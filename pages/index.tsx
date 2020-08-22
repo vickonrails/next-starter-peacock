@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Index = () => {
+const Index: FC = () => {
   return <div>Welcome to Next Starter Peacock</div>;
 };
 
