@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@400;700&display=swap");
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: inherit;
+}
+
+:root {
+  --text-color: #bbb;
+  --text-color-dark: #777;
+  --text-color-bright: #999;
+  --text-color-white: #fff;
+  --prim-color: #b94c50;
+  --transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-duration: 0.25s;
+  --background: #121212;
+}
+
+a {
+  color: var(--prim-color);
+  text-decoration: underline var(--prim-color);
+}
+a:hover,
+a:visited:hover {
+  text-decoration: underline var(--prim-color);
+  color: #fff;
+}
+a:focus {
+  outline-color: var(--prim-color);
+  text-decoration: none;
+}
+a.no-underline {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+a > img,
+a:hover > img {
+  text-decoration: none;
+}
+html {
+  font-family: montserrat;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+ul,
+ol {
+  color: var(--text-color);
+}
+body {
+  background: #121212;
+  color: #999;
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1em;
+  color: var(--text-color-white);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: var(--text-color-white);
+  font-family: "roboto mono";
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  word-spacing: -10px;
+}
+
+p,
+table {
+  margin-bottom: 1.5em;
+  color: var(--text-color);
+}
+td,
+th {
+  border: 1px solid var(--text-color-white);
+  padding: 0.5em;
+}
+th {
+  color: var(--text-color-white);
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--text-color);
+  width: 100%;
+  overflow-x: scroll;
+  display: block;
+}
+
+blockquote {
+  font-style: italic;
+  background: #202020;
+  position: relative;
+  padding: 1em 1em;
+  margin-bottom: 1.5em;
+}
+blockquote p {
+  margin-bottom: 0;
+}
+blockquote:before {
+  content: "";
+  height: 100%;
+  width: 4px;
+  display: inline-block;
+  background: var(--prim-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+hr {
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 1px solid #505050;
+}
+figcaption {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+  font-style: italic;
+  display: block;
+}
+
+@media all and (min-width: 1330px) {
+  :root {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 759px) {
+  h1 {
+    font-size: 3em;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4em;
+    word-spacing: -20px;
+  }
+}
+@media (min-width: 1336px) {
+  h1 {
+    font-size: 4.37em;
+  }
+}
