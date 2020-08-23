@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 
-import { NavSection } from "./styles/nav.styles";
+import { NavSection, StyledHamburger } from "./styles/nav.styles";
 import Logo from "./logo";
 import Container from "./container";
 import obj from "../config/index.json";
+import { MenuContext } from ".";
 
 const Nav = () => {
+  const menuContext = useContext(MenuContext);
+
+  const { toggleMenuOpen, menuOpen } = menuContext;
+
   return (
     <NavSection>
       <Container>
@@ -21,8 +26,11 @@ const Nav = () => {
           </div>
 
           <div className="navRight">
-            {/* <Hamburger onClick={() => setMenuOpen(!menuOpen)} />
-          {menuOpen ? <MobileMenu /> : null} */}
+            <StyledHamburger
+              menuOpen={menuOpen}
+              onClick={toggleMenuOpen}
+            ></StyledHamburger>
+
             <ul className="navLinkList">
               <li className="navLinkItem">
                 <Link href="articles">

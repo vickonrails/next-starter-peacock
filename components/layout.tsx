@@ -9,6 +9,7 @@ import { StyledMain } from "./styles/layout.styles";
 import Header from "./header/header";
 import Footer from "./footer";
 import Nav from "./nav";
+import MobileNav from "./nav/mobile-nav";
 
 interface ILayout {
   children: ReactNode;
@@ -16,37 +17,31 @@ interface ILayout {
 }
 
 //@ts-ignore
-export const MenuContext = createContext();
+export const MenuContext = createContext({
+  menuOpen: null,
+  toggleMenuOpen: null,
+});
 
 const Layout = ({ children, pathname }: ILayout) => {
-  //   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  //   const closeModal = (e) => {
-  //     menuOpen && setMenuOpen(false);
-  //   };
+  const toggleMenuOpen = () => {
+    menuOpen ? setMenuOpen(false) : setMenuOpen(true);
+  };
+
   return (
-    // <MenuContext.Provider
-    //   value={{ menuOpen: menuOpen, setMenuOpen: setMenuOpen }}
-    // >
-    //   <div onClick={closeModal}>
-    //     <Nav name={name} />
-    //     <Header
-    //       location={location}
-    //       articleTitle={articleTitle}
-    //       tags={tags}
-    //       date={date}
-    //       articleImage={articleImage}
-    //     />
-    <>
+    <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
       <Nav />
-      <Header pathname={pathname} />
-      <StyledMain>{children}</StyledMain>
-      <Footer />
-    </>
-    //{" "}
-    //   </div>
-    //{" "}
-    // </MenuContext.Provider>
+      {menuOpen ? (
+        <MobileNav />
+      ) : (
+        <>
+          <Header pathname={pathname} />
+          <StyledMain>{children}</StyledMain>
+          <Footer />
+        </>
+      )}
+    </MenuContext.Provider>
   );
 };
 

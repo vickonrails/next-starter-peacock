@@ -57,6 +57,7 @@ body {
   background: #121212;
   color: #999;
   transition: all var(--transition-duration) var(--transition-timing-function);
+  overflow: hidden;
 }
 h1,
 h2,
