@@ -73,6 +73,10 @@ export const NavSection = styled.header`
 
   @media (min-width: 759px) {
     margin-bottom: 5em;
+
+    .navLinkList {
+      display: flex;
+    }
   }
 `;
 
