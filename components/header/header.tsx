@@ -1,6 +1,7 @@
 import React from "react";
 import HomeHeader from "./home-header";
 import AboutHeader from "./about-header";
+import PageHeader from "./page-header";
 
 interface IHeader {
   pathname: string;
@@ -16,6 +17,9 @@ const header = ({ pathname }: IHeader) => {
 
     case "/about":
       return <AboutHeader />;
+
+    case "/articles":
+      return <PageHeader headingTitle="Articles" />;
   }
 
   return <div>Header</div>;

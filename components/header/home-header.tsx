@@ -1,8 +1,9 @@
 import React from "react";
 
-import Container from "../container";
+import { Container } from "../container";
 import siteConfig from "../../config/index.json";
 import { StyledHomeHeading } from "../styles/header.styles";
+import Link from "next/link";
 
 const HomeHeader = () => (
   <StyledHomeHeading>
@@ -10,6 +11,9 @@ const HomeHeader = () => (
       <div className="header-container">
         <h1>{siteConfig.title}</h1>
         <p className="description">{siteConfig.description}</p>
+        <Link href="work">
+          <a>See My Work</a>
+        </Link>
       </div>
     </Container>
   </StyledHomeHeading>

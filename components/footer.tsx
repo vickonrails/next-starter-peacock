@@ -5,7 +5,7 @@ import {
   CodepenIcon,
   TwitterIcon,
 } from "./styles/footer.styles";
-import Container from "./container";
+import { Container } from "./container";
 
 const Footer = () => (
   <StyledFooterSection>

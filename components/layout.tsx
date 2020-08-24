@@ -35,11 +35,11 @@ const Layout = ({ children, pathname }: ILayout) => {
       {menuOpen ? (
         <MobileNav />
       ) : (
-        <main>
+        <>
           <Header pathname={pathname} />
           <StyledMain>{children}</StyledMain>
           <Footer />
-        </main>
+        </>
       )}
     </MenuContext.Provider>
   );

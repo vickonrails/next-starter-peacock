@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import { useRouter } from "next/router";
 
-import { Layout } from "../components";
-import Container from "../components/container";
+import { Layout, Container, Cards } from "../components";
 import { StyledIndexPage } from "../components/styles/home.styles";
 
 const Index: FC = () => {
@@ -10,7 +9,10 @@ const Index: FC = () => {
   return (
     <Layout pathname={pathname}>
       <StyledIndexPage>
-        <Container>Welcome to Next Starter Peacock</Container>
+        <Container>
+          Articles Page
+          <Cards />
+        </Container>
       </StyledIndexPage>
     </Layout>
   );

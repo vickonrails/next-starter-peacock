@@ -18,4 +18,4 @@ const Container: FC<IContainer> = ({
   );
 };
 
-export default Container;
+export { Container };

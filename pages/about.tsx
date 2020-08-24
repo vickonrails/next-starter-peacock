@@ -1,8 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import { Layout } from "../components";
-import Container from "../components/container";
+import { Layout, Container } from "../components";
 import { StyledAbout } from "../components/styles/about.styles";
 
 const About = () => {

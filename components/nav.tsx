@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { NavSection, StyledHamburger } from "./styles/nav.styles";
 import Logo from "./logo";
-import Container from "./container";
+import { Container } from "./container";
 import obj from "../config/index.json";
 import { MenuContext } from ".";
 
@@ -32,6 +32,11 @@ const Nav = () => {
             ></StyledHamburger>
 
             <ul className="navLinkList">
+              <li className="navLinkItem">
+                <Link href="work">
+                  <a>Work</a>
+                </Link>
+              </li>
               <li className="navLinkItem">
                 <Link href="articles">
                   <a>Articles</a>
