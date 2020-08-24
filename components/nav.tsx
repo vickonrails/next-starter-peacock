@@ -20,7 +20,7 @@ const Nav = () => {
             <Link href="/">
               <a className="no-underline">
                 <Logo />
-                {obj.name}
+                <span>{obj.name}</span>
               </a>
             </Link>
           </div>

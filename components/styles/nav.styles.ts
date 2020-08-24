@@ -71,6 +71,11 @@ export const NavSection = styled.header`
     }
   }
 
+  .no-underline {
+    display: flex;
+    align-items: center;
+  }
+
   @media (min-width: 759px) {
     margin-bottom: 5em;
 

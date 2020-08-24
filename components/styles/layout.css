@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=DM+Sans:wght@400;700");
 
 *,
 *:after,
@@ -18,6 +19,10 @@
   --transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-duration: 0.25s;
   --background: #121212;
+
+  --max-width: 83.5em;
+  --max-width-bleed: 90%;
+  --max-width-narrow: 50em;
 }
 
 a {
@@ -44,7 +49,7 @@ a:hover > img {
   text-decoration: none;
 }
 html {
-  font-family: montserrat;
+  font-family: "DM Sans";
   font-size: 17px;
   line-height: 1.5;
   color: var(--text-color);
@@ -57,7 +62,9 @@ body {
   background: #121212;
   color: #999;
   transition: all var(--transition-duration) var(--transition-timing-function);
-  overflow: hidden;
+}
+main {
+  margin-bottom: 2em;
 }
 h1,
 h2,
@@ -66,16 +73,16 @@ h4,
 h5,
 h6 {
   margin-bottom: 1em;
+  font-family: "Manrope";
   color: var(--text-color-white);
 }
 
 h1 {
   font-size: 2.5em;
   color: var(--text-color-white);
-  font-family: "roboto mono";
   line-height: 1.25;
+  font-weight: 800;
   margin-bottom: 1rem;
-  word-spacing: -10px;
 }
 
 p,
@@ -131,6 +138,9 @@ figcaption {
   font-style: italic;
   display: block;
 }
+.max-width {
+  max-width: 50em;
+}
 
 @media all and (min-width: 1330px) {
   :root {
@@ -146,7 +156,6 @@ figcaption {
 @media (min-width: 1024px) {
   h1 {
     font-size: 4em;
-    word-spacing: -20px;
   }
 }
 @media (min-width: 1336px) {
