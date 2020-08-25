@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 import { Layout, Container } from "../components";
 import { StyledAbout } from "../components/styles/about.styles";
 
+/**
+ * About page `/about`
+ */
 const About = () => {
   const { pathname } = useRouter();
   return (

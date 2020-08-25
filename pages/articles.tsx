@@ -2,6 +2,10 @@ import React from "react";
 import { Layout, Container } from "../components";
 import { useRouter } from "next/router";
 
+/**
+ * Article page `/articles`
+ */
+
 const Articles = () => {
   const { pathname } = useRouter();
   return (

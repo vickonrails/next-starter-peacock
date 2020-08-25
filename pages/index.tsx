@@ -4,6 +4,10 @@ import { useRouter } from "next/router";
 import { Layout, Container, Cards } from "../components";
 import { StyledIndexPage } from "../components/styles/home.styles";
 
+/**
+ * Index page `/index`
+ */
+
 const Index: FC = () => {
   const { pathname } = useRouter();
   return (

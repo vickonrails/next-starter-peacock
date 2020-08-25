@@ -5,7 +5,7 @@ import { Layout } from "../../components";
 import { getAllContentIds, getContentData } from "../../lib/content";
 
 /**
- *  Renders markdown posts
+ *  Renders notes markdown posts
  */
 
 const Note = ({ notesData }) => {
