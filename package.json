@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "gray-matter": "^4.0.2",
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
