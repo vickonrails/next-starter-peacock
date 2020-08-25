@@ -14,8 +14,15 @@ const Index: FC = () => {
     <Layout pathname={pathname} pageTitle="Home page">
       <StyledIndexPage>
         <Container>
-          Articles Page
-          <Cards />
+          <Cards
+            data={[
+              {
+                title: "Some Title",
+                body: <p>One More Thing</p>,
+                slug: "/articles/markdown-2",
+              },
+            ]}
+          />
         </Container>
       </StyledIndexPage>
     </Layout>

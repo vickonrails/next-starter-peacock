@@ -1,20 +1,25 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import { Layout } from "../../components";
+import { Layout, Container } from "../../components";
 import { getAllContentIds, getContentData } from "../../lib/content";
+import { StyledContent } from "../../components/styles/content.styles";
 
 /**
  *  Renders articles markdown posts
  */
 
-const Article = ({ notesData }) => {
+const Article = ({ notesData }: { notesData: INotesData }) => {
   const { pathname } = useRouter();
-  const { title } = notesData;
+  const { title, contentHtml } = notesData;
 
   return (
     <Layout pathname={pathname} pageTitle={title}>
-      {notesData.title}
+      <Container width="narrow">
+        <StyledContent>
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </StyledContent>
+      </Container>
     </Layout>
   );
 };
@@ -27,8 +32,15 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = ({ params }) => {
-  const notesData = getContentData(params.id, "articles");
+interface INotesData {
+  id: string;
+  contentHtml: string;
+  date: Date;
+  title: string;
+}
+
+export const getStaticProps = async ({ params }) => {
+  const notesData: INotesData = await getContentData(params.id, "articles");
   return {
     props: {
       notesData,

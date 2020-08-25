@@ -15,25 +15,25 @@ const MobileNav = () => {
           </li>
 
           <li className="listItem">
-            <Link href="articles">
+            <Link href="/articles">
               <a className="link">Guides</a>
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="articles">
+            <Link href="/articles">
               <a className="link">Articles</a>
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="notes">
+            <Link href="/notes">
               <a className="link">Notes</a>
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="about">
+            <Link href="/about">
               <a className="link">About</a>
             </Link>
           </li>

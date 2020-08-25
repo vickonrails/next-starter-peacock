@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "../components";
+import { Layout, Container, Cards } from "../components";
 import { useRouter } from "next/router";
 
 /**
@@ -9,12 +9,27 @@ const Notes = () => {
   const { pathname } = useRouter();
   return (
     <Layout pageTitle="Notes" pathname={pathname}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus illum
-        dolores perferendis, optio reprehenderit et, amet earum ex ut quam
-        incidunt ab rerum iure itaque aliquam? Placeat consequuntur provident
-        qui?
-      </p>
+      <Container>
+        <Cards
+          data={[
+            {
+              title: "Some literally content here",
+              body: <p>Alright something</p>,
+              slug: "/articles/markdown-2",
+            },
+            {
+              title: "Some literally content here",
+              body: <p>Alright something</p>,
+              slug: "/articles/markdown-2",
+            },
+            {
+              title: "Some literally content here",
+              body: <p>Alright something</p>,
+              slug: "/articles/markdown-2",
+            },
+          ]}
+        />
+      </Container>
     </Layout>
   );
 };

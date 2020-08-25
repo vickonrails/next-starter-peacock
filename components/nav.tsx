@@ -33,22 +33,22 @@ const Nav = () => {
 
             <ul className="navLinkList">
               <li className="navLinkItem">
-                <Link href="work">
+                <Link href="/work">
                   <a>Work</a>
                 </Link>
               </li>
               <li className="navLinkItem">
-                <Link href="articles">
+                <Link href="/articles">
                   <a>Articles</a>
                 </Link>
               </li>
               <li className="navLinkItem">
-                <Link href="notes">
+                <Link href="/notes">
                   <a>Notes</a>
                 </Link>
               </li>
               <li className="navLinkItem">
-                <Link href="about">
+                <Link href="/about">
                   <a>About</a>
                 </Link>
               </li>

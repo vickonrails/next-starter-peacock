@@ -11,9 +11,9 @@ const HomeHeader = () => (
       <div className="header-container">
         <h1>{siteConfig.title}</h1>
         <p className="description">{siteConfig.description}</p>
-        <Link href="work">
+        {/* <Link href="work">
           <a>See My Work</a>
-        </Link>
+        </Link> */}
       </div>
     </Container>
   </StyledHomeHeading>

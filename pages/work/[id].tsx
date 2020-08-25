@@ -27,8 +27,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = ({ params }) => {
-  const notesData = getContentData(params.id, "work");
+export const getStaticProps = async ({ params }) => {
+  const notesData = await getContentData(params.id, "work");
   return {
     props: {
       notesData,

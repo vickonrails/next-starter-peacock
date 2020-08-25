@@ -1,63 +1,36 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { StyledCards } from "../styles/cards.styles";
 import Link from "next/link";
 
-const Cards = () => {
+interface ICard {
+  data: {
+    title: string;
+    slug: string;
+    body: ReactElement;
+  }[];
+}
+
+/**
+ * Renders a grid of cards
+ * @param {Array} data Data to display in grid
+ */
+const Cards = ({ data }: ICard) => {
   return (
     <StyledCards>
-      <article className="article">
-        <Link href="/">
-          <a>
-            <img src="/images/article-preview.png" />
-            <time>Apr 12, 2020</time>
-            <h2>Designing Experiences at</h2>
+      {data.map((singleCard) => (
+        <article className="article">
+          {/* //@ts-ignore */}
+          <Link href="/articles/[id]" as={`/articles/${singleCard.slug}`}>
+            <a>
+              <img src="/images/article-preview.png" />
+              <time>Apr 12, 2020</time>
+              <h2>{singleCard.title}</h2>
 
-            <section>
-              <p>
-                The HTML element represents a specific period in time. It may
-                include the datetime attribute to translate dates into
-                machine-readable format.
-              </p>
-            </section>
-          </a>
-        </Link>
-      </article>
-
-      <article className="article">
-        <Link href="/">
-          <a>
-            <img src="/images/article-preview.png" />
-            <time>Apr 12, 2020</time>
-            <h2>Designing Experiences at</h2>
-
-            <section>
-              <p>
-                The HTML element represents a specific period in time. It may
-                include the datetime attribute to translate dates into
-                machine-readable format.
-              </p>
-            </section>
-          </a>
-        </Link>
-      </article>
-
-      <article className="article">
-        <Link href="/">
-          <a>
-            <img src="/images/article-preview.png" />
-            <time>Apr 12, 2020</time>
-            <h2>Designing Experiences at</h2>
-
-            <section>
-              <p>
-                The HTML element represents a specific period in time. It may
-                include the datetime attribute to translate dates into
-                machine-readable format.
-              </p>
-            </section>
-          </a>
-        </Link>
-      </article>
+              <section>{singleCard.body}</section>
+            </a>
+          </Link>
+        </article>
+      ))}
     </StyledCards>
   );
 };
