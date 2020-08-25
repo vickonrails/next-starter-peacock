@@ -6,7 +6,7 @@ import { exception } from "console";
 import remark from "remark";
 import html from "remark-html";
 
-const caseStudiesDirectory = path.join(process.cwd(), "content", "work");
+const workDirectory = path.join(process.cwd(), "content", "work");
 const notesDirectory = path.join(process.cwd(), "content", "notes");
 const articlesDirectory = path.join(process.cwd(), "content", "articles");
 
@@ -30,7 +30,7 @@ export const getAllContentIds = (contentType: ContentType) => {
       break;
 
     case "work":
-      filenames = fs.readdirSync(caseStudiesDirectory);
+      filenames = fs.readdirSync(workDirectory);
       break;
 
     default:
@@ -65,7 +65,7 @@ export const getContentData = async (id: string, contentType: ContentType) => {
       break;
 
     case "work":
-      contentTypeDirectory = caseStudiesDirectory;
+      contentTypeDirectory = workDirectory;
       break;
 
     default:
@@ -90,12 +90,31 @@ export const getContentData = async (id: string, contentType: ContentType) => {
   };
 };
 
-export const getContentList = () => {
-  const blogFiles = fs.readdirSync(articlesDirectory);
-  const blogs = blogFiles
-    .filter((blog) => blog.endsWith(".md"))
-    .map((blog) => {
-      const path = `${articlesDirectory}/${blog}`;
+export const getContentList = (contentType: ContentType) => {
+  let contentFiles;
+  let contentDir;
+
+  switch (contentType) {
+    case "articles":
+      contentFiles = fs.readdirSync(articlesDirectory);
+      contentDir = articlesDirectory;
+      break;
+
+    case "notes":
+      contentFiles = fs.readdirSync(notesDirectory);
+      contentDir = notesDirectory;
+      break;
+
+    case "work":
+      contentFiles = fs.readdirSync(workDirectory);
+      contentDir = workDirectory;
+      break;
+  }
+
+  const content = contentFiles
+    .filter((content) => content.endsWith(".md"))
+    .map((content) => {
+      const path = `${contentDir}/${content}`;
       const rawContent = fs.readFileSync(path, {
         encoding: "utf-8",
       });
@@ -105,5 +124,5 @@ export const getContentList = () => {
       return { ...data, id: uuid() };
     });
 
-  return blogs;
+  return content;
 };

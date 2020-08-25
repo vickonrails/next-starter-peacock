@@ -19,8 +19,7 @@ const Cards = ({ data }: ICard) => {
     <StyledCards>
       {data.map((singleCard) => (
         <article className="article">
-          {/* //@ts-ignore */}
-          <Link href="/articles/[id]" as={`/articles/${singleCard.slug}`}>
+          <Link href="/work/[id]" as={`/work/${singleCard.slug}`}>
             <a>
               <img src="/images/article-preview.png" />
               <time>Apr 12, 2020</time>

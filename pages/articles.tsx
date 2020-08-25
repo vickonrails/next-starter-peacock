@@ -7,7 +7,7 @@ import { getContentList } from "../lib/content";
  * Article page `/articles`
  */
 
-const Articles = ({ blogs }) => {
+const Articles = ({ articles }) => {
   const { pathname } = useRouter();
   return (
     <Layout pathname={pathname} pageTitle="Articles">
@@ -15,16 +15,16 @@ const Articles = ({ blogs }) => {
         <blockquote>
           Site is a work in progress. So dummy content all the way!
         </blockquote>
-        <Cards data={blogs} />
+        <Cards data={articles} />
       </Container>
     </Layout>
   );
 };
 
 export const getStaticProps = async () => {
-  const blogs = getContentList();
+  const articles = getContentList("articles");
   return {
-    props: { blogs },
+    props: { articles },
   };
 };
 

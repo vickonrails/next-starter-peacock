@@ -9,7 +9,7 @@ import { StyledContent } from "../../components/styles/content.styles";
  *  Renders articles markdown posts
  */
 
-const Article = ({ notesData }: { notesData: INotesData }) => {
+const Article = ({ notesData }: { notesData: IContentData }) => {
   const { pathname } = useRouter();
   const { title, contentHtml } = notesData;
 
@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-interface INotesData {
+export interface IContentData {
   id: string;
   contentHtml: string;
   date: Date;
@@ -40,7 +40,7 @@ interface INotesData {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const notesData: INotesData = await getContentData(params.id, "articles");
+  const notesData: IContentData = await getContentData(params.id, "articles");
   return {
     props: {
       notesData,
