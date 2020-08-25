@@ -2,20 +2,20 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import { Layout } from "../../components";
-import { getAllPostsIds, getPostData } from "../../lib/posts";
+import { getAllContentIds, getContentData } from "../../lib/content";
 
 /**
  *  Renders markdown posts
  */
 
-const Post = ({ postData }) => {
+const Article = ({ notesData }) => {
   const { pathname } = useRouter();
 
-  return <Layout pathname={pathname}>{postData.title}</Layout>;
+  return <Layout pathname={pathname}>{notesData.title}</Layout>;
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllPostsIds();
+  const paths = getAllContentIds("work");
   return {
     paths,
     fallback: false,
@@ -23,12 +23,12 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = ({ params }) => {
-  const postData = getPostData(params.id);
+  const notesData = getContentData(params.id, "work");
   return {
     props: {
-      postData,
+      notesData,
     },
   };
 };
 
-export default Post;
+export default Article;
