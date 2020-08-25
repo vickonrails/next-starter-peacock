@@ -14,6 +14,7 @@ import MobileNav from "./nav/mobile-nav";
 interface ILayout {
   children: ReactNode;
   pathname: string;
+  pageTitle: string;
 }
 
 //@ts-ignore
@@ -22,7 +23,7 @@ export const MenuContext = createContext({
   toggleMenuOpen: null,
 });
 
-const Layout = ({ children, pathname }: ILayout) => {
+const Layout = ({ children, pathname, pageTitle }: ILayout) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenuOpen = () => {
@@ -36,7 +37,7 @@ const Layout = ({ children, pathname }: ILayout) => {
         <MobileNav />
       ) : (
         <>
-          <Header pathname={pathname} />
+          <Header pathname={pathname} title={pageTitle} />
           <StyledMain>{children}</StyledMain>
           <Footer />
         </>

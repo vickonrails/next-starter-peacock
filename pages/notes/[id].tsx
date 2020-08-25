@@ -10,8 +10,13 @@ import { getAllContentIds, getContentData } from "../../lib/content";
 
 const Note = ({ notesData }) => {
   const { pathname } = useRouter();
+  const { title } = notesData;
 
-  return <Layout pathname={pathname}>{notesData.title}</Layout>;
+  return (
+    <Layout pathname={pathname} pageTitle={title}>
+      {title}
+    </Layout>
+  );
 };
 
 export const getStaticPaths = async () => {

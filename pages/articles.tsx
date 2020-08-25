@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const Articles = () => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname}>
+    <Layout pathname={pathname} pageTitle="Articles">
       <Container>
         <blockquote>
           Site is a work in progress. So dummy content all the way!

@@ -11,7 +11,7 @@ import { StyledIndexPage } from "../components/styles/home.styles";
 const Index: FC = () => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname}>
+    <Layout pathname={pathname} pageTitle="Home page">
       <StyledIndexPage>
         <Container>
           Articles Page

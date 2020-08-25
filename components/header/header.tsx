@@ -5,12 +5,12 @@ import PageHeader from "./page-header";
 
 interface IHeader {
   pathname: string;
-  articleTitle?: string;
+  title?: string;
   date?: Date;
   articleImage?: string;
 }
 
-const header = ({ pathname }: IHeader) => {
+const header = ({ pathname, title }: IHeader) => {
   switch (pathname) {
     case "/":
       return <HomeHeader />;
@@ -18,11 +18,9 @@ const header = ({ pathname }: IHeader) => {
     case "/about":
       return <AboutHeader />;
 
-    case "/articles":
-      return <PageHeader headingTitle="Articles" />;
+    default:
+      return <PageHeader headingTitle={title} />;
   }
-
-  return <div>Header</div>;
 };
 
 export default header;

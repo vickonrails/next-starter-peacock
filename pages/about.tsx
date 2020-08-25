@@ -10,7 +10,7 @@ import { StyledAbout } from "../components/styles/about.styles";
 const About = () => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname}>
+    <Layout pathname={pathname} pageTitle="About">
       <StyledAbout>
         <Container width="narrow">
           <div className="postContent">
