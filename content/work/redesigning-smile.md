@@ -1,6 +1,6 @@
 ---
 title: Redesigning Smile
-date: "2015-05-01"
+date: "Jan, 2019"
 slug: "redesigning-smile"
 ---
 
@@ -80,7 +80,7 @@ The only goal of this test was to
 
 I don’t know much about the Smile userbase, neither do I have data-oriented information of their most typical user. A Persona hypothesis was the quickest way to organize my knowledge of the ideal Smile user into a narrative.
 
-![Smile Desktop](./images/persona.png "Testing Something")
+![Smile Desktop](/images/work/persona.png "Testing Something")
 
 ### Tasks Scenarios
 
@@ -98,7 +98,7 @@ Task Scenarios were crafted to test aspects of the user dashboard. These tasks a
 
 Here’s a table that summarizes the average results of the usability tests before the redesign.
 
-![Usability Tests Result](./images/test_results1.png "Usability Tests Result")
+![Usability Tests Result](/images/work/test_results1.png "Usability Tests Result")
 
 ### Problem Definition.
 
@@ -127,33 +127,33 @@ After watching the test videos over and over again, I discovered these problems 
 
 The next step was to revisit the present Site Map. This involved me decoupling pages into sticky notes and asking a test participant to sort them into sensible groups.
 
-![Smile's Sitemap](./images/old_smile_IA.png "Smile's Current Site Map")
+![Smile's Sitemap](/images/work/old_smile_IA.png "Smile's Current Site Map")
 
-![Card Sorting Results](./images/card_sorting1.jpeg "Card Sorting to group related content in sensible categories")
+![Card Sorting Results](/images/work/card_sorting1.jpeg "Card Sorting to group related content in sensible categories")
 
-![New Sitemap](./images/new_mobile_IA.png "New Site Map informed from the card sorting.")
+![New Sitemap](/images/work/new_mobile_IA.png "New Site Map informed from the card sorting.")
 
 #### What Changed and Why?
 
 The current IA puts the My Accounts section under the Profile category. From the tests, users didn’t think of things this way. They assumed their Accounts were different from their Smile Profile. Another problem I discovered in the current IA was the unnecessary replication of nodes that made the site more easy to get lost in.
 
-![Smile Accounts](./images/old_accounts.png "New Site Map informed from the card sorting.")
+![Smile Accounts](/images/work/old_accounts.png "New Site Map informed from the card sorting.")
 
 ### Sketches
 
-![Low-fi Sketches](./images/sketch4.jpeg)
+![Low-fi Sketches](/images/work/sketch4.jpeg)
 
-![Low-fi Sketches](./image/../images/sketch2.jpeg "A few of my ugly sketches.")
+![Low-fi Sketches](/images/work/sketch2.jpeg)
 
 ### Wireframes
 
-![Wireframes](./images/wireframe1.png "One of my few wireframes.")
+![Wireframes](/images/work/wireframe1.png)
 
 ### High Fidelity Designs
 
 And here comes the fun part. 🎉🎉🎉
 
-![High-fi designs](./images/high_fidelity.png "High Fidelity Screen designs")
+![High-fi designs](/images/work/high_fidelity.png "High Fidelity Screen designs")
 
 ### Not so Fast (Highlights)
 
@@ -179,7 +179,7 @@ Based on that, the most sensible classifications are in this order
 
 **Data amount and Validity**: Users can choose to sort the list by any of the categories (Recency, Price, Data amount, or Validity).
 
-![Newly Informed Card Sortings](./images/card_sorting1.jpeg "Card sorting data bundles according to price")
+![Newly Informed Card Sortings](/images/work/card_sorting1.jpeg "Card sorting data bundles according to price")
 
 > I also provided an Input for the user to quickly enter their budget and get data bundles around that price range.
 
@@ -191,9 +191,9 @@ A more info link provides more information about the data plan.
 
 Smile has a whole tab in their main navigation dedicated to Customer Help. This is such a cool thing to do… But providing users with 1 inch of space to type in their problems is the opposite of what they’re trying to say.
 
-![Help experience](./images/support_desk_before.png "Current site help experience")
+![Help experience](/images/work/support_desk_before.png "Current site help experience")
 
-![Redesigned help experience](./images/support_desk_after.png "Redesigned help experience with affordance to add visual description of the situation")
+![Redesigned help experience](/images/work/support_desk_after.png "Redesigned help experience with affordance to add visual description of the situation")
 
 ### Mobile Experience?
 
@@ -203,11 +203,11 @@ At first, it sounded like I could just make the mobile version from the desktop.
 
 In order to make only the key experiences close to the user as possible, I had to revisit the IA of the site. Basically shifting away operations that are hardly performed.
 
-![Mobile Information Architecture](./images/new_mobile_IA.png "IA for new mobile experience")
+![Mobile Information Architecture](/images/work/new_mobile_IA.png "IA for new mobile experience")
 
 ### High fidelity mobile experiences
 
-![High fidelity mobile screens](./images/high_fidelity_mobile.png "High fidelity mobile screens")
+![High fidelity mobile screens](/images/work/high_fidelity_mobile.png "High fidelity mobile screens")
 
 ### Outcome
 
@@ -239,9 +239,11 @@ After the redesign, error rates went down to 0.6 errors per task. A 94% improvem
 
 Here’s a side by side comparison of the average results of usability tests with 3 participants; David, Wale, and Presh.
 
-![High fidelity mobile screens](./images/test_results_before.png "High fidelity mobile screens")
 
-![High fidelity mobile screens](./images/test_results_before.png "High fidelity mobile screens")
+
+![High fidelity mobile screens](/images/work/test_results1.png "High fidelity mobile screens")
+
+![High fidelity mobile screens](/images/work/test_results_after.png "High fidelity mobile screens")
 
 > This is much better and Straight forward- Presh.
 

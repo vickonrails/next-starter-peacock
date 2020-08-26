@@ -7,6 +7,7 @@ interface ICard {
   data: {
     title: string;
     slug: string;
+    date: Date;
     body: ReactElement;
   }[];
 }
@@ -26,7 +27,7 @@ const Cards = ({ data, basePath }: ICard) => {
           >
             <a>
               <img src="/images/article-preview.png" />
-              <time>Apr 12, 2020</time>
+              <time>{singleCard.date}</time>
               <h2>{singleCard.title}</h2>
 
               <section>{singleCard.body}</section>

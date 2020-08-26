@@ -53,6 +53,7 @@ export const StyledCards = styled.section`
 
   time {
     color: #808080;
+    font-size: 0.9em;
   }
 
   a {
@@ -82,7 +83,7 @@ export const StyledCards = styled.section`
   }
 
   @media all and (min-width: 560px) {
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
   }
 `;

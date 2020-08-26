@@ -1,6 +1,6 @@
 ---
 title: Working at iSWAG
-date: "2017-06-01"
+date: "Dec, 2019"
 slug: 'work-at-iswag'
 ---
 

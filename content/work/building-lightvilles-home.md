@@ -1,7 +1,7 @@
 ---
-title: Building Lensees
-date: "June, 2019"
-slug: 'lensees'
+title: Building LightVille's Home
+date: "July, 2020"
+slug: 'building-lightvilles-home'
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.
