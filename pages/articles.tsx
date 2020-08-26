@@ -15,7 +15,7 @@ const Articles = ({ articles }) => {
         <blockquote>
           Site is a work in progress. So dummy content all the way!
         </blockquote>
-        <Cards data={articles} />
+        <Cards data={articles} basePath="articles" />
       </Container>
     </Layout>
   );

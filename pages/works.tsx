@@ -4,24 +4,24 @@ import { useRouter } from "next/router";
 import { getContentList } from "../lib/content";
 
 /**
- * Blog page `/blog`
+ * Work page `/work`
  */
-const Notes = ({ notes }) => {
+const Work = ({ works }) => {
   const { pathname } = useRouter();
   return (
-    <Layout pageTitle="Notes" pathname={pathname}>
+    <Layout pathname={pathname} pageTitle="My Work">
       <Container>
-        <Cards data={notes} basePath="notes" />
+        <Cards data={works} basePath="works" />
       </Container>
     </Layout>
   );
 };
 
 export const getStaticProps = async () => {
-  const notes = getContentList("notes");
+  const works = getContentList("work");
   return {
-    props: { notes },
+    props: { works },
   };
 };
 
-export default Notes;
+export default Work;

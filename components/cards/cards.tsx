@@ -3,6 +3,7 @@ import { StyledCards } from "../styles/cards.styles";
 import Link from "next/link";
 
 interface ICard {
+  basePath: string;
   data: {
     title: string;
     slug: string;
@@ -14,12 +15,15 @@ interface ICard {
  * Renders a grid of cards
  * @param {Array} data Data to display in grid
  */
-const Cards = ({ data }: ICard) => {
+const Cards = ({ data, basePath }: ICard) => {
   return (
     <StyledCards>
       {data.map((singleCard) => (
         <article className="article">
-          <Link href="/work/[id]" as={`/work/${singleCard.slug}`}>
+          <Link
+            href={`/${basePath}/[id]`}
+            as={`/${basePath}/${singleCard.slug}`}
+          >
             <a>
               <img src="/images/article-preview.png" />
               <time>Apr 12, 2020</time>
