@@ -12,11 +12,12 @@ export const StyledDesignPlus = styled.section`
   .container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .container .text,
   .container .image {
-    flex: 1;
+    flex: 1 100%;
   }
 
   h2 {
@@ -34,6 +35,10 @@ export const StyledDesignPlus = styled.section`
   }
 
   @media (min-width: 759px) {
+    .container .text,
+    .container .image {
+      flex: 1;
+    }
     .text {
       margin-right: 5%;
     }

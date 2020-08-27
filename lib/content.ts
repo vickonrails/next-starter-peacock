@@ -124,7 +124,5 @@ export const getContentList = (contentType: ContentType) => {
       return { ...data, id: uuid() };
     });
 
-  console.log(content);
-
   return content;
 };
