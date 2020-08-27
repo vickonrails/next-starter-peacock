@@ -2,6 +2,7 @@
 title: Working at iSWAG
 date: "Dec, 2019"
 slug: 'work-at-iswag'
+selectedWork: false
 ---
 
 **ISWAG’s** goal was to connect local communities and smaller businesses together. This post documents my learnings as an intern and early employee at the startup

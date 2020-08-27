@@ -6,6 +6,7 @@ interface ICard {
   basePath: string;
   data: {
     title: string;
+    id: string;
     slug: string;
     date: Date;
     body: ReactElement;
@@ -20,7 +21,7 @@ const Cards = ({ data, basePath }: ICard) => {
   return (
     <StyledCards>
       {data.map((singleCard) => (
-        <article className="article">
+        <article className="article" key={singleCard.id}>
           <Link
             href={`/${basePath}/[id]`}
             as={`/${basePath}/${singleCard.slug}`}

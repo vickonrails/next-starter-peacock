@@ -3,30 +3,37 @@ import { useRouter } from "next/router";
 
 import { Layout, Container, Cards } from "../components";
 import { StyledIndexPage } from "../components/styles/home.styles";
+import { getContentList } from "../lib/content";
+import DesignCode from "../components/design-code";
 
 /**
  * Index page `/index`
  */
 
-const Index: FC = () => {
+//@ts-ignore
+const Index: FC = ({ selectedWorks }) => {
   const { pathname } = useRouter();
   return (
     <Layout pathname={pathname} pageTitle="Home page">
       <StyledIndexPage>
         <Container>
-          <Cards
-            data={[
-              {
-                title: "Some Title",
-                body: <p>One More Thing</p>,
-                slug: "/articles/markdown-2",
-              },
-            ]}
-          />
+          <Cards data={selectedWorks} basePath="works" />
         </Container>
+        <DesignCode />
       </StyledIndexPage>
     </Layout>
   );
+};
+
+export const getStaticProps = async () => {
+  const works = await getContentList("work");
+  const selectedWorks = works.filter((work) => work.selectedWork);
+
+  return {
+    props: {
+      selectedWorks,
+    },
+  };
 };
 
 export default Index;

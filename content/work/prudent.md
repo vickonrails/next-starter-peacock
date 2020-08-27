@@ -2,6 +2,7 @@
 title: Designing & Building Prudent
 date: "April, 2020"
 slug: 'prudent'
+selectedWork: true
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

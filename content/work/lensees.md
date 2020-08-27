@@ -2,6 +2,7 @@
 title: Building Lensees
 date: "June, 2019"
 slug: 'lensees'
+selectedWork: true
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

@@ -2,6 +2,7 @@
 title: Building LightVille's Home
 date: "July, 2020"
 slug: 'building-lightvilles-home'
+selectedWork: true
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

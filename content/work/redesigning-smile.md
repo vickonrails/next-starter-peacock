@@ -2,6 +2,7 @@
 title: Redesigning Smile
 date: "Jan, 2019"
 slug: "redesigning-smile"
+selectedWork: false
 ---
 
 [Smile Communications](https://smile.com.ng/) is one of Africa’s largest 4G LTE provider. Launched in 2007, Smile currently provides fast and reliable Internet and Voice Services for 4 countries in Africa; Tanzania, Nigeria, The Republic of Congo and Uganda.
