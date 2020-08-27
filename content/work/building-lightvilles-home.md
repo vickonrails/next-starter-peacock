@@ -1,8 +1,9 @@
 ---
 title: Building LightVille's Home
 date: "July, 2020"
-slug: 'building-lightvilles-home'
+slug: "building-lightvilles-home"
 selectedWork: true
+previewImage: "/images/work/smile_desktop.png"
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

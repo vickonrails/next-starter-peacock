@@ -9,6 +9,7 @@ interface ICard {
     id: string;
     slug: string;
     date: Date;
+    previewImage: string;
     body: ReactElement;
   }[];
 }
@@ -27,7 +28,8 @@ const Cards = ({ data, basePath }: ICard) => {
             as={`/${basePath}/${singleCard.slug}`}
           >
             <a>
-              <img src="/images/article-preview.png" />
+              {/* @ts-ignore */}
+              <img src={singleCard.previewImage} alt={singleCard.title} />
               <time>{singleCard.date}</time>
               <h2>{singleCard.title}</h2>
 

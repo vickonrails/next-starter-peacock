@@ -1,8 +1,9 @@
 ---
 title: Building Lensees
 date: "June, 2019"
-slug: 'lensees'
+slug: "lensees"
 selectedWork: true
+previewImage: "/images/work/lensees/lensees_desktop.png"
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

@@ -1,8 +1,9 @@
 ---
 title: Designing & Building Prudent
 date: "April, 2020"
-slug: 'prudent'
+slug: "prudent"
 selectedWork: true
+previewImage: "/images/work/prudent/prudent.png"
 ---
 
 **Role**: UX Strategy, User Research, Interaction design, Engineering.

@@ -1,8 +1,9 @@
 ---
 title: Working at iSWAG
 date: "Dec, 2019"
-slug: 'work-at-iswag'
+slug: "work-at-iswag"
 selectedWork: false
+previewImage: "/images/work/prudent/prudent.png"
 ---
 
 **ISWAG’s** goal was to connect local communities and smaller businesses together. This post documents my learnings as an intern and early employee at the startup
@@ -37,7 +38,6 @@ In the following weeks, I worked closely with my friends from engineering to fin
 
 ![Flowchart of sign-up & sign-in microinteraction](./images/flowchart_signin_signup.png)
 
-
 Crafting flows like this enabled me to see how large and unrelated things connect. It gave me a holistic view of the user experience.
 
 The next steps were for me to sketch possible interactions and visual layout of the app.
@@ -64,11 +64,10 @@ A few months later, the startup can no longer continue to exist due to issues co
 
 ### Learnings
 
-I learned a lot from interning at a startup. Whenever I try to reflect on things we could have done better, 2 things come to mind... 
+I learned a lot from interning at a startup. Whenever I try to reflect on things we could have done better, 2 things come to mind...
 
-**Priority**. The product has to launch, as fast as possible. Whatever stops the product from launching early is the reason the startup will fail. In our case, this was the desire to build a perfect product from day 1. 
+**Priority**. The product has to launch, as fast as possible. Whatever stops the product from launching early is the reason the startup will fail. In our case, this was the desire to build a perfect product from day 1.
 
 **Objectivity**. A startup is a romantic and high-risk environment. It's hard to do basic maths and it's more difficult if it's your first time. There's a lot of things we would've gotten right with a little more experience.
 
-Thanks for taking the time out. 
-
+Thanks for taking the time out.

@@ -3,6 +3,7 @@ title: Redesigning Smile
 date: "Jan, 2019"
 slug: "redesigning-smile"
 selectedWork: false
+previewImage: "/images/work/prudent/prudent.png"
 ---
 
 [Smile Communications](https://smile.com.ng/) is one of Africa’s largest 4G LTE provider. Launched in 2007, Smile currently provides fast and reliable Internet and Voice Services for 4 countries in Africa; Tanzania, Nigeria, The Republic of Congo and Uganda.
@@ -239,8 +240,6 @@ After the redesign, error rates went down to 0.6 errors per task. A 94% improvem
 > ( 0 + 0 + 0 + 4 + 0 + 0 + 0) / 7 tasks = 0.6 errors per task
 
 Here’s a side by side comparison of the average results of usability tests with 3 participants; David, Wale, and Presh.
-
-
 
 ![High fidelity mobile screens](/images/work/test_results1.png "High fidelity mobile screens")
 

@@ -2,6 +2,7 @@
 title: "How Do We Ensure We Are Not Just Joking Here"
 date: "2020-01-04"
 slug: "markdown-3"
+previewImage: "/images/articles/article-preview.png"
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
