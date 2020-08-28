@@ -1,9 +1,6 @@
-import React, {
-  useState,
-  createContext,
-  ReactChildren,
-  ReactNode,
-} from "react";
+import React, { useState, createContext, ReactNode } from "react";
+import Head from "next/head";
+import SiteConfig from "../config/index.json";
 
 import { StyledMain } from "./styles/layout.styles";
 import Header from "./header/header";

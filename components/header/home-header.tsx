@@ -3,7 +3,6 @@ import React from "react";
 import { Container } from "../container";
 import siteConfig from "../../config/index.json";
 import { StyledHomeHeading } from "../styles/header.styles";
-import Link from "next/link";
 
 const HomeHeader = () => (
   <StyledHomeHeading>
