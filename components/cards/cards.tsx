@@ -10,7 +10,7 @@ interface ICard {
     slug: string;
     date: Date;
     previewImage: string;
-    body: ReactElement;
+    description: string;
   }[];
 }
 
@@ -33,7 +33,7 @@ const Cards = ({ data, basePath }: ICard) => {
               <time>{singleCard.date}</time>
               <h2>{singleCard.title}</h2>
 
-              <section>{singleCard.body}</section>
+              {singleCard.description && <p>{singleCard.description}</p>}
             </a>
           </Link>
         </article>

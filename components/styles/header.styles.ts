@@ -20,6 +20,12 @@ export const StyledHomeHeading = styled.div`
 export const StyledPageHeading = styled.div`
   text-align: center;
 
+  &.page h1 {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
   .about-header {
     font-size: 1.75em;
     text-align: center;

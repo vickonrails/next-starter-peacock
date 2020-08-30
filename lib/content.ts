@@ -87,6 +87,8 @@ export const getContentData = async (id: string, contentType: ContentType) => {
     contentHtml,
     title: matterResult.data.title,
     date: matterResult.data.date,
+    previewImage: matterResult.data.previewImage || "",
+    description: matterResult.data.description || "",
   };
 };
 

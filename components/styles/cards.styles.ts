@@ -26,6 +26,7 @@ export const StyledCards = styled.section`
     img {
       transition: all var(--animation-duration)
         var(--transition-timing-function);
+      object-fit: cover;
     }
 
     &:hover img {

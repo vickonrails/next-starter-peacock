@@ -18,6 +18,8 @@ const Note = ({ notesData }) => {
     <Layout pathname={pathname} pageTitle={title}>
       <Container width="narrow">
         <StyledContent>
+          <time>{notesData.date}</time>
+          {notesData.previewImage && <img src={notesData.previewImage} />}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>

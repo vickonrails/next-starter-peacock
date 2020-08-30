@@ -3,6 +3,7 @@ title: Redesigning Smile
 date: "Jan, 2019"
 slug: "redesigning-smile"
 selectedWork: false
+description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 previewImage: "/images/work/prudent/prudent.png"
 ---
 

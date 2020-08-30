@@ -3,6 +3,7 @@ title: Designing & Building Prudent
 date: "April, 2020"
 slug: "prudent"
 selectedWork: true
+description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 previewImage: "/images/work/prudent/prudent.png"
 ---
 

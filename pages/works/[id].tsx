@@ -11,6 +11,7 @@ import { StyledContent } from "../../components/styles/content.styles";
  */
 
 const Article = ({ worksData }) => {
+  console.log(worksData.previewImage);
   const { pathname } = useRouter();
   const { title, contentHtml } = worksData;
 
@@ -18,6 +19,8 @@ const Article = ({ worksData }) => {
     <Layout pageTitle={title} pathname={pathname}>
       <Container width="narrow">
         <StyledContent>
+          <time>{worksData.date}</time>
+          {worksData.previewImage && <img src={worksData.previewImage} />}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>

@@ -17,6 +17,8 @@ const Article = ({ notesData }: { notesData: IContentData }) => {
     <Layout pathname={pathname} pageTitle={title}>
       <Container width="narrow">
         <StyledContent>
+          <time>{notesData.date}</time>
+          {notesData.previewImage && <img src={notesData.previewImage} />}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>
@@ -37,6 +39,8 @@ export interface IContentData {
   contentHtml: string;
   date: Date;
   title: string;
+  previewImage?: string;
+  description?: string;
 }
 
 export const getStaticProps = async ({ params }) => {

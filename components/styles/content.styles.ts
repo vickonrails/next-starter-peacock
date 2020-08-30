@@ -7,6 +7,12 @@ export const StyledContent = styled.section`
     margin-bottom: 1em;
   }
 
+  time {
+    text-align: center;
+    display: block;
+    margin-bottom: 2em;
+  }
+
   img {
     margin-bottom: 1em;
     display: block;

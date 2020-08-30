@@ -2,6 +2,7 @@
 title: "How Do We Ensure We Are Not Just Joking Here"
 date: "2020-01-04"
 slug: "markdown-3"
+description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 previewImage: "/images/articles/article-preview.png"
 ---
 

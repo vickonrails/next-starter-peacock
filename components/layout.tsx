@@ -29,6 +29,9 @@ const Layout = ({ children, pathname, pageTitle }: ILayout) => {
 
   return (
     <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
       <Nav />
       {menuOpen ? (
         <MobileNav />

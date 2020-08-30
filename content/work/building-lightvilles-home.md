@@ -3,6 +3,7 @@ title: Building LightVille's Home
 date: "July, 2020"
 slug: "building-lightvilles-home"
 selectedWork: true
+description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 previewImage: "/images/work/smile_desktop.png"
 ---
 
