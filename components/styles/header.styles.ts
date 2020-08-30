@@ -23,7 +23,7 @@ export const StyledPageHeading = styled.div`
   &.page h1 {
     max-width: 80%;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
   }
 
   .about-header {

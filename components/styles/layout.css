@@ -66,6 +66,11 @@ body {
   color: #999;
   transition: all var(--transition-duration) var(--transition-timing-function);
 }
+.page-intro {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 2em;
+}
 main {
   margin-bottom: 2em;
 }

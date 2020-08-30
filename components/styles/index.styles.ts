@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 // import BackgroundImage from "./images/background-pattern.jpg";
 
+export const StyledIndex = styled.div`
+  .page-intro {
+  }
+`;
 export const StyledDesignPlus = styled.section`
   background: #fff url("/images/background-pattern.jpg");
   padding: 40px 0;

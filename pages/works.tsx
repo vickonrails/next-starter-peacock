@@ -15,6 +15,10 @@ const Work = ({ works }) => {
       pageDescription="Works and projects done by Victor Ofoegbu. Spanning Product design, Research, frontend and software engineering with ReactJS, React Native and NodeJs"
     >
       <Container>
+        <p className="page-intro">
+          Selected works I'm proud of. Ranging from Software Engineering and
+          Product Design.
+        </p>
         <Cards data={works} basePath="works" />
       </Container>
     </Layout>

@@ -16,9 +16,13 @@ const Articles = ({ articles }) => {
       pageDescription="Articles and Essays about Frontend Web Development and software engineering by Victor Ofoegbu, Product Designer and Frontend Engineer in Nigeria"
     >
       <Container>
-        <blockquote>
+        <p className="page-intro">
+          More long form articles and essays about new things I'm exploring and
+          learning about...
+        </p>
+        {/* <blockquote>
           Site is a work in progress. So dummy content all the way!
-        </blockquote>
+        </blockquote> */}
         <Cards data={articles} basePath="articles" />
       </Container>
     </Layout>
