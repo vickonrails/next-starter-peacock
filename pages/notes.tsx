@@ -9,7 +9,11 @@ import { getContentList } from "../lib/content";
 const Notes = ({ notes }) => {
   const { pathname } = useRouter();
   return (
-    <Layout pageTitle="Notes" pathname={pathname}>
+    <Layout
+      pageTitle="Notes"
+      pathname={pathname}
+      pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about ReactJS, Product Design, React Native and NodeJS"
+    >
       <Container>
         <Cards data={notes} basePath="notes" />
       </Container>

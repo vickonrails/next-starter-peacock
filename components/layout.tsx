@@ -12,6 +12,7 @@ interface ILayout {
   children: ReactNode;
   pathname: string;
   pageTitle: string;
+  pageDescription?: string;
 }
 
 //@ts-ignore
@@ -20,7 +21,12 @@ export const MenuContext = createContext({
   toggleMenuOpen: null,
 });
 
-const Layout = ({ children, pathname, pageTitle }: ILayout) => {
+const Layout = ({
+  children,
+  pathname,
+  pageTitle,
+  pageDescription,
+}: ILayout) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenuOpen = () => {
@@ -30,7 +36,12 @@ const Layout = ({ children, pathname, pageTitle }: ILayout) => {
   return (
     <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
       <Head>
-        <title>{pageTitle}</title>
+        <title>{`${pageTitle} | ${SiteConfig.site.siteTitle}`}</title>
+        <meta name="keywords" content={SiteConfig.site.keywords} />
+        <meta
+          name="description"
+          content={pageDescription || SiteConfig.site.siteDescription}
+        />
       </Head>
       <Nav />
       {menuOpen ? (

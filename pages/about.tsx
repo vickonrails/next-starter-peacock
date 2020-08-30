@@ -10,7 +10,11 @@ import { StyledAbout } from "../components/styles/about.styles";
 const About = () => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname} pageTitle="About">
+    <Layout
+      pathname={pathname}
+      pageTitle="About"
+      pageDescription="About page of Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
+    >
       <StyledAbout>
         <Container width="narrow">
           <div className="postContent">

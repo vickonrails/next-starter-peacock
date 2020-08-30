@@ -10,7 +10,11 @@ import { getContentList } from "../lib/content";
 const Articles = ({ articles }) => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname} pageTitle="Articles">
+    <Layout
+      pathname={pathname}
+      pageTitle="Articles"
+      pageDescription="Articles and Essays about Frontend Web Development and software engineering by Victor Ofoegbu, Product Designer and Frontend Engineer in Nigeria"
+    >
       <Container>
         <blockquote>
           Site is a work in progress. So dummy content all the way!

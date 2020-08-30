@@ -13,10 +13,10 @@ import { StyledContent } from "../../components/styles/content.styles";
 const Article = ({ worksData }) => {
   console.log(worksData.previewImage);
   const { pathname } = useRouter();
-  const { title, contentHtml } = worksData;
+  const { title, contentHtml, description } = worksData;
 
   return (
-    <Layout pageTitle={title} pathname={pathname}>
+    <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
           <time>{worksData.date}</time>

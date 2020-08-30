@@ -11,10 +11,10 @@ import { StyledContent } from "../../components/styles/content.styles";
 
 const Article = ({ notesData }: { notesData: IContentData }) => {
   const { pathname } = useRouter();
-  const { title, contentHtml } = notesData;
+  const { title, contentHtml, description } = notesData;
 
   return (
-    <Layout pathname={pathname} pageTitle={title}>
+    <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
           <time>{notesData.date}</time>
