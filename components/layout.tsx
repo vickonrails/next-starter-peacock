@@ -71,7 +71,7 @@ const Layout = ({
         <meta name="twitter:card" content="summary" key="twcard" />
         <meta
           name="twitter:creator"
-          content={SiteConfig.twitterHandle}
+          content={SiteConfig.author.twitterHandle}
           key="twhandle"
         />
 
