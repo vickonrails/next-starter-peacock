@@ -27,4 +27,8 @@ export const StyledContent = styled.section`
   li {
     margin-bottom: 0.5em;
   }
+
+  pre code {
+    overflow: hidden;
+  }
 `;

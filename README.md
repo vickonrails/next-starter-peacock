@@ -68,3 +68,11 @@ The best way you can contribute to peacock is by [creating issues](https://githu
 - Pull request is merged
 
 The fastest way to get an answer to your question is to reach out via [Twitter](https://twitter.com/vick_onrails). Feel free to through a tweet or DM.
+## Todo
+
+[x] Test rendering and styling of standard HTML elements
+[] Replace personal portfolio content with dummy
+[] Code syntax highlighting
+[] Add simpler notes page
+[] Add page transitions with react-spring
+[] Release V1
