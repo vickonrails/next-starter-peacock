@@ -1,7 +1,7 @@
 ---
-title: "When to Use Static Generation v.s. Server-side Rendering"
+title: Getting Started With NodeJS and Friends
 date: "2020-01-02"
-slug: "markdown-2"
+slug: "getting-started-with-node"
 previewImage: "/images/articles/article-preview.png"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 ---

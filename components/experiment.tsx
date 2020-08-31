@@ -37,8 +37,8 @@ const ExperimentItem = ({ experiment }) => {
         <h3 className="experiment-item-heading">{experiment.title}</h3>
         <p>{experiment.description}</p>
         <ul>
-          {experiment.tags.map((tag) => (
-            <li>{tag}</li>
+          {experiment.tags.map((tag, index) => (
+            <li key={index}>{tag}</li>
           ))}
         </ul>
       </StyledExperimentItemContainer>

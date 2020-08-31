@@ -8,11 +8,8 @@ const HomeHeader = () => (
   <StyledHomeHeading>
     <Container>
       <div className="header-container">
-        <h1>{siteConfig.title}</h1>
-        <p className="description">{siteConfig.description}</p>
-        {/* <Link href="work">
-          <a>See My Work</a>
-        </Link> */}
+        <h1>{siteConfig.author.title}</h1>
+        <p className="description">{siteConfig.author.description}</p>
       </div>
     </Container>
   </StyledHomeHeading>

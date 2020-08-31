@@ -20,9 +20,11 @@ const Articles = ({ articles }) => {
           More long form articles and essays about new things I'm exploring and
           learning about...
         </p>
-        {/* <blockquote>
-          Site is a work in progress. So dummy content all the way!
-        </blockquote> */}
+
+        <blockquote>
+          All articles here are for demo purposes. But hey, the sky is the limit
+          🚀
+        </blockquote>
         <Cards data={articles} basePath="articles" />
       </Container>
     </Layout>

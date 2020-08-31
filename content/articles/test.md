@@ -2,10 +2,9 @@
 title: "Markdown Test"
 date: "2020-01-02"
 slug: "test"
-previewImage: "/images/articles/article-preview.png"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 ---
----
+
 __Advertisement :)__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image

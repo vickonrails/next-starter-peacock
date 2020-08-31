@@ -10,9 +10,6 @@
   transition: inherit;
 }
 
-body {
-  overflow-x: hidden;
-}
 :root {
   --text-color: #bbb;
   --text-color-dark: #777;
@@ -49,6 +46,7 @@ a.no-underline {
 }
 img {
   width: 100%;
+  max-width: 100%;
 }
 a > img,
 a:hover > img {

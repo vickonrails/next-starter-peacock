@@ -123,7 +123,11 @@ export const getContentList = (contentType: ContentType) => {
 
       const { data } = matter(rawContent);
 
-      return { ...data, id: uuid() };
+      return {
+        ...data,
+        previewImage: data.previewImage || "/images/image-placeholder.png",
+        id: uuid(),
+      };
     });
 
   return content;

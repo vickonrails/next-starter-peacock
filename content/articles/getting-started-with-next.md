@@ -1,9 +1,8 @@
 ---
-title: "How Do We Ensure We Are Not Just Joking Here"
+title: Getting Started With NextJS
 date: "2020-01-04"
-slug: "markdown-3"
-description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
-previewImage: "/images/articles/article-preview.png"
+slug: "getting-started-with-next"
+description: "NextJS is a framework for building server-side and static sites in ReactJS. Generally pre-rendered sites with ease"
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

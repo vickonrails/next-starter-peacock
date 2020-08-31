@@ -1,7 +1,10 @@
 {
-  "name": "Victor Ofoegbu",
-  "title": "Frontend Engineer & Product Designer",
-  "twitterHandle": "@vick_onrails",
+  "author": {
+    "name": "Victor Ofoegbu",
+    "title": "Frontend Engineer & Product Designer",
+    "twitterHandle": "@vick_onrails",
+    "description": "Hi!. My name is Victor, I’m passionate about designing and building modern experiences on the web. I also love learning in public and working on little side projects that help others build things faster. Here's a few things I'm proud of"
+  },
   "site": {
     "siteUrl": "https://victorofoegbu.com",
     "siteName": "Victor Ofoegbu's personal site",
@@ -9,6 +12,5 @@
     "siteDescription": "Personal & Portfolio site of Victor Ofoegbu, Nigerian based Frontend Software Engineer and Product Designer",
     "keywords": "JavaScript, Software Engineer, Nigeria Software Engineer, Lagos Software Engineer, JavaScript Engineer Nigeria, ReactJS Engineer Nigeria, Product Designer Nigeria, Victor Ofoegbu",
     "siteImage": "../public/Logo.png"
-  },
-  "description": "Hi!. My name is Victor, I’m passionate about designing and building modern experiences on the web. I also love learning in public and working on little side projects that help others build things faster. Here's a few things I'm proud of"
+  }
 }

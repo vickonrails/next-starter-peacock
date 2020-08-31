@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NavSection, StyledHamburger } from "./styles/nav.styles";
 import Logo from "./logo";
 import { Container } from "./container";
-import obj from "../config/index.json";
+import SiteConfig from "../config/index.json";
 import { MenuContext } from ".";
 
 const Nav = () => {
@@ -20,7 +20,7 @@ const Nav = () => {
             <Link href="/">
               <a className="no-underline">
                 <Logo />
-                <span>{obj.name}</span>
+                <span>{SiteConfig.author.name}</span>
               </a>
             </Link>
           </div>

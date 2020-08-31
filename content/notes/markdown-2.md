@@ -2,7 +2,7 @@
 title: "Two Forms of Pre-rendering"
 date: "2020-01-01"
 slug: "markdown-2"
-previewImage: "/images/work/prudent/prudent.png"
+previewImage: "/images/notes/markdown_2.jpg"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 ---
 

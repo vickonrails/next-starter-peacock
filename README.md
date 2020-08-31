@@ -71,8 +71,10 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 ## Todo
 
 [x] Test rendering and styling of standard HTML elements
-[] Replace personal portfolio content with dummy
-[] Code syntax highlighting
+[x] Replace personal portfolio content with demo content
 [] Add simpler notes page
-[] Add page transitions with react-spring
 [] Release V1
+[] Add page transitions with react-spring
+[] Add mdx support
+[] Image optimization
+[] Code syntax highlighting

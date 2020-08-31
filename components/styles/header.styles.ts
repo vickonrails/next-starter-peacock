@@ -36,7 +36,9 @@ export const StyledPageHeading = styled.div`
     font-size: 2.5em;
   } */
 
-  /* @media (min-width: 1024px) {
-    font-size: 3em;
-  } */
+  @media (max-width: 769px) {
+    &.page h1 {
+      font-size: 2.2em;
+    }
+  }
 `;
