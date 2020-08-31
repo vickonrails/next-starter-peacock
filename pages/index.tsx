@@ -15,7 +15,7 @@ import ExperimentsSection from "../components/experiments";
 const Index: FC = ({ selectedWorks }) => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname} pageTitle="Home page">
+    <Layout pathname={pathname} pageTitle="Home page" >
       <StyledIndexPage>
         <Container>
           <Cards data={selectedWorks} basePath="works" />

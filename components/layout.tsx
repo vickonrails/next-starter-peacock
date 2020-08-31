@@ -52,7 +52,7 @@ const Layout = ({
         <meta property="og:title" content={pageTitle} key="ogtitle" />
         <meta
           property="og:description"
-          content={pageDescription}
+          content={pageDescription || SiteConfig.site.siteDescription}
           key="ogdesc"
         />
         <meta property="og:url" content={SiteConfig.site.siteUrl} key="ogurl" />

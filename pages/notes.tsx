@@ -19,6 +19,7 @@ const Notes = ({ notes }) => {
           Quick and Scrappy thoughts and learning notes. Things I randomly bump
           into and don't want to forget.
         </p>
+
         <Cards data={notes} basePath="notes" />
       </Container>
     </Layout>

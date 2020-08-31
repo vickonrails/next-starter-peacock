@@ -7,6 +7,9 @@ export const StyledContent = styled.section`
     margin-bottom: 1em;
   }
 
+  code {
+  }
+
   time {
     text-align: center;
     display: block;
