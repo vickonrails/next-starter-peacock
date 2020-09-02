@@ -1,7 +1,7 @@
 {
   "author": {
     "name": "Peacock",
-    "title": "NextJS Starter Prudent",
+    "title": "NextJS Starter Peacock",
     "twitterHandle": "@vick_onrails",
     "description": "Hi! My name is <a href=\"\">Victor</a>, I love to design and build modern experiences on the web. I also love learning in public and working on little side projects that help others build things faster. This starter is my gift to you and I hope it helps somehow 🙏🏾"
   },
@@ -9,7 +9,7 @@
     "siteUrl": "https://victorofoegbu.com",
     "siteName": "Peacock",
     "siteTitle": "NextJS Starter Peacock",
-    "siteDescription": "Personal & Portfolio Nextjs starter by Victor Ofoegbu, Nigerian based Frontend Software Engineer and Product Designer",
+    "siteDescription": "Peacock is a Nextjs starter for Personal Sites/Portfolios made by @vick_onrails",
     "keywords": "JavaScript, NextJS, Software Engineer, Nigeria Software Engineer, Lagos Software Engineer, JavaScript Engineer Nigeria, ReactJS Engineer Nigeria, Product Designer Nigeria, Victor Ofoegbu",
     "siteImage": "../public/Logo.png"
   }

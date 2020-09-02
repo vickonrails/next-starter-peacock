@@ -16,7 +16,7 @@ import Link from "next/link";
 const Index: FC = ({ selectedWorks }) => {
   const { pathname } = useRouter();
   return (
-    <Layout pathname={pathname} pageTitle="Home page">
+    <Layout pathname={pathname} pageTitle="Nextjs Starter Peacock">
       <StyledIndexPage>
         <Container>
           <Cards data={selectedWorks} basePath="works" />
