@@ -1,3 +1,4 @@
+![Next Starter Peacock](./screenshot.png)
 # 🦚 Next Starter Peacock
 
 Peacock is a NextJS portfolio Starter for software engineers and designers. Showcase your awesome work and build personal sites you're proud of.
@@ -10,7 +11,7 @@ Peacock is a NextJS portfolio Starter for software engineers and designers. Show
 
 ## Getting Started
 
-1. Fork the project
+1. Fork the project. (It's highly recommended to fork the project to get upcoming features and bug fixes)
 
 2. Clone your fork
 
@@ -72,9 +73,9 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 
 [x] Test rendering and styling of standard HTML elements
 [x] Replace personal portfolio content with demo content
-[] Add simpler notes page
+[x] Add simpler notes page
 [] Release V1
-[] Add page transitions with react-spring
+[] Add page transitions with `react-spring`
 [] Add mdx support
 [] Image optimization
 [] Code syntax highlighting
