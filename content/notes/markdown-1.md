@@ -1,5 +1,5 @@
 ---
-title: "Two Forms of Pre-rendering"
+title: "Getting started with React Nativ"
 date: "2020-01-01"
 slug: "markdown-1"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
