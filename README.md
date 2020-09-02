@@ -71,11 +71,11 @@ The best way you can contribute to peacock is by [creating issues](https://githu
 The fastest way to get an answer to your question is to reach out via [Twitter](https://twitter.com/vick_onrails). Feel free to through a tweet or DM.
 ## Todo
 
-[x] Test rendering and styling of standard HTML elements
-[x] Replace personal portfolio content with demo content
-[x] Add simpler notes page
-[] Release V1
-[] Add page transitions with `react-spring`
-[] Add mdx support
-[] Image optimization
-[] Code syntax highlighting
+- [x] Test rendering and styling of standard HTML elements
+- [x] Replace personal portfolio content with demo content
+- [x] Add simpler notes page
+- [ ] Image optimization (Fixed image heights to avoid layout janks)
+- [ ] Release V1
+- [ ] Add page transitions with `react-spring`
+- [ ] Add mdx support
+- [ ] Code syntax highlighting

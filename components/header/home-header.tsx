@@ -9,7 +9,10 @@ const HomeHeader = () => (
     <Container>
       <div className="header-container">
         <h1>{siteConfig.author.title}</h1>
-        <p className="description">{siteConfig.author.description}</p>
+        <p
+          className="description"
+          dangerouslySetInnerHTML={{ __html: siteConfig.author.description }}
+        />
       </div>
     </Container>
   </StyledHomeHeading>

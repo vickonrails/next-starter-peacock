@@ -9,7 +9,7 @@ import { Container } from "./container";
 
 const Footer = () => (
   <StyledFooterSection>
-    <Container>
+    <Container className="footer-container">
       <ul className="footerSocialLinks">
         <li className="footerSocialLink">
           <a
@@ -44,6 +44,20 @@ const Footer = () => (
           </a>
         </li>
       </ul>
+    </Container>
+
+    <Container>
+      <p className="about-site">
+        Built by{" "}
+        <a
+          href="https://twitter.com/vick_OnRails"
+          target="_blank"
+          rel="noopenner norefferer"
+        >
+          @vick_onrails
+        </a>
+        . With NextJS, TypeScript Emotion and Vercel.
+      </p>
     </Container>
   </StyledFooterSection>
 );

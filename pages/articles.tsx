@@ -13,7 +13,7 @@ const Articles = ({ articles }) => {
     <Layout
       pathname={pathname}
       pageTitle="Articles"
-      pageDescription="Articles and Essays about Frontend Web Development and software engineering by Victor Ofoegbu, Product Designer and Frontend Engineer in Nigeria"
+      pageDescription="Articles and Essays about Frontend Web Development and software engineering"
     >
       <Container>
         <p className="page-intro">

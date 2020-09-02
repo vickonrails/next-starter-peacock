@@ -23,22 +23,6 @@ const Index: FC = ({ selectedWorks }) => {
         </Container>
         <DesignCode />
         <ExperimentsSection />
-
-        <section>
-          <Container>
-            <hr />
-            <h2 style={{ fontSize: "1.75em" }}>Learning in Public</h2>
-            <p className="max-width">
-              I forget most of the things I learn. Plus I happen to love writing
-              and preserving my exact thoughts for later. I use the{" "}
-              <Link href="/notes">
-                <a>/notes</a>
-              </Link>
-              section of my blog to jot down things I'm learning and actively
-              thinking about.
-            </p>
-          </Container>
-        </section>
       </StyledIndexPage>
     </Layout>
   );

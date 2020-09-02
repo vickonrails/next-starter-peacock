@@ -13,7 +13,7 @@ const About = () => {
     <Layout
       pathname={pathname}
       pageTitle="About"
-      pageDescription="About page of Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
+      pageDescription="About page of Peacock starter by Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
     >
       <StyledAbout>
         <Container width="narrow">
@@ -33,25 +33,8 @@ const About = () => {
               Standards, Design Systems and Learning in Public.
             </p>
             <p>
-              Aside from my day job, I work on{" "}
-              <a
-                href="https://betterweb.xyz"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                BetterwebList
-              </a>{" "}
-              - a daily curation of 3 resources to help frontend people build
-              better experiences on the web and{" "}
-              <a
-                href="https://biggerhands.netlify.app"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                BiggerHands
-              </a>{" "}
-              - a design and development studio focused on resources for
-              designers and developers.
+              Aside from my day job, I work on a few side projects to help
+              designers and engineers build with speed
             </p>
 
             <p>

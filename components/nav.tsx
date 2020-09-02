@@ -52,6 +52,16 @@ const Nav = () => {
                   <a>About</a>
                 </Link>
               </li>
+
+              <li className="navLinkItem">
+                <a
+                  href="https://github.com/vickOnRails/next-starter-peacock"
+                  target="_blank"
+                  rel="noopener norefferer"
+                >
+                  Source
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

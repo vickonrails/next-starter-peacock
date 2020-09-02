@@ -37,6 +37,16 @@ const MobileNav = () => {
               <a className="link">About</a>
             </Link>
           </li>
+
+          <li className="listItem">
+            <a
+              href="https://github.com/vickOnRails/next-starter-peacock"
+              target="_blank"
+              rel="noopener norefferer"
+            >
+              Source
+            </a>
+          </li>
         </ul>
       </div>
     </StyledMobileNav>

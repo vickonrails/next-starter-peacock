@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Container, Cards } from "../components";
+import { Layout, Container } from "../components";
 import { useRouter } from "next/router";
 import { getContentList } from "../lib/content";
 import NotesComponent from "../components/notes/notes";
