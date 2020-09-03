@@ -12,6 +12,7 @@ const Notes = ({ notes, basePath }: INotes) => {
     <StyledNotes>
       {notes.map((note) => (
         <Note
+          key={note.id}
           basePath={basePath}
           title={note.title}
           slug={note.slug}
