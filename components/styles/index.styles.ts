@@ -24,6 +24,10 @@ export const StyledDesignPlus = styled.section`
     flex: 1 100%;
   }
 
+  img {
+    object-fit: cover;
+  }
+
   h2 {
     font-size: 1.75em;
     color: #000;

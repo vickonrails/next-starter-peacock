@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Image from 'next/image'
 
 import { Layout, Container } from "../components";
 import { StyledAbout } from "../components/styles/about.styles";
@@ -18,7 +19,9 @@ const About = () => {
       <StyledAbout>
         <Container width="narrow">
           <div className="postContent">
-            <img src="/images/avatar.jpg" width={200} height={200} />
+            <div className="avatarImage">
+              <Image src="/images/avatar.jpg" width={200} height={200} />
+            </div>
             <p>
               I'm{" "}
               <a

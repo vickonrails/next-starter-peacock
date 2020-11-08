@@ -19,6 +19,7 @@ export const StyledContent = styled.section`
   img {
     margin-bottom: 1em;
     display: block;
+    object-fit: cover;
   }
   ul ul,
   ol ol {

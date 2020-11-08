@@ -1,6 +1,8 @@
 import React, { ReactElement } from "react";
-import { StyledCards } from "../styles/cards.styles";
 import Link from "next/link";
+import Image from 'next/image'
+
+import { StyledCards } from "../styles/cards.styles";
 
 interface ICard {
   basePath: string;
@@ -18,6 +20,7 @@ interface ICard {
  * Renders a grid of cards
  * @param {Array} data Data to display in grid
  */
+
 const Cards = ({ data, basePath }: ICard) => {
   return (
     <StyledCards>
@@ -29,7 +32,7 @@ const Cards = ({ data, basePath }: ICard) => {
           >
             <a>
               {/* @ts-ignore */}
-              <img src={singleCard.previewImage} alt={singleCard.title} />
+              <Image src={singleCard.previewImage} alt={singleCard.title} width={450} height={220} sizes="(min-width: 640px) 700px, 400px"/>
               <time>{singleCard.date}</time>
               <h2>{singleCard.title}</h2>
 

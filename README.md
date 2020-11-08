@@ -74,7 +74,7 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 - [x] Test rendering and styling of standard HTML elements
 - [x] Replace personal portfolio content with demo content
 - [x] Add simpler notes page
-- [ ] Image optimization (Fixed image heights to avoid layout janks)
+- [x] Image optimization (Fixed image heights to avoid layout janks)
 - [ ] Release V1
 - [ ] Add page transitions with `react-spring`
 - [ ] Add mdx support

@@ -45,7 +45,7 @@ export const StyledCards = styled.section`
     @media all and (min-width: 1024px) {
       flex: 0 1 32.5%;
       img {
-        height: 180px;
+        /* height: 180px; */
       }
     }
   }
