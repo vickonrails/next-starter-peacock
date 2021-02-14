@@ -1,4 +1,5 @@
 ![Next Starter Peacock](./screenshot.png)
+
 # 🦚 Next Starter Peacock
 
 Peacock is a NextJS portfolio Starter for software engineers and designers. Showcase your awesome work and build personal sites you're proud of.
@@ -69,6 +70,7 @@ The best way you can contribute to peacock is by [creating issues](https://githu
 - Pull request is merged
 
 The fastest way to get an answer to your question is to reach out via [Twitter](https://twitter.com/vick_onrails). Feel free to through a tweet or DM.
+
 ## Todo
 
 - [x] Test rendering and styling of standard HTML elements
@@ -78,4 +80,4 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 - [ ] Release V1
 - [ ] Add page transitions with `react-spring`
 - [ ] Add mdx support
-- [ ] Code syntax highlighting
+- [x] Code syntax highlighting
