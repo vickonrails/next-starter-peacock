@@ -12,6 +12,10 @@ export default class MyDocument extends Document {
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
           />
+          <link
+            href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
+            rel="stylesheet"
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `

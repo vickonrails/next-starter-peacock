@@ -5,6 +5,7 @@ import { v4 as uuid } from "uuid";
 import { exception } from "console";
 import remark from "remark";
 import html from "remark-html";
+import remarkPrism from "remark-prism";
 
 const workDirectory = path.join(process.cwd(), "content", "work");
 const notesDirectory = path.join(process.cwd(), "content", "notes");
@@ -78,6 +79,7 @@ export const getContentData = async (id: string, contentType: ContentType) => {
   const matterResult = matter(fileContents);
   const processedContent = await remark()
     .use(html)
+    .use(remarkPrism)
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
