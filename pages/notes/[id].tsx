@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Image from 'next/image'
+import Image from "next/image";
 
 import { Layout, Container } from "../../components";
 import { getAllContentIds, getContentData } from "../../lib/content";
@@ -20,7 +20,9 @@ const Note = ({ notesData }) => {
       <Container width="narrow">
         <StyledContent>
           <time>{notesData.date}</time>
-          {notesData.previewImage && <Image src={notesData.previewImage} height={550} width={1200} />}
+          {notesData.previewImage && (
+            <Image src={notesData.previewImage} height={550} width={1200} />
+          )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>
@@ -30,6 +32,7 @@ const Note = ({ notesData }) => {
 
 export const getStaticPaths = async () => {
   const paths = getAllContentIds("notes");
+
   return {
     paths,
     fallback: false,

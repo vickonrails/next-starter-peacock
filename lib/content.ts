@@ -6,19 +6,24 @@ import { exception } from "console";
 import remark from "remark";
 import html from "remark-html";
 import remarkPrism from "remark-prism";
+import { IContentData } from "../pages/articles/[id]";
 
 const workDirectory = path.join(process.cwd(), "content", "work");
 const notesDirectory = path.join(process.cwd(), "content", "notes");
 const articlesDirectory = path.join(process.cwd(), "content", "articles");
 
-type ContentType = "articles" | "notes" | "work";
+const tagsDirectory = path.join(process.cwd(), "config", "tags.json");
+
+const tags = fs.readFileSync(tagsDirectory, "utf-8");
+
+type IContentType = "articles" | "notes" | "work";
 
 /**
  * Get IDs of all markdown post
  * @param {string} contentType Type of content to get ids
  */
 
-export const getAllContentIds = (contentType: ContentType) => {
+export const getAllContentIds = (contentType: IContentType) => {
   let filenames;
 
   switch (contentType) {
@@ -54,7 +59,7 @@ export const getAllContentIds = (contentType: ContentType) => {
  * @param {string} contentType Type of content
  */
 
-export const getContentData = async (id: string, contentType: ContentType) => {
+export const getContentData = async (id: string, contentType: IContentType) => {
   let contentTypeDirectory;
   switch (contentType) {
     case "articles":
@@ -94,7 +99,11 @@ export const getContentData = async (id: string, contentType: ContentType) => {
   };
 };
 
-export const getContentList = (contentType: ContentType) => {
+/**
+ * Get content list for a particular content type
+ * @param {string} contentType Type of content
+ */
+export const getContentList = (contentType: IContentType) => {
   let contentFiles;
   let contentDir;
 
@@ -135,6 +144,61 @@ export const getContentList = (contentType: ContentType) => {
   return content.sort(sortByDate);
 };
 
+/**
+ * Get content type with particular tag
+ * @param {string} tag - tag to filter by
+ */
+export const getContentWithTag = (tag: string, contentType: IContentType) => {
+  let contentDir;
+  let contentFiles;
+
+  switch (contentType) {
+    case "articles":
+      contentDir = articlesDirectory;
+      break;
+
+    case "notes":
+      contentDir = notesDirectory;
+      break;
+
+    case "work":
+      contentDir = workDirectory;
+      break;
+  }
+
+  contentFiles = fs.readdirSync(contentDir);
+
+  let contentData = contentFiles
+    .filter((content) => content.endsWith(".md"))
+    .map((content) => {
+      const path = `${contentDir}/${content}`;
+      const rawContent = fs.readFileSync(path, {
+        encoding: "utf-8",
+      });
+
+      const { data } = matter(rawContent);
+
+      return {
+        ...data,
+        previewImage: data.previewImage || "/images/image-placeholder.png",
+        id: uuid(),
+      };
+    });
+
+  // console.log(contentData);
+
+  const filteredContent = contentData.filter((content: IContentData) => {
+    return content.tags && content.tags.includes(tag);
+  });
+
+  return filteredContent;
+};
+
+/**
+ * Sorts content by their dates
+ * @param a {Date} - Date of post 1
+ * @param b {Date} - Date of post 2
+ */
 const sortByDate = (a, b) => {
   if (a.date > b.date) {
     return -1;
