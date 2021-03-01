@@ -1,6 +1,6 @@
 ---
 title: Building Lensees
-date: "June, 2019"
+date: "2019-06"
 slug: "lensees"
 selectedWork: true
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"

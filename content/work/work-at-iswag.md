@@ -1,6 +1,6 @@
 ---
 title: Working at iSWAG
-date: "Dec, 2019"
+date: "2019-12"
 slug: "work-at-iswag"
 selectedWork: false
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
