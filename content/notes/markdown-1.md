@@ -1,6 +1,6 @@
 ---
 title: "Getting started with React Nativ"
-date: "2019-01-01"
+date: "2021-01-01"
 slug: "markdown-1"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
 previewImage: "/images/notes/markdown_1.jpg"

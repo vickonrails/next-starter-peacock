@@ -132,7 +132,7 @@ export const getContentList = (contentType: ContentType) => {
       };
     });
 
-  return content;
+  return content.sort(sortByDate);
 };
 
 const sortByDate = (a, b) => {
