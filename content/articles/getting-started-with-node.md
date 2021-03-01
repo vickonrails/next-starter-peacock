@@ -4,6 +4,7 @@ date: "2020-01-03"
 slug: "getting-started-with-node"
 previewImage: "/images/articles/article-preview.png"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
+category: weekly-notes
 tags:
   - css
 ---

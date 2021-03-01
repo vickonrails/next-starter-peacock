@@ -12,10 +12,6 @@ const workDirectory = path.join(process.cwd(), "content", "work");
 const notesDirectory = path.join(process.cwd(), "content", "notes");
 const articlesDirectory = path.join(process.cwd(), "content", "articles");
 
-const tagsDirectory = path.join(process.cwd(), "config", "tags.json");
-
-const tags = fs.readFileSync(tagsDirectory, "utf-8");
-
 type IContentType = "articles" | "notes" | "work";
 
 /**
@@ -185,10 +181,59 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
       };
     });
 
-  // console.log(contentData);
-
   const filteredContent = contentData.filter((content: IContentData) => {
     return content.tags && content.tags.includes(tag);
+  });
+
+  return filteredContent;
+};
+
+/**
+ * Get content type with particular tag
+ * @param {string} tag - tag to filter by
+ */
+export const getContentInCategory = (
+  category: string,
+  contentType: IContentType
+) => {
+  let contentDir;
+  let contentFiles;
+
+  switch (contentType) {
+    case "articles":
+      contentDir = articlesDirectory;
+      break;
+
+    case "notes":
+      contentDir = notesDirectory;
+      break;
+
+    case "work":
+      contentDir = workDirectory;
+      break;
+  }
+
+  contentFiles = fs.readdirSync(contentDir);
+
+  let contentData = contentFiles
+    .filter((content) => content.endsWith(".md"))
+    .map((content) => {
+      const path = `${contentDir}/${content}`;
+      const rawContent = fs.readFileSync(path, {
+        encoding: "utf-8",
+      });
+
+      const { data } = matter(rawContent);
+
+      return {
+        ...data,
+        previewImage: data.previewImage || "/images/image-placeholder.png",
+        id: uuid(),
+      };
+    });
+
+  const filteredContent = contentData.filter((content: IContentData) => {
+    return content.category && content.category === category;
   });
 
   return filteredContent;

@@ -1,0 +1,17 @@
+[
+  {
+    "category": "weekly-notes",
+    "title": "Weekly Notes",
+    "description": "Weekly Notes are randomly curated links and resources of things I've learned in the past week. They include jams, podcasts and things I'm learning"
+  },
+  {
+    "category": "til",
+    "title": "Today I Learned",
+    "description": "Random things I learn and I don't want to forget"
+  },
+  {
+    "category": "bug-fixes",
+    "title": "Bug Fixes",
+    "description": "Common and regular bugfixes that I want to document. My reason for documenting them is so I don't have to find them again"
+  }
+]

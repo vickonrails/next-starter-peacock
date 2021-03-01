@@ -45,6 +45,7 @@ export interface IContentData {
   previewImage?: string;
   description?: string;
   tags?: string[];
+  category?: string;
 }
 
 export const getStaticProps = async ({ params }) => {
