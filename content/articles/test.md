@@ -6,6 +6,8 @@ description: "Designing and building a website to connect quality photographers 
 category: bug-fixes
 tags:
   - html
+  - css
+  - javascript
 ---
 
 **Advertisement :)**

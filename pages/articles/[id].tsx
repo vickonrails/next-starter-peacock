@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Layout, Container } from "../../components";
 import { getAllContentIds, getContentData } from "../../lib/content";
 import { StyledContent } from "../../components/styles/content.styles";
+import { Chips } from "../../components/chips/chips";
 
 /**
  *  Renders articles markdown posts
@@ -23,6 +24,7 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
             <Image src={articlesData.previewImage} height={550} width={1200} />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          {articlesData.tags && <Chips items={articlesData.tags} />}
         </StyledContent>
       </Container>
     </Layout>

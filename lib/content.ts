@@ -92,6 +92,8 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     date: matterResult.data.date,
     previewImage: matterResult.data.previewImage || "",
     description: matterResult.data.description || "",
+    tags: matterResult.data.tags || [],
+    category: matterResult.data.category || "",
   };
 };
 
