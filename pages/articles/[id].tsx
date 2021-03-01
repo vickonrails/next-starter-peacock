@@ -1,10 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Image from 'next/image'
+import Image from "next/image";
 
 import { Layout, Container } from "../../components";
 import { getAllContentIds, getContentData } from "../../lib/content";
 import { StyledContent } from "../../components/styles/content.styles";
+import { Chips } from "../../components/chips/chips";
 
 /**
  *  Renders articles markdown posts
@@ -19,8 +20,11 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
       <Container width="narrow">
         <StyledContent>
           <time>{articlesData.date}</time>
-          {articlesData.previewImage && <Image src={articlesData.previewImage} height={550} width={1200} />}
+          {articlesData.previewImage && (
+            <Image src={articlesData.previewImage} height={550} width={1200} />
+          )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          {articlesData.tags && <Chips items={articlesData.tags} />}
         </StyledContent>
       </Container>
     </Layout>
@@ -42,10 +46,15 @@ export interface IContentData {
   title: string;
   previewImage?: string;
   description?: string;
+  tags?: string[];
+  category?: string;
 }
 
 export const getStaticProps = async ({ params }) => {
-  const articlesData : IContentData = await getContentData(params.id, "articles");
+  const articlesData: IContentData = await getContentData(
+    params.id,
+    "articles"
+  );
   return {
     props: {
       articlesData,

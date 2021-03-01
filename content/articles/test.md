@@ -3,6 +3,11 @@ title: "Markdown Test"
 date: "2020-01-02"
 slug: "test"
 description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
+category: bug-fixes
+tags:
+  - html
+  - css
+  - javascript
 ---
 
 **Advertisement :)**
