@@ -21,17 +21,22 @@ type IContentType = "articles" | "notes" | "work";
 
 export const getAllContentIds = (contentType: IContentType) => {
   let filenames;
+  let baseDir;
 
+  // determine where to look for content types
   switch (contentType) {
     case "articles":
+      baseDir = articlesDirectory;
       filenames = fs.readdirSync(articlesDirectory);
       break;
 
     case "notes":
+      baseDir = notesDirectory;
       filenames = fs.readdirSync(notesDirectory);
       break;
 
     case "work":
+      baseDir = workDirectory;
       filenames = fs.readdirSync(workDirectory);
       break;
 
@@ -39,11 +44,18 @@ export const getAllContentIds = (contentType: IContentType) => {
       throw new exception("You have to provide a content type");
   }
 
+  // return the slug of all the content IDs
   return filenames.map((filename) => {
+    const filePath = path.join(baseDir, filename);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+
+    const matterResult = matter(fileContent);
+
     return {
       params: {
-        // remove .md extension from filename
-        id: filename.replace(/\.md$/, ""),
+        // This is where we switch it up to use slug instead of the filename for generating pages
+        // id: filename.replace(/\.md$/, ""),
+        id: matterResult.data.slug,
       },
     };
   });
@@ -57,16 +69,20 @@ export const getAllContentIds = (contentType: IContentType) => {
 
 export const getContentData = async (id: string, contentType: IContentType) => {
   let contentTypeDirectory;
+  let filenames;
   switch (contentType) {
     case "articles":
+      filenames = fs.readdirSync(articlesDirectory);
       contentTypeDirectory = articlesDirectory;
       break;
 
     case "notes":
+      filenames = fs.readdirSync(notesDirectory);
       contentTypeDirectory = notesDirectory;
       break;
 
     case "work":
+      filenames = fs.readdirSync(workDirectory);
       contentTypeDirectory = workDirectory;
       break;
 
@@ -74,7 +90,20 @@ export const getContentData = async (id: string, contentType: IContentType) => {
       throw new exception("You have to provide a content type");
   }
 
-  const fullPath = path.join(contentTypeDirectory, `${id}.md`);
+  // loop through all the content types and compare the slug to get the filename
+  const match = filenames.filter((filename) => {
+    const filePath = path.join(contentTypeDirectory, filename);
+
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const matterResult = matter(fileContent);
+    const { slug } = matterResult.data;
+
+    return slug === id;
+  });
+
+  // use the returned path to get the fullpath and read the file content
+  const fullPath = path.join(contentTypeDirectory, match[0]);
+  // const fullPath = path.join(contentTypeDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
 
   const matterResult = matter(fileContents);
@@ -109,6 +138,7 @@ export const getContentList = (contentType: IContentType) => {
     case "articles":
       contentFiles = fs.readdirSync(articlesDirectory);
       contentDir = articlesDirectory;
+
       break;
 
     case "notes":
@@ -187,7 +217,7 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
     return content.tags && content.tags.includes(tag);
   });
 
-  return filteredContent;
+  return filteredContent.sort(sortByDate);
 };
 
 /**
@@ -238,7 +268,7 @@ export const getContentInCategory = (
     return content.category && content.category === category;
   });
 
-  return filteredContent;
+  return filteredContent.sort(sortByDate);
 };
 
 /**
