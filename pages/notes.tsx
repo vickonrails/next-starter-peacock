@@ -7,6 +7,7 @@ import NotesComponent from "../components/notes/notes";
 /**
  * Blog page `/blog`
  */
+
 const Notes = ({ notes }) => {
   const { pathname } = useRouter();
   return (
