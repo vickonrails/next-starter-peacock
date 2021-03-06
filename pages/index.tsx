@@ -6,7 +6,6 @@ import { StyledIndexPage } from "../components/styles/home.styles";
 import { getContentList } from "../lib/content";
 import DesignCode from "../components/design-code";
 import ExperimentsSection from "../components/experiments";
-import Link from "next/link";
 
 /**
  * Index page `/index`
