@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
+        <Head lang="en">
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
