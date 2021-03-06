@@ -17,6 +17,7 @@ const Footer = () => (
             href="https://github.com/vickOnRails"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="github"
           >
             <GitHubIcon />
           </a>
@@ -28,6 +29,7 @@ const Footer = () => (
             href="https://codepen.io/Vick_onrails"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="codepen"
           >
             <CodepenIcon />
           </a>
@@ -39,6 +41,7 @@ const Footer = () => (
             href="https://twitter.com/vick_onrails"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="twitter"
           >
             <TwitterIcon />
           </a>
@@ -52,7 +55,7 @@ const Footer = () => (
         <a
           href="https://twitter.com/vick_OnRails"
           target="_blank"
-          rel="noopenner norefferer"
+          rel="noreferrer noopener"
         >
           @vick_onrails
         </a>
