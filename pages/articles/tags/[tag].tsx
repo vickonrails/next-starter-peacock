@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { getAllContentIds, getContentWithTag } from "../../../lib/content";
+import { getContentWithTag } from "../../../lib/content";
 
 import tagsJSON from "../../../config/tags.json";
 import { Cards, Container, Layout } from "../../../components";

@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { experiments } from "../content/experiments";
 import { Container } from "./container";
 import { StyledExperimentsSection } from "./styles/experiments.styles";

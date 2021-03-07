@@ -1,4 +1,3 @@
-import { ReactComponentElement } from "react";
 import { AppProps } from "next/app";
 
 import "../components/styles/layout.css";
