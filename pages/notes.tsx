@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Container } from "../components";
-import { useRouter } from "next/router";
 import { getContentList } from "../lib/content";
 import NotesComponent from "../components/notes/notes";
 
@@ -9,11 +8,10 @@ import NotesComponent from "../components/notes/notes";
  */
 
 const Notes = ({ notes }) => {
-  const { pathname } = useRouter();
   return (
     <Layout
       pageTitle="Notes"
-      pathname={pathname}
+      pathname={"/notes"}
       pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about ReactJS, Product Design, React Native and NodeJS"
     >
       <Container width="narrow">

@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Container, Cards } from "../components";
-import { useRouter } from "next/router";
 import { getContentList } from "../lib/content";
 
 /**
@@ -8,10 +7,9 @@ import { getContentList } from "../lib/content";
  */
 
 const Articles = ({ articles }) => {
-  const { pathname } = useRouter();
   return (
     <Layout
-      pathname={pathname}
+      pathname={"/articles"}
       pageTitle="Articles"
       pageDescription="Articles and Essays about Frontend Web Development and software engineering"
     >

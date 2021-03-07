@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Image from 'next/image'
 
 import { Layout, Container } from "../components";
@@ -9,10 +8,9 @@ import { StyledAbout } from "../components/styles/about.styles";
  * About page `/about`
  */
 const About = () => {
-  const { pathname } = useRouter();
   return (
     <Layout
-      pathname={pathname}
+      pathname={"/about"}
       pageTitle="About"
       pageDescription="About page of Peacock starter by Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
     >
