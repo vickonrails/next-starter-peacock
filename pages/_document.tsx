@@ -5,8 +5,8 @@ import ANALYTICS_ID from "../lib/gtag";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
-        <Head lang="en">
+      <Html lang="en">
+        <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
