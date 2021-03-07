@@ -20,7 +20,7 @@ const About = () => {
         <Container width="narrow">
           <div className="postContent">
             <div className="avatarImage">
-              <Image src="/images/avatar.jpg" width={200} height={200} />
+              <Image src="/images/avatar.jpg" width={200} height={200} alt="Victor Ofoegbu" />
             </div>
             <p>
               I'm{" "}
