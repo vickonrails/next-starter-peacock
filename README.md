@@ -77,6 +77,7 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 - [x] Replace personal portfolio content with demo content
 - [x] Add simpler notes page
 - [x] Image optimization (Fixed image heights to avoid layout janks)
+- [x] RSS Feed
 - [ ] Release V1
 - [ ] Add page transitions with `react-spring`
 - [ ] Add mdx support
