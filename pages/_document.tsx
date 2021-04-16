@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript, Html } from "next/document";
 
+import { site } from "../config/index.json";
 import ANALYTICS_ID from "../lib/gtag";
 
 export default class MyDocument extends Document {
@@ -15,6 +16,13 @@ export default class MyDocument extends Document {
           <link
             href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
             rel="stylesheet"
+          />
+
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={site.siteName}
+            href={`${site.siteUrl}rss.xml`}
           />
           <script
             dangerouslySetInnerHTML={{
