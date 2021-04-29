@@ -276,7 +276,7 @@ export const getContentInCategory = (
  * @param a {Date} - Date of post 1
  * @param b {Date} - Date of post 2
  */
-const sortByDate = (a, b) => {
+export const sortByDate = (a, b) => {
   if (a.date > b.date) {
     return -1;
   } else if (a.date < b.date) {

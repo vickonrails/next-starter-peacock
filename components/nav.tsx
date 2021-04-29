@@ -55,11 +55,11 @@ const Nav = () => {
 
               <li className="navLinkItem">
                 <a
-                  href="https://github.com/vickOnRails/next-starter-peacock"
+                  href={`${SiteConfig.site.siteUrl}/rss.xml`}
                   target="_blank"
                   rel="noopener norefferer"
                 >
-                  Source
+                  RSS Feed
                 </a>
               </li>
             </ul>

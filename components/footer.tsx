@@ -59,7 +59,14 @@ const Footer = () => (
         >
           @vick_onrails
         </a>
-        . With NextJS, TypeScript Emotion and Vercel.
+        . With NextJS, TypeScript Emotion and Vercel.{" "}
+        <a
+          href="https://github.com/vickOnRails/next-starter-peacock"
+          target="_blank"
+          rel="noopener norefferer"
+        >
+          Source
+        </a>
       </p>
     </Container>
   </StyledFooterSection>

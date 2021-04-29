@@ -9,6 +9,7 @@ export interface INote {
   slug: string;
   date: Date;
   basePath: string;
+  description?: string;
 }
 
 const Note = ({ date, title, slug, basePath }: INote) => {
