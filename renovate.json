@@ -1,4 +1,16 @@
 {
-  "extends": ["github>karlhorky/renovate-config"],
-  "ignoreDeps": ["mdx-deck", "raw-loader"]
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies", "dependencies", "peerDependencies"],
+      "updateTypes": ["patch", "minor"],
+      "groupName": "dependencies (non-major)"
+    }
+  ],
+  "schedule": "after 4pm on thursday",
+  "vulnerabilityAlerts": {
+    "schedule": null
+  }
 }
