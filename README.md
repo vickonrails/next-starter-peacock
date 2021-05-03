@@ -20,7 +20,15 @@ Peacock is a NextJS portfolio Starter for software engineers and designers. Show
 git clone https://github.com/<your-username>/next-starter-peacock.git
 ```
 
-3. Jump into the directory and Install dependencies
+3. Install the dependencies for `canvas` (see [Automattic/node-canvas#1065](https://github.com/Automattic/node-canvas/issues/1065)).
+
+For example, on macOS:
+
+```bash
+brew install pkg-config pixman cairo pango
+```
+
+4. Jump into the directory and Install dependencies
 
 ```bash
 cd next-starter-peacock && yarn
@@ -30,7 +38,7 @@ or
 cd next-starter-peacock && npm install
 ```
 
-4. Start the dev server
+5. Start the dev server
 
 ```bash
 yarn dev
@@ -40,7 +48,7 @@ or
 npm run dev
 ```
 
-5. Find `config/index.json`, change `name` and `title` to your name and title. Save and open [http://localhost:3000](http://localhost:3000) with your browser 💥💥💥. See the results 😊.
+6. Find `config/index.json`, change `name` and `title` to your name and title. Save and open [http://localhost:3000](http://localhost:3000) with your browser 💥💥💥. See the results 😊.
 
 ---
 
