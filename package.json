@@ -9,11 +9,11 @@
     "build:rss": "ts-node ./lib/rss.ts"
   },
   "dependencies": {
-    "@emotion/react": "11.1.5",
+    "@emotion/react": "11.4.0",
     "@emotion/styled": "11.3.0",
     "@types/uuid": "8.3.0",
     "gray-matter": "4.0.3",
-    "next": "10.2.0",
+    "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-feather": "2.0.9",
@@ -24,9 +24,9 @@
   },
   "devDependencies": {
     "@types/node": "14.14.44",
-    "@types/react": "17.0.5",
+    "@types/react": "17.0.8",
     "rss": "1.2.2",
     "ts-node": "9.1.1",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   }
 }
