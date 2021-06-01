@@ -26,7 +26,7 @@
     "@types/node": "14.14.44",
     "@types/react": "17.0.8",
     "rss": "1.2.2",
-    "ts-node": "9.1.1",
+    "ts-node": "10.0.0",
     "typescript": "4.3.2"
   }
 }
