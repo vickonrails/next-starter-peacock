@@ -25,14 +25,6 @@ export default class MyDocument extends Document {
             href={`${site.siteUrl}rss.xml`}
           />
 
-          {/* Add plausible analytics */}
-          <script
-            async
-            defer
-            data-domain="victorofoegbu.com"
-            src="https://plausible.io/js/plausible.js"
-          ></script>
-
           <script
             dangerouslySetInnerHTML={{
               __html: `
