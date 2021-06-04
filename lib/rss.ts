@@ -52,7 +52,7 @@ try {
       description: description,
       author: author.name,
       date,
-      guid: id,
+      guid: url,
       url,
     });
   });
