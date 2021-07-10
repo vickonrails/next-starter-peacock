@@ -23,7 +23,7 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@types/node": "14.14.44",
+    "@types/node": "16.3.1",
     "@types/react": "17.0.8",
     "rss": "1.2.2",
     "ts-node": "10.0.0",
