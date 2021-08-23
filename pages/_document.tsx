@@ -24,6 +24,7 @@ export default class MyDocument extends Document {
             title={site.siteName}
             href={`${site.siteUrl}rss.xml`}
           />
+
           <script
             dangerouslySetInnerHTML={{
               __html: `

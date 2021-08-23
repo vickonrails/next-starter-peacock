@@ -31,14 +31,14 @@ try {
   // Add Notes content to feed
   notesContent.sort(sortByDate).map((contentItem: INote) => {
     const { title, date, id, slug, description } = contentItem;
-    const url = `${siteUrl}/notes/${slug}`;
+    const url = `${siteUrl}notes/${slug}`;
 
     feed.item({
       title,
       description: description,
       author: author.name,
       date,
-      guid: id,
+      guid: url,
       url,
     });
   });
@@ -52,7 +52,7 @@ try {
       description: description,
       author: author.name,
       date,
-      guid: id,
+      guid: url,
       url,
     });
   });
