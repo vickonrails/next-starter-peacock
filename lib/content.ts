@@ -1,7 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import remark from 'remark';
+import { remark } from 'remark';
 import highlight from 'remark-highlight.js';
 import { v4 as uuid } from 'uuid';
 import { IContentData } from '../pages/articles/[id]';
