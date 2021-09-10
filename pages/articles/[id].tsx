@@ -1,11 +1,12 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-
-import { Layout, Container } from "../../components";
-import { getAllContentIds, getContentData } from "../../lib/content";
-import { StyledContent } from "../../components/styles/content.styles";
-import { Chips } from "../../components/chips/chips";
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import { Params } from 'next/dist/server/router';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Container, Layout } from '../../components';
+import { Chips } from '../../components/chips/chips';
+import { StyledContent } from '../../components/styles/content.styles';
+import { getAllContentIds, getContentData } from '../../lib/content';
 
 /**
  *  Renders articles markdown posts
@@ -32,7 +33,7 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllContentIds("articles");
+  const paths = getAllContentIds('articles');
   return {
     paths,
     fallback: false,
@@ -50,10 +51,21 @@ export interface IContentData {
   category?: string;
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async (
+  context: GetStaticPropsContext,
+): Promise<GetStaticPropsResult<Params>> => {
+  const { params } = context;
+  if (!params?.id) {
+    return {
+      props: {},
+    };
+  }
+
+  const contentId = JSON.stringify(params.id);
+
   const articlesData: IContentData = await getContentData(
-    params.id,
-    "articles"
+    contentId,
+    'articles',
   );
   return {
     props: {

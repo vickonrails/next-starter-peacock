@@ -1,15 +1,20 @@
-import fs from "fs";
+import fs from 'node:fs';
+import { author, site } from '../config/index.json';
+import { getContentList, sortByDate } from './content';
 
-import { getContentList, sortByDate } from "./content";
-import { site, author } from "../config/index.json";
-import { INote } from "../components/notes/note";
+type NoteContent = {
+  [key: string]: any;
+  previewImage: string;
+  id: string;
+};
 
-const RSS = require("rss");
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const RSS = require('rss');
 
 const { siteName, siteTitle, siteUrl } = site;
 
-export const notesContent = getContentList("notes");
-export const articlesContent = getContentList("articles");
+export const notesContent = getContentList('notes');
+export const articlesContent = getContentList('articles');
 
 const year = new Date().getFullYear();
 
@@ -25,11 +30,11 @@ try {
     managingEditor: author.name,
     webMaster: author.name,
     copyright: `${year} ${author.name}`,
-    language: "en",
+    language: 'en',
   });
 
   // Add Notes content to feed
-  notesContent.sort(sortByDate).map((contentItem: INote) => {
+  notesContent.sort(sortByDate).forEach((contentItem: NoteContent) => {
     const { title, date, id, slug, description } = contentItem;
     const url = `${siteUrl}notes/${slug}`;
 
@@ -44,8 +49,8 @@ try {
   });
 
   // Add Articles content to feed
-  articlesContent.sort(sortByDate).map((contentItem: INote) => {
-    const { title, date, id, slug, description } = contentItem;
+  articlesContent.sort(sortByDate).forEach((contentItem: NoteContent) => {
+    const { title, date, slug, description } = contentItem;
     const url = `${siteUrl}/articles/${slug}`;
     feed.item({
       title,
@@ -60,10 +65,12 @@ try {
   // convert to xml format
   const xml = feed.xml();
   // write to rss.xml
-  fs.writeFileSync("./public/rss.xml", xml);
+  fs.writeFileSync('./public/rss.xml', xml);
   console.log(`🎉 - RSS feed generated at rss.xml`);
 } catch (ex) {
   console.error(
-    `😢 An error occurred while generating XML scripts: ${ex.message}`
+    `😢 An error occurred while generating XML scripts: ${
+      (ex as { message: string }).message
+    }`,
   );
 }

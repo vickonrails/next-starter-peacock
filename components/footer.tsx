@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
+import { Container } from './container';
 import {
-  StyledFooterSection,
-  GitHubIcon,
   CodepenIcon,
+  GitHubIcon,
+  StyledFooterSection,
   TwitterIcon,
-} from "./styles/footer.styles";
-import { Container } from "./container";
+} from './styles/footer.styles';
 
 const Footer = () => (
   <StyledFooterSection>
@@ -51,7 +51,7 @@ const Footer = () => (
 
     <Container>
       <p className="about-site">
-        Built by{" "}
+        Built by{' '}
         <a
           href="https://twitter.com/vick_OnRails"
           target="_blank"
@@ -59,11 +59,11 @@ const Footer = () => (
         >
           @vick_onrails
         </a>
-        . With NextJS, TypeScript Emotion and Vercel.{" "}
+        . With NextJS, TypeScript Emotion and Vercel.{' '}
         <a
           href="https://github.com/vickOnRails/next-starter-peacock"
           target="_blank"
-          rel="noopener norefferer"
+          rel="noopener noreferrer"
         >
           Source
         </a>

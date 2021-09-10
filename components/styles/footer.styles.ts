@@ -29,6 +29,7 @@ export const StyledFooterSection = styled.footer`
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const IconStyles = css`
   height: 1.2em;
   width: 1.2em;

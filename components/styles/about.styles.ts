@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledAbout = styled.section`
   .avatarImage {
@@ -21,7 +21,6 @@ export const StyledAbout = styled.section`
         width: 200px;
       }
     }
-    
   }
 
   @media (min-width: 1400px) {
@@ -32,4 +31,3 @@ export const StyledAbout = styled.section`
     }
   }
 `;
-

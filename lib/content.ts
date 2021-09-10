@@ -1,10 +1,9 @@
-import fs from 'fs';
+import fs from 'node:fs';
+import path from 'node:path';
 import matter from 'gray-matter';
-import path from 'path';
 import { remark } from 'remark';
 import highlight from 'remark-highlight.js';
 import { v4 as uuid } from 'uuid';
-import { IContentData } from '../pages/articles/[id]';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');
@@ -19,7 +18,7 @@ type IContentType = 'articles' | 'notes' | 'work';
 
 export const getAllContentIds = (contentType: IContentType) => {
   let filenames;
-  let baseDir;
+  let baseDir: string;
 
   // determine where to look for content types
   switch (contentType) {
@@ -66,7 +65,7 @@ export const getAllContentIds = (contentType: IContentType) => {
  */
 
 export const getContentData = async (id: string, contentType: IContentType) => {
-  let contentTypeDirectory;
+  let contentTypeDirectory: string;
   let filenames;
   switch (contentType) {
     case 'articles':
@@ -129,7 +128,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
  */
 export const getContentList = (contentType: IContentType) => {
   let contentFiles;
-  let contentDir;
+  let contentDir: string;
 
   switch (contentType) {
     case 'articles':
@@ -149,7 +148,7 @@ export const getContentList = (contentType: IContentType) => {
       break;
   }
 
-  const content = contentFiles
+  const content: { date?: Date; previewImage: any; id: string }[] = contentFiles
     .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
@@ -174,8 +173,7 @@ export const getContentList = (contentType: IContentType) => {
  * @param {string} tag - tag to filter by
  */
 export const getContentWithTag = (tag: string, contentType: IContentType) => {
-  let contentDir;
-  let contentFiles;
+  let contentDir: string;
 
   switch (contentType) {
     case 'articles':
@@ -191,9 +189,9 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
       break;
   }
 
-  contentFiles = fs.readdirSync(contentDir);
+  const contentFiles = fs.readdirSync(contentDir);
 
-  let contentData = contentFiles
+  const contentData = contentFiles
     .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
@@ -210,9 +208,12 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
       };
     });
 
-  const filteredContent = contentData.filter((content: IContentData) => {
-    return content.tags && content.tags.includes(tag);
-  });
+  const filteredContent: { date?: Date; previewImage: any; id: string }[] =
+    contentData.filter(
+      (content: { [key: string]: any; previewImage: any; id: string }) => {
+        return content.tags && content.tags.includes(tag);
+      },
+    );
 
   return filteredContent.sort(sortByDate);
 };
@@ -225,8 +226,7 @@ export const getContentInCategory = (
   category: string,
   contentType: IContentType,
 ) => {
-  let contentDir;
-  let contentFiles;
+  let contentDir: string;
 
   switch (contentType) {
     case 'articles':
@@ -242,9 +242,9 @@ export const getContentInCategory = (
       break;
   }
 
-  contentFiles = fs.readdirSync(contentDir);
+  const contentFiles = fs.readdirSync(contentDir);
 
-  let contentData = contentFiles
+  const contentData = contentFiles
     .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
@@ -261,19 +261,18 @@ export const getContentInCategory = (
       };
     });
 
-  const filteredContent = contentData.filter((content: IContentData) => {
-    return content.category && content.category === category;
-  });
+  const filteredContent: { date?: Date; previewImage: any; id: string }[] =
+    contentData.filter(
+      (content: { [key: string]: any; previewImage: any; id: string }) => {
+        return content.category && content.category === category;
+      },
+    );
 
   return filteredContent.sort(sortByDate);
 };
 
-/**
- * Sorts content by their dates
- * @param a {Date} - Date of post 1
- * @param b {Date} - Date of post 2
- */
-export const sortByDate = (a, b) => {
+export const sortByDate = (a: { date?: Date }, b: { date?: Date }) => {
+  if (!a.date || !b.date) return 0;
   if (a.date > b.date) {
     return -1;
   } else if (a.date < b.date) {

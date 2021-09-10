@@ -1,23 +1,27 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { GitHub, Codepen, ExternalLink } from "react-feather";
-
+import styled from '@emotion/styled';
+import React from 'react';
+import { Codepen, ExternalLink, GitHub } from 'react-feather';
+import { IExperiments } from '../content/experiments';
 import {
   StyledExperimentItemContainer,
   Tilter,
-} from "./styles/experiments.styles";
+} from './styles/experiments.styles';
 
-const ExperimentItem = ({ experiment }) => {
+type Props = {
+  experiment: IExperiments;
+};
+
+const ExperimentItem = ({ experiment }: Props) => {
   let icon;
 
   switch (experiment.location) {
-    case "codepen":
+    case 'codepen':
       icon = <CodepenIcon role="img" />;
       break;
-    case "github":
+    case 'github':
       icon = <GithubIcon role="img" />;
       break;
-    case "medium":
+    case 'medium':
     default:
       icon = <ExternalLinkIcon role="img" />;
   }
@@ -37,8 +41,8 @@ const ExperimentItem = ({ experiment }) => {
         <h3 className="experiment-item-heading">{experiment.title}</h3>
         <p>{experiment.description}</p>
         <ul>
-          {experiment.tags.map((tag, index) => (
-            <li key={index}>{tag}</li>
+          {experiment.tags.map((tag) => (
+            <li key={tag}>{tag}</li>
           ))}
         </ul>
       </StyledExperimentItemContainer>

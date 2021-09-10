@@ -1,12 +1,11 @@
-import React, { useState, createContext, ReactNode } from "react";
-import Head from "next/head";
-import SiteConfig from "../config/index.json";
-
-import { StyledMain } from "./styles/layout.styles";
-import Header from "./header/header";
-import Footer from "./footer";
-import Nav from "./nav";
-import MobileNav from "./nav/mobile-nav";
+import Head from 'next/head';
+import React, { createContext, ReactNode, useState } from 'react';
+import SiteConfig from '../config/index.json';
+import Footer from './footer';
+import Header from './header/header';
+import Nav from './nav';
+import MobileNav from './nav/mobile-nav';
+import { StyledMain } from './styles/layout.styles';
 
 interface ILayout {
   children: ReactNode;
@@ -15,8 +14,13 @@ interface ILayout {
   pageDescription?: string;
 }
 
-//@ts-ignore
-export const MenuContext = createContext({
+type Menu = {
+  menuOpen: boolean | null;
+  toggleMenuOpen: (() => void) | null;
+};
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const MenuContext = createContext<Menu>({
   menuOpen: null,
   toggleMenuOpen: null,
 });

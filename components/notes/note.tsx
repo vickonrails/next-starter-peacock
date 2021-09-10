@@ -1,7 +1,7 @@
-import React from "react";
-import { Calendar } from "react-feather";
-import { StyledNote, StyledNoteLink } from "../styles/notes.styles";
-import Link from "next/link";
+import Link from 'next/link';
+import React from 'react';
+import { Calendar } from 'react-feather';
+import { StyledNote, StyledNoteLink } from '../styles/notes.styles';
 
 export interface INote {
   title: string;
@@ -14,7 +14,7 @@ export interface INote {
 
 const Note = ({ date, title, slug, basePath }: INote) => {
   return (
-    <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`}>
+    <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} passHref>
       <StyledNoteLink>
         <StyledNote>
           <time>

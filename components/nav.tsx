@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import Link from "next/link";
-
-import { NavSection, StyledHamburger } from "./styles/nav.styles";
-import Logo from "./logo";
-import { Container } from "./container";
-import SiteConfig from "../config/index.json";
-import { MenuContext } from ".";
+import Link from 'next/link';
+import React, { useContext } from 'react';
+import SiteConfig from '../config/index.json';
+import { MenuContext } from './';
+import { Container } from './container';
+import Logo from './logo';
+import { NavSection, StyledHamburger } from './styles/nav.styles';
 
 const Nav = () => {
   const menuContext = useContext(MenuContext);
@@ -26,10 +25,9 @@ const Nav = () => {
           </div>
 
           <div className="navRight">
-            <StyledHamburger
-              menuOpen={menuOpen}
-              onClick={toggleMenuOpen}
-            ></StyledHamburger>
+            {menuOpen && toggleMenuOpen && (
+              <StyledHamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
+            )}
 
             <ul className="navLinkList">
               <li className="navLinkItem">
@@ -57,7 +55,7 @@ const Nav = () => {
                 <a
                   href={`${SiteConfig.site.siteUrl}/rss.xml`}
                   target="_blank"
-                  rel="noopener norefferer"
+                  rel="noopener noreferrer"
                 >
                   RSS Feed
                 </a>

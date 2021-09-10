@@ -1,13 +1,16 @@
-import Link from "next/link";
-import React from "react";
-import { StyledChip } from "../styles/chips.styles";
+import Link from 'next/link';
+import { StyledChip } from '../styles/chips.styles';
 
-export const Chips = ({ items }) => {
+type Props = {
+  items: string[];
+};
+
+export const Chips = ({ items }: Props) => {
   return (
     <StyledChip>
       <ul>
-        {items.map((tag: string[], index: number) => (
-          <li key={index}>
+        {items.map((tag: string) => (
+          <li key={tag}>
             <Link href={`tags/${tag}`}>
               <a>{tag}</a>
             </Link>

@@ -1,12 +1,9 @@
-import styled from "@emotion/styled";
-import { IContainer } from "../container";
+import styled from '@emotion/styled';
+import { IContainer } from '../container';
 
 export const StyledChip = styled.div<IContainer>`
-  //   display: flex;
-
   ul {
     list-style-type: none;
-    // margin: auto;
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;

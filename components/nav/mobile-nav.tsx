@@ -1,7 +1,6 @@
-import React from "react";
-import Link from "next/link";
-
-import { StyledMobileNav } from "../styles/nav.styles";
+import Link from 'next/link';
+import React from 'react';
+import { StyledMobileNav } from '../styles/nav.styles';
 
 const MobileNav = () => {
   return (
@@ -42,7 +41,7 @@ const MobileNav = () => {
             <a
               href="https://github.com/vickOnRails/next-starter-peacock"
               target="_blank"
-              rel="noopener norefferer"
+              rel="noopener noreferrer"
             >
               Source
             </a>

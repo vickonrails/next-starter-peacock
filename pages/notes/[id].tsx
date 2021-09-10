@@ -1,18 +1,22 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-
-import { Layout, Container } from "../../components";
-import { getAllContentIds, getContentData } from "../../lib/content";
-import { IContentData } from "../articles/[id]";
-import { StyledContent } from "../../components/styles/content.styles";
-import { Chips } from "../../components/chips/chips";
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Container, Layout } from '../../components';
+import { Chips } from '../../components/chips/chips';
+import { StyledContent } from '../../components/styles/content.styles';
+import { getAllContentIds, getContentData } from '../../lib/content';
+import { IContentData } from '../articles/[id]';
 
 /**
  *  Renders notes markdown posts
  */
 
-const Note = ({ notesData }) => {
+type Props = {
+  notesData: IContentData;
+};
+
+const Note = ({ notesData }: Props) => {
   const { pathname } = useRouter();
   const { title, contentHtml, description } = notesData;
 
@@ -33,7 +37,7 @@ const Note = ({ notesData }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllContentIds("notes");
+  const paths = getAllContentIds('notes');
 
   return {
     paths,
@@ -41,8 +45,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const notesData: IContentData = await getContentData(params.id, "notes");
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const paramsId = JSON.stringify(params?.id);
+  const notesData: IContentData = await getContentData(paramsId, 'notes');
   return {
     props: {
       notesData,
