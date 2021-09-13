@@ -1,5 +1,4 @@
-import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
-import { Params } from 'next/dist/server/router';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -51,10 +50,7 @@ export interface IContentData {
   category?: string;
 }
 
-export const getStaticProps = async (
-  context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<Params>> => {
-  const { params } = context;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.id) {
     return {
       props: {},
