@@ -9,10 +9,10 @@ import { getContentList } from '../lib/content';
  * Index page `/index`
  */
 
-//@ts-ignore
+// @ts-ignore
 const Index: FC = ({ selectedWorks }) => {
   return (
-    <Layout pathname={'/'} pageTitle="Nextjs Starter Peacock">
+    <Layout pathname="/" pageTitle="Nextjs Starter Peacock">
       <StyledIndexPage>
         <Container>
           <Cards data={selectedWorks} basePath="works" />
@@ -25,7 +25,15 @@ const Index: FC = ({ selectedWorks }) => {
 };
 
 export const getStaticProps = async () => {
-  const works = await getContentList('work');
+  type Work = {
+    [key: string]: any;
+    date?: Date | undefined;
+    previewImage: any;
+    id: string;
+  };
+
+  const works: Work[] = await getContentList('work');
+  console.log('work', works);
   const selectedWorks = works.filter((work) => work.selectedWork);
 
   return {

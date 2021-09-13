@@ -94,14 +94,10 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const matterResult = matter(fileContent);
     const { slug } = matterResult.data;
-    console.log('slug', slug);
-    console.log('id', id);
-    console.log('res', slug === id);
     return slug === id;
   });
 
   // use the returned path to get the fullpath and read the file content
-  console.log(contentTypeDirectory, filenames);
   const fullPath = path.join(contentTypeDirectory, match[0]);
   // const fullPath = path.join(contentTypeDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
@@ -160,8 +156,6 @@ export const getContentList = (contentType: IContentType) => {
       });
 
       const { data } = matter(rawContent);
-
-      console.log('data', data);
 
       return {
         ...data,

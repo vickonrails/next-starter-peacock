@@ -63,8 +63,6 @@ export const getStaticProps = async (
 
   const contentId = Array.isArray(params.id) ? params.id[0] : params.id;
 
-  console.log('on id tsx', contentId);
-
   const articlesData: IContentData = await getContentData(
     contentId,
     'articles',

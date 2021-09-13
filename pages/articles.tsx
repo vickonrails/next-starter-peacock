@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cards, Container, ICard, Layout } from '../components';
+import { Cards, Container, Layout } from '../components';
 import { getContentList } from '../lib/content';
 
 /**
@@ -8,9 +8,14 @@ import { getContentList } from '../lib/content';
 
 type Props = {
   articles: {
-    date?: Date | undefined;
-    previewImage: any;
+    category: string;
+    date: Date;
+    description: string;
     id: string;
+    previewImage: string;
+    slug: string;
+    tags: string;
+    title: string;
   }[];
 };
 
@@ -40,20 +45,8 @@ const Articles = ({ articles }: Props) => {
 };
 
 export const getStaticProps = async () => {
-  type NoteContent = {
-    data: {
-      title: string;
-      id: string;
-      slug: string;
-      date: Date;
-      previewImage: string;
-      description: string;
-    }[];
-    previewImage: string;
-    id: string;
-  };
   const articles = getContentList('articles');
-  console.log('articles', articles);
+
   return {
     props: { articles },
   };

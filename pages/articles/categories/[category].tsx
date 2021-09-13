@@ -1,12 +1,20 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getContentInCategory } from "../../../lib/content";
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import { Params } from 'next/dist/server/router';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Container, Layout } from '../../../components';
+import { INote } from '../../../components/notes/note';
+import NotesComponent from '../../../components/notes/notes';
+import categoryJSON from '../../../config/categories.json';
+import { getContentInCategory } from '../../../lib/content';
 
-import categoryJSON from "../../../config/categories.json";
-import { Container, Layout } from "../../../components";
-import NotesComponent from "../../../components/notes/notes";
+type Props = {
+  content: INote[];
+  title: string;
+  description: string;
+};
 
-const category = ({ content, title, description }) => {
+const Category = ({ content, title, description }: Props) => {
   const { pathname } = useRouter();
   return (
     <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
@@ -20,10 +28,10 @@ const category = ({ content, title, description }) => {
 
 export const getStaticPaths = async () => {
   // Get all the tags from the already defined site tags
-  const paths = categoryJSON.map((category) => {
+  const paths = categoryJSON.map(({ category }) => {
     return {
       params: {
-        category: category.category,
+        category: category,
       },
     };
   });
@@ -34,10 +42,23 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  let content = getContentInCategory(params.category, "articles");
+export const getStaticProps = async (
+  context: GetStaticPropsContext,
+): Promise<GetStaticPropsResult<Params>> => {
+  const { params } = context;
+
+  if (!params?.category) {
+    return {
+      props: {},
+    };
+  }
+  const contentCategory = Array.isArray(params.category)
+    ? params.category[0]
+    : params.category;
+
+  const content = getContentInCategory(contentCategory, 'articles');
   const categoryObject = categoryJSON.filter(
-    (category) => category.category === params.category
+    ({ category }) => category === params.category,
   )[0];
 
   return {
@@ -49,4 +70,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default category;
+export default Category;
