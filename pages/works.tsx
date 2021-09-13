@@ -1,14 +1,26 @@
-import React from "react";
-import { Layout, Container, Cards } from "../components";
-import { getContentList } from "../lib/content";
+import React from 'react';
+import { Cards, Container, Layout } from '../components';
+import { getContentList } from '../lib/content';
 
 /**
  * Work page `/work`
  */
-const Work = ({ works }) => {
+
+type Props = {
+  works: {
+    title: string;
+    id: string;
+    slug: string;
+    date: Date;
+    previewImage: string;
+    description: string;
+  }[];
+};
+
+const Work = ({ works }: Props) => {
   return (
     <Layout
-      pathname={"/works"}
+      pathname="/works"
       pageTitle="Works &amp; Projects"
       pageDescription="Works and projects spanning Product design, Research, frontend and software engineering with ReactJS, React Native and NodeJs"
     >
@@ -24,7 +36,7 @@ const Work = ({ works }) => {
 };
 
 export const getStaticProps = async () => {
-  const works = getContentList("work");
+  const works = getContentList('work');
   return {
     props: { works },
   };

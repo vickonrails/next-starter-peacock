@@ -1,17 +1,22 @@
-import React from "react";
-import { Layout, Container } from "../components";
-import { getContentList } from "../lib/content";
-import NotesComponent from "../components/notes/notes";
+import React from 'react';
+import { Container, Layout } from '../components';
+import { INote } from '../components/notes/note';
+import NotesComponent from '../components/notes/notes';
+import { getContentList } from '../lib/content';
 
 /**
  * Blog page `/blog`
  */
 
-const Notes = ({ notes }) => {
+type Props = {
+  notes: INote[];
+};
+
+const Notes = ({ notes }: Props) => {
   return (
     <Layout
       pageTitle="Notes"
-      pathname={"/notes"}
+      pathname="/notes"
       pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about ReactJS, Product Design, React Native and NodeJS"
     >
       <Container width="narrow">
@@ -28,7 +33,7 @@ const Notes = ({ notes }) => {
 };
 
 export const getStaticProps = async () => {
-  const notes = getContentList("notes");
+  const notes = getContentList('notes');
   return {
     props: { notes },
   };

@@ -1,13 +1,21 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getContentWithTag } from "../../../lib/content";
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import { Params } from 'next/dist/server/router';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { Container } from '../../../components/container';
+import { Layout } from '../../../components/layout';
+import { INote } from '../../../components/notes/note';
+import NotesComponent from '../../../components/notes/notes';
+import tagsJSON from '../../../config/tags.json';
+import { getContentWithTag } from '../../../lib/content';
 
-import tagsJSON from "../../../config/tags.json";
-import { Layout } from "../../../components/layout";
-import { Container } from "../../../components/container";
-import NotesComponent from "../../../components/notes/notes";
+type Props = {
+  content: INote[];
+  title: string;
+  description: string;
+};
 
-const category = ({ content, title, description }) => {
+const Category = ({ content, title, description }: Props) => {
   const { pathname } = useRouter();
 
   return (
@@ -36,8 +44,20 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  let content = getContentWithTag(params.tag, "notes");
+export const getStaticProps = async (
+  context: GetStaticPropsContext,
+): Promise<GetStaticPropsResult<Params>> => {
+  const { params } = context;
+
+  if (!params?.tag) {
+    return {
+      props: {},
+    };
+  }
+
+  const contentTag = Array.isArray(params.tag) ? params.tag[0] : params.tag;
+
+  const content = getContentWithTag(contentTag, 'notes');
   const tagObject = tagsJSON.filter((json) => json.tag === params.tag)[0];
 
   return {
@@ -49,4 +69,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default category;
+export default Category;
