@@ -21,7 +21,6 @@ export interface ICard {
  */
 
 const Cards = ({ data, basePath }: ICard) => {
-  console.log('path', basePath);
   return (
     <StyledCards>
       {data.map((singleCard) => (
