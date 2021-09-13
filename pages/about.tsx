@@ -1,8 +1,7 @@
-import React from "react";
-import Image from 'next/image'
-
-import { Layout, Container } from "../components";
-import { StyledAbout } from "../components/styles/about.styles";
+import Image from 'next/image';
+import React from 'react';
+import { Container, Layout } from '../components';
+import { StyledAbout } from '../components/styles/about.styles';
 
 /**
  * About page `/about`
@@ -10,7 +9,7 @@ import { StyledAbout } from "../components/styles/about.styles";
 const About = () => {
   return (
     <Layout
-      pathname={"/about"}
+      pathname="/about"
       pageTitle="About"
       pageDescription="About page of Peacock starter by Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
     >
@@ -18,10 +17,15 @@ const About = () => {
         <Container width="narrow">
           <div className="postContent">
             <div className="avatarImage">
-              <Image src="/images/avatar.jpg" width={200} height={200} alt="Victor Ofoegbu" />
+              <Image
+                src="/images/avatar.jpg"
+                width={200}
+                height={200}
+                alt="Victor Ofoegbu"
+              />
             </div>
             <p>
-              I'm{" "}
+              I'm{' '}
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
@@ -41,14 +45,14 @@ const About = () => {
             <p>
               I work heavily with ReactJs, Redux, Styled Components, Figma,
               Storybook & recently picked up C#/Dotnet Core for backend APIs. If
-              you're excited about any of the following, please shoot at me on{" "}
+              you're excited about any of the following, please shoot at me on{' '}
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
                 rel="noopenner noreferrer"
               >
                 Twitter
-              </a>{" "}
+              </a>{' '}
               and let's be friends 😊.
             </p>
           </div>

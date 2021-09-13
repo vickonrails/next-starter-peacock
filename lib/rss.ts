@@ -35,7 +35,7 @@ try {
 
   // Add Notes content to feed
   notesContent.sort(sortByDate).forEach((contentItem: NoteContent) => {
-    const { title, date, id, slug, description } = contentItem;
+    const { title, date, slug, description } = contentItem;
     const url = `${siteUrl}notes/${slug}`;
 
     feed.item({

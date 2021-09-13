@@ -1,15 +1,23 @@
-import React from "react";
-import { Layout, Container, Cards } from "../components";
-import { getContentList } from "../lib/content";
+import React from 'react';
+import { Cards, Container, ICard, Layout } from '../components';
+import { getContentList } from '../lib/content';
 
 /**
  * Article page `/articles`
  */
 
-const Articles = ({ articles }) => {
+type Props = {
+  articles: {
+    date?: Date | undefined;
+    previewImage: any;
+    id: string;
+  }[];
+};
+
+const Articles = ({ articles }: Props) => {
   return (
     <Layout
-      pathname={"/articles"}
+      pathname="/articles"
       pageTitle="Articles"
       pageDescription="Articles and Essays about Frontend Web Development and software engineering"
     >
@@ -21,7 +29,9 @@ const Articles = ({ articles }) => {
 
         <blockquote>
           All articles here are for demo purposes. But hey, the sky is the limit
-          🚀
+          <span aria-label="rocket" role="img">
+            🚀
+          </span>
         </blockquote>
         <Cards data={articles} basePath="articles" />
       </Container>
@@ -30,7 +40,20 @@ const Articles = ({ articles }) => {
 };
 
 export const getStaticProps = async () => {
-  const articles = getContentList("articles");
+  type NoteContent = {
+    data: {
+      title: string;
+      id: string;
+      slug: string;
+      date: Date;
+      previewImage: string;
+      description: string;
+    }[];
+    previewImage: string;
+    id: string;
+  };
+  const articles = getContentList('articles');
+  console.log('articles', articles);
   return {
     props: { articles },
   };
