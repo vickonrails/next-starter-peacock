@@ -5,7 +5,7 @@ import React from 'react';
 import { Container, Layout } from '../../components';
 import { Chips } from '../../components/chips/chips';
 import { StyledContent } from '../../components/styles/content.styles';
-import { getAllContentIds, getContentData } from '../../lib/content';
+import { getContentData } from '../../lib/content';
 
 /**
  *  Renders articles markdown posts
@@ -32,6 +32,7 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
 };
 
 export const getStaticPaths = async () => {
+  const { getAllContentIds } = await import('../../lib/content');
   const paths = getAllContentIds('articles');
   return {
     paths,

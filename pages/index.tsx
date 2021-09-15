@@ -33,7 +33,6 @@ export const getStaticProps = async () => {
   };
 
   const works: Work[] = await getContentList('work');
-  console.log('work', works);
   const selectedWorks = works.filter((work) => work.selectedWork);
 
   return {
