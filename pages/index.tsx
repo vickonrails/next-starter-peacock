@@ -12,7 +12,7 @@ import { getContentList } from '../lib/content';
 // @ts-ignore
 const Index: FC = ({ selectedWorks }) => {
   return (
-    <Layout pathname="/" pageTitle="Nextjs Starter Peacock">
+    <Layout pathname="/" pageTitle="Next.js Starter Peacock">
       <StyledIndexPage>
         <Container>
           <Cards data={selectedWorks} basePath="works" />

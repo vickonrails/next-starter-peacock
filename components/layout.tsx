@@ -36,7 +36,6 @@ const Layout = ({
   const toggleMenuOpen = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   };
-
   return (
     <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
       <Head>
