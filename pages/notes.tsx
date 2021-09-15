@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Layout } from '../components';
 import { INote } from '../components/notes/note';
 import NotesComponent from '../components/notes/notes';
-import { getContentList } from '../lib/content';
 
 /**
  * Blog page `/blog`
@@ -33,6 +32,7 @@ const Notes = ({ notes }: Props) => {
 };
 
 export const getStaticProps = async () => {
+  const { getContentList } = await import('../lib/content');
   const notes = getContentList('notes');
   return {
     props: { notes },

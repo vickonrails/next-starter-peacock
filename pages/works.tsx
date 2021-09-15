@@ -1,6 +1,5 @@
 import React from 'react';
 import { Cards, Container, Layout } from '../components';
-import { getContentList } from '../lib/content';
 
 /**
  * Work page `/work`
@@ -36,6 +35,7 @@ const Work = ({ works }: Props) => {
 };
 
 export const getStaticProps = async () => {
+  const { getContentList } = await import('../lib/content');
   const works = getContentList('work');
   return {
     props: { works },

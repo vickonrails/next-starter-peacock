@@ -3,7 +3,6 @@ import { Cards, Container, Layout } from '../components';
 import DesignCode from '../components/design-code';
 import ExperimentsSection from '../components/experiments';
 import { StyledIndexPage } from '../components/styles/home.styles';
-import { getContentList } from '../lib/content';
 
 /**
  * Index page `/index`
@@ -25,6 +24,7 @@ const Index: FC = ({ selectedWorks }) => {
 };
 
 export const getStaticProps = async () => {
+  const { getContentList } = await import('../lib/content');
   type Work = {
     [key: string]: any;
     date?: Date | undefined;
