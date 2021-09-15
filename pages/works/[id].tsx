@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { Container, Layout } from '../../components';
 import { StyledContent } from '../../components/styles/content.styles';
-import { getAllContentIds, getContentData } from '../../lib/content';
+import { getContentData } from '../../lib/content';
 import { IContentData } from '../articles/[id]';
 
 /**
@@ -35,6 +35,7 @@ const Article = ({ worksData }: Props) => {
 };
 
 export const getStaticPaths = async () => {
+  const { getAllContentIds } = await import('../../lib/content');
   const paths = getAllContentIds('work');
   return {
     paths,
