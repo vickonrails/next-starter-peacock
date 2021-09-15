@@ -8,9 +8,6 @@
     "start": "next start",
     "build:rss": "ts-node ./lib/rss.ts"
   },
-  "browser": {
-    "fs": false
-  },
   "dependencies": {
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
