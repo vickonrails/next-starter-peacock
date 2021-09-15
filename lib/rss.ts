@@ -1,4 +1,5 @@
-import fs from 'node:fs';
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import fs from 'fs';
 import { author, site } from '../config/index.json';
 import { getContentList, sortByDate } from './content';
 

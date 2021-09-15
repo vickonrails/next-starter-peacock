@@ -1,6 +1,8 @@
-import fs from 'node:fs';
-import path from 'node:path';
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import fs from 'fs';
 import matter from 'gray-matter';
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import path from 'path';
 import { remark } from 'remark';
 import highlight from 'remark-highlight.js';
 import { v4 as uuid } from 'uuid';
