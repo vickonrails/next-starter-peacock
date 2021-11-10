@@ -46,7 +46,7 @@
     "eslint-plugin-react": "7.27.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-testing-library": "5.0.0",
-    "eslint-plugin-unicorn": "37.0.1",
+    "eslint-plugin-unicorn": "38.0.1",
     "rss": "1.2.2",
     "ts-node": "10.4.0",
     "typescript": "4.4.4"
