@@ -1,5 +1,4 @@
-// eslint-disable-next-line unicorn/prefer-node-protocol
-import fs from 'fs';
+import fs from 'node:fs';
 import { author, site } from '../config/index.json';
 import { getContentList, sortByDate } from './content';
 
@@ -9,8 +8,7 @@ type NoteContent = {
   id: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const RSS = require('rss');
+const rss = require('rss');
 
 const { siteName, siteTitle, siteUrl } = site;
 
@@ -22,7 +20,7 @@ const year = new Date().getFullYear();
 try {
   console.log(`🔃 - Generating RSS feed at rss.xml`);
   // Instantiate RSS feed
-  const feed = new RSS({
+  const feed = new rss({
     title: siteName,
     description: siteTitle,
     feed_url: `${siteUrl}/rss.xml`,

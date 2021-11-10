@@ -19,8 +19,7 @@ type Menu = {
   toggleMenuOpen: (() => void) | null;
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export const MenuContext = createContext<Menu>({
+export const menuContext = createContext<Menu>({
   menuOpen: null,
   toggleMenuOpen: null,
 });
@@ -37,7 +36,7 @@ const Layout = ({
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   };
   return (
-    <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
+    <menuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
       <Head>
         <title>{`${pageTitle} | ${SiteConfig.site.siteTitle}`}</title>
         <meta
@@ -90,7 +89,7 @@ const Layout = ({
           <Footer />
         </>
       )}
-    </MenuContext.Provider>
+    </menuContext.Provider>
   );
 };
 

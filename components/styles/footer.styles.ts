@@ -29,18 +29,17 @@ export const StyledFooterSection = styled.footer`
   }
 `;
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const IconStyles = css`
+const iconStyles = css`
   height: 1.2em;
   width: 1.2em;
 `;
 
 export const GitHubIcon = styled(GitHub)`
-  ${IconStyles}
+  ${iconStyles}
 `;
 export const TwitterIcon = styled(Twitter)`
-  ${IconStyles}
+  ${iconStyles}
 `;
 export const CodepenIcon = styled(Codepen)`
-  ${IconStyles}
+  ${iconStyles}
 `;

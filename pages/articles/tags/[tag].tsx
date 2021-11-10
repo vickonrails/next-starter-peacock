@@ -1,7 +1,6 @@
 import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import { Params } from 'next/dist/server/router';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { Cards, Container, Layout } from '../../../components';
 import tagsJSON from '../../../config/tags.json';
 import { getContentWithTag } from '../../../lib/content';
@@ -38,7 +37,7 @@ const Category = ({ content, title, description }: Props) => {
   );
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = () => {
   // Get all the tags from the already defined site tags
   const paths = tagsJSON.map((tag) => {
     return {
@@ -54,9 +53,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (
+export const getStaticProps = (
   context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<Params>> => {
+): GetStaticPropsResult<Params> => {
   const { params } = context;
 
   if (!params?.tag) {

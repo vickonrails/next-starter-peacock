@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import SiteConfig from '../config/index.json';
-import { MenuContext } from './';
+import { menuContext } from './';
 import { Container } from './container';
 import Logo from './logo';
 import { NavSection, StyledHamburger } from './styles/nav.styles';
 
 const Nav = () => {
-  const menuContext = useContext(MenuContext);
+  const menuCtx = useContext(menuContext);
 
-  const { toggleMenuOpen, menuOpen } = menuContext;
+  const { toggleMenuOpen, menuOpen } = menuCtx;
 
   return (
     <NavSection>
