@@ -27,6 +27,7 @@
     "@types/node": "17.0.8",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "5.9.0",
     "@typescript-eslint/parser": "5.9.0",
     "@upleveled/eslint-config-upleveled": "2.1.8",
