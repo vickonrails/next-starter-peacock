@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import { Codepen, ExternalLink, GitHub } from 'react-feather';
 import { IExperiments } from '../content/experiments';
 import {
