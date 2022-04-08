@@ -12,12 +12,7 @@ export interface INote {
   description?: string;
 }
 
-const Note = ({
-  title,
-  slug,
-  date,
-  basePath,
-}: Omit<INote, 'id' | 'description'>) => {
+const Note = ({ title, slug, date, basePath }: Omit<INote, 'description'>) => {
   return (
     <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} passHref>
       <StyledNoteLink>
