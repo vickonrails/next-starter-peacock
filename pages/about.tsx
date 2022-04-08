@@ -29,7 +29,7 @@ const About = () => {
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 @Victor
               </a>
@@ -49,7 +49,7 @@ const About = () => {
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Twitter
               </a>{' '}
