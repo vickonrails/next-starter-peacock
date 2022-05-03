@@ -38,7 +38,7 @@ const Cards = ({ data, basePath }: ICard) => {
                 height={220}
                 sizes="(min-width: 640px) 700px, 400px"
               />
-              <time>{singleCard.date}</time>
+              <time>{singleCard.date.toString()}</time>
               <h2>{singleCard.title}</h2>
 
               {singleCard.description && <p>{singleCard.description}</p>}

@@ -23,7 +23,7 @@ const Article = ({ worksData }: Props) => {
     <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
-          <time>{worksData.date}</time>
+          <time>{worksData.date.toString()}</time>
           {worksData.previewImage && (
             <Image src={worksData.previewImage} height={550} width={1200} />
           )}

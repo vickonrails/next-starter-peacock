@@ -21,7 +21,7 @@ const Note = ({ title, slug, date, basePath }: Omit<INote, 'description'>) => {
             <span className="date-icon">
               <Calendar className="icon" />
             </span>
-            <p className="date-written">{date}</p>
+            <p className="date-written">{date.toString()}</p>
           </time>
           <h2>{title}</h2>
         </StyledNote>
