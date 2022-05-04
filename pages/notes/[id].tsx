@@ -24,7 +24,7 @@ const Note = ({ notesData }: Props) => {
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
-          <time>{notesData.date}</time>
+          <time>{notesData.date.toString()}</time>
           {notesData.previewImage && (
             <Image src={notesData.previewImage} height={550} width={1200} />
           )}

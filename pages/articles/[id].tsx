@@ -19,7 +19,7 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
-          <time>{articlesData.date}</time>
+          <time>{articlesData.date.toString()}</time>
           {articlesData.previewImage && (
             <Image src={articlesData.previewImage} height={550} width={1200} />
           )}
