@@ -1,5 +1,5 @@
 import { GetStaticPropsContext, GetStaticPropsResult } from 'next';
-import { Params } from 'next/dist/server/router';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { useRouter } from 'next/router';
 import { Container, Layout } from '../../../components';
 import { INote } from '../../../components/notes/note';
