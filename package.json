@@ -59,6 +59,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-react": "7.31.1",
     "eslint-plugin-jest": "26.9.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react-hooks": "4.6.0",
     "@typescript-eslint/utils": "5.36.1",
     "@types/react": "18.0.18",
