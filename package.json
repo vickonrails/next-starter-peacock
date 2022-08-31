@@ -37,7 +37,7 @@
     "cypress": "9.7.0",
     "eslint": "8.23.0",
     "eslint-config-react-app": "7.0.1",
-    "eslint-import-resolver-typescript": "2.7.1",
+    "eslint-import-resolver-typescript": "3.5.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-flowtype": "8.0.3",
     "eslint-plugin-import": "2.26.0",
