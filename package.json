@@ -19,7 +19,7 @@
     "react-tilt": "0.1.4",
     "remark": "14.0.2",
     "remark-highlight.js": "7.0.1",
-    "uuid": "8.3.2"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.9",
@@ -28,7 +28,7 @@
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
-    "@types/uuid": "8.3.4",
+    "@types/uuid": "9.0.0",
     "@typescript-eslint/eslint-plugin": "5.36.1",
     "@typescript-eslint/parser": "5.36.1",
     "@upleveled/eslint-config-upleveled": "3.4.4",
