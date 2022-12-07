@@ -52,14 +52,14 @@ export const getStaticProps = (
     };
   }
 
-  const contentCategory = Array.isArray(params.category)
-    ? params.category[0]
-    : params.category;
+  const contentCategory =
+    (Array.isArray(params.category) ? params.category[0] : params.category) ||
+    '';
 
   const content = getContentInCategory(contentCategory, 'notes');
   const categoryObject = categoryJSON.filter(
     (category) => category.category === params.category,
-  )[0];
+  )[0]!;
 
   return {
     props: {
