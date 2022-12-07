@@ -98,7 +98,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
   });
 
   // use the returned path to get the fullpath and read the file content
-  const fullPath = path.join(contentTypeDirectory, match[0]);
+  const fullPath = path.join(contentTypeDirectory, match[0]!);
   // const fullPath = path.join(contentTypeDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
