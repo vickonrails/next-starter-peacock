@@ -24,8 +24,13 @@ const Article = ({ worksData }: Props) => {
       <Container width="narrow">
         <StyledContent>
           <time>{worksData.date.toString()}</time>
-          {worksData.previewImage && (
-            <Image src={worksData.previewImage} height={550} width={1200} />
+          {!!worksData.previewImage && (
+            <Image
+              alt=""
+              src={worksData.previewImage}
+              height={550}
+              width={1200}
+            />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
@@ -50,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
-  const paramsId = Array.isArray(params.id) ? params.id[0] : params.id;
+  const paramsId = (Array.isArray(params.id) ? params.id[0] : params.id) || '';
 
   const worksData: IContentData = await getContentData(paramsId, 'work');
   return {

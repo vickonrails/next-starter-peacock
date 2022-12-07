@@ -16,11 +16,9 @@ const Nav = () => {
       <Container>
         <nav className="navWrapper">
           <div className="navLeft">
-            <Link href="/">
-              <a className="no-underline">
-                <Logo />
-                <span>{SiteConfig.author.name}</span>
-              </a>
+            <Link className="no-underline" href="/">
+              <Logo />
+              <span>{SiteConfig.author.name}</span>
             </Link>
           </div>
 
@@ -31,24 +29,16 @@ const Nav = () => {
 
             <ul className="navLinkList">
               <li data-cy="workPageLink" className="navLinkItem">
-                <Link href="/works">
-                  <a>Work</a>
-                </Link>
+                <Link href="/works">Work</Link>
               </li>
               <li data-cy="articlesPageLink" className="navLinkItem">
-                <Link href="/articles">
-                  <a>Articles</a>
-                </Link>
+                <Link href="/articles">Articles</Link>
               </li>
               <li data-cy="notesPageLink" className="navLinkItem">
-                <Link href="/notes">
-                  <a>Notes</a>
-                </Link>
+                <Link href="/notes">Notes</Link>
               </li>
               <li data-cy="aboutPageLink" className="navLinkItem">
-                <Link href="/about">
-                  <a>About</a>
-                </Link>
+                <Link href="/about">About</Link>
               </li>
 
               <li data-cy="rssPageLink" className="navLinkItem">

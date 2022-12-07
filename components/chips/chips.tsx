@@ -11,9 +11,7 @@ export const Chips = ({ items }: Props) => {
       <ul>
         {items.map((tag: string) => (
           <li key={tag}>
-            <Link href={`tags/${tag}`}>
-              <a>{tag}</a>
-            </Link>
+            <Link href={`tags/${tag}`}>{tag}</Link>
           </li>
         ))}
       </ul>

@@ -20,8 +20,13 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
       <Container width="narrow">
         <StyledContent>
           <time>{articlesData.date.toString()}</time>
-          {articlesData.previewImage && (
-            <Image src={articlesData.previewImage} height={550} width={1200} />
+          {!!articlesData.previewImage && (
+            <Image
+              alt=""
+              src={articlesData.previewImage}
+              height={550}
+              width={1200}
+            />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
           {articlesData.tags && <Chips items={articlesData.tags} />}
@@ -58,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
-  const contentId = Array.isArray(params.id) ? params.id[0] : params.id;
+  const contentId = (Array.isArray(params.id) ? params.id[0] : params.id) || '';
 
   const articlesData: IContentData = await getContentData(
     contentId,

@@ -8,32 +8,32 @@ const MobileNav = () => {
       <div className="mobile-nav-container">
         <ul className="linkList">
           <li className="listItem">
-            <Link href="/">
-              <a className="link">Home</a>
+            <Link className="no-underline" href="/">
+              Home
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/works">
-              <a className="link">Works</a>
+            <Link className="no-underline" href="/works">
+              Works
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/articles">
-              <a className="link">Articles</a>
+            <Link className="no-underline" href="/articles">
+              Articles
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/notes">
-              <a className="link">Notes</a>
+            <Link className="no-underline" href="/notes">
+              Notes
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/about">
-              <a className="link">About</a>
+            <Link className="no-underline" href="/about">
+              About
             </Link>
           </li>
 
