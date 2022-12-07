@@ -54,10 +54,11 @@ export const getStaticProps = (
     };
   }
 
-  const contentTag = Array.isArray(params.tag) ? params.tag[0] : params.tag;
+  const contentTag =
+    (Array.isArray(params.tag) ? params.tag[0] : params.tag) || '';
 
   const content = getContentWithTag(contentTag, 'notes');
-  const tagObject = tagsJSON.filter((json) => json.tag === params.tag)[0];
+  const tagObject = tagsJSON.filter((json) => json.tag === params.tag)[0]!;
 
   return {
     props: {
