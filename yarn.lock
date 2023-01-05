@@ -4650,10 +4650,10 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-libpg-query@13.3.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/libpg-query/-/libpg-query-13.3.0.tgz#c362285373c17619cc775870c0a36aed963fd149"
-  integrity sha512-9PKW8iRWnSCw+IW5LlZYq+bLMmAhKsAIR2en8iRYnoRLBg4x+HKHBb+PQyqFy8+jC7AmzV65A+DsUO7tiZddEQ==
+libpg-query@15.0.2:
+  version "15.0.2"
+  resolved "https://registry.yarnpkg.com/libpg-query/-/libpg-query-15.0.2.tgz#4126adb13579e172aec22da33614965dc54552d7"
+  integrity sha512-Nj+gQJPbvthDCfLb+NEcnhfUUW76N1otzD8xBxmr6kY4292GWJwhANse3SwGFGn5xl76WWAVW+IM7Wk5uyb9hg==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0.8"
     node-addon-api "^1.6.3"
