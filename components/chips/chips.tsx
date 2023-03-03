@@ -10,7 +10,7 @@ export const Chips = ({ items }: Props) => {
     <StyledChip>
       <ul>
         {items.map((tag: string) => (
-          <li key={tag}>
+          <li key={`tag-${tag}`}>
             <Link href={`tags/${tag}`}>{tag}</Link>
           </li>
         ))}

@@ -1,6 +1,6 @@
-import React from "react";
-import { StyledNotes } from "../styles/notes.styles";
-import Note, { INote } from "./note";
+import React from 'react';
+import { StyledNotes } from '../styles/notes.styles';
+import Note, { INote } from './note';
 
 interface INotes {
   notes: INote[];
@@ -12,7 +12,7 @@ const Notes = ({ notes, basePath }: INotes) => {
     <StyledNotes>
       {notes.map((note) => (
         <Note
-          key={note.id}
+          key={`note-${note.id}`}
           basePath={basePath}
           title={note.title}
           slug={note.slug}

@@ -41,7 +41,7 @@ const ExperimentItem = ({ experiment }: Props) => {
         <p>{experiment.description}</p>
         <ul>
           {experiment.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
+            <li key={`tag-${tag}`}>{tag}</li>
           ))}
         </ul>
       </StyledExperimentItemContainer>

@@ -24,7 +24,7 @@ const Cards = ({ data, basePath }: ICard) => {
   return (
     <StyledCards>
       {data.map((singleCard) => (
-        <article className="article" key={singleCard.id}>
+        <article className="article" key={`singleCard-${singleCard.id}`}>
           <Link
             href={`/${basePath}/[id]`}
             as={`/${basePath}/${singleCard.slug}`}
