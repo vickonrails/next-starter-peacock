@@ -3,5 +3,10 @@
   "extends": "@upleveled/eslint-config-upleveled/tsconfig.base.json",
   "compilerOptions": {
     "jsx": "preserve"
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
