@@ -20,7 +20,7 @@
     "react-tilt": "0.1.4",
     "remark": "14.0.2",
     "remark-highlight.js": "7.0.1",
-    "sharp": "0.31.3",
+    "sharp": "^0.31.3",
     "uuid": "9.0.0"
   },
   "devDependencies": {
