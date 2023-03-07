@@ -1590,10 +1590,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.8.tgz#50d680c8a8a78fe30abe6906453b21ad8ab0ad7b"
   integrity sha512-YofkM6fGv4gDJq78g4j0mMuGMkZVxZDgtU0JRdx6FgiJDG+0fY0GKVolOV8WqVmEhLCXkQRjwDdKyPxJp/uucg==
 
-"@types/node@18.14.5":
-  version "18.14.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.5.tgz#4a13a6445862159303fc38586598a9396fc408b3"
-  integrity sha512-CRT4tMK/DHYhw1fcCEBwME9CSaZNclxfzVMe7GsO6ULSwsttbj70wSiX6rZdIjGblu93sTJxLdhNIT85KKI7Qw==
+"@types/node@18.14.4":
+  version "18.14.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.14.4.tgz#0e64ec0b35a772e1e3d849f9a0ff61782d0cb647"
+  integrity sha512-VhCw7I7qO2X49+jaKcAUwi3rR+hbxT5VcYF493+Z5kMLI0DL568b7JI4IDJaxWFH0D/xwmGJNoXisyX+w7GH/g==
 
 "@types/node@^14.14.31":
   version "14.18.5"
@@ -1814,10 +1814,10 @@
     "@typescript-eslint/types" "5.9.0"
     eslint-visitor-keys "^3.0.0"
 
-"@upleveled/eslint-config-upleveled@^3.11.0":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-3.11.0.tgz#a6e319996324e0ff05eef263559b37b820410c56"
-  integrity sha512-q/A3kXtRk515OSXUWbT06XpWY2dgXVdOai9Hji3nTvs6W1wHz3ksqZnON7Wl/2+G6Tj/Op1O3cTjoczdA2A2VA==
+"@upleveled/eslint-config-upleveled@^3.12.1":
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-3.12.1.tgz#988f3d8f336081b2199686973cef3848dfd1273b"
+  integrity sha512-4/ro5jYEcnjdVxy4GD4uONojztMcw0I+YdP8mOVEBMQbfMt81IcVzEzlZPiemO6ymUK62BspMxAztBS+iuL+0A==
 
 "@upleveled/eslint-plugin-upleveled@2.1.6":
   version "2.1.6"
