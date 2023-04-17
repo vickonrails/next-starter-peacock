@@ -36,7 +36,7 @@
     "@types/uuid": "9.0.1",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
-    "@upleveled/eslint-config-upleveled": "3.12.1",
+    "@upleveled/eslint-config-upleveled": "4.0.10",
     "@upleveled/eslint-plugin-upleveled": "2.1.6",
     "babel-eslint": "10.1.0",
     "cypress": "12.7.0",
