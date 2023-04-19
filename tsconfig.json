@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@upleveled/eslint-config-upleveled/tsconfig.base.json",
+  "extends": "eslint-config-upleveled/tsconfig.base.json",
   "include": [
     "**/.eslintrc.cjs",
     "**/*.ts",
@@ -11,5 +11,8 @@
     "**/*.mjs",
     ".next/types/**/*.ts",
     "next-env.d.ts"
-  ]
+  ],
+  "compilerOptions": {
+    "jsx": "preserve"
+  }
 }
