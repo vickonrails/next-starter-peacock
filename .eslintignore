@@ -2,3 +2,8 @@ build
 
 # Next.js build folder
 .next
+
+# Type overrides for Next.js
+# https://github.com/upleveled/eslint-config-upleveled/commit/0789cfa8873176a675ccde4c569a4d7c9c5f04b2
+# https://github.com/vercel/next.js/issues/45943#issuecomment-1500874994
+next.d.ts
