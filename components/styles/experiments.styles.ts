@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import Tilt from "react-tilt";
+import styled from '@emotion/styled';
+import Tilt from 'react-parallax-tilt';
 
 export const Tilter = styled(Tilt)`
   padding: 40px 0;
