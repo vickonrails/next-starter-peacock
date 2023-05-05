@@ -25,9 +25,9 @@ dependencies:
   react-feather:
     specifier: 2.0.10
     version: 2.0.10(react@18.2.0)
-  react-tilt:
-    specifier: 0.1.4
-    version: 0.1.4(react-dom@18.2.0)(react@18.2.0)
+  react-parallax-tilt:
+    specifier: ^1.7.137
+    version: 1.7.137(react-dom@18.2.0)(react@18.2.0)
   remark:
     specifier: 14.0.2
     version: 14.0.2
@@ -5543,11 +5543,11 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  /react-tilt@0.1.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-bVeRumg+RIn6QN8S92UmubGqX/BG6/QeQISBeAcrS/70dpo/jVj+sjikIawDl5wTuPdubFH8zH0EMulWIctsnw==}
+  /react-parallax-tilt@1.7.137(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-PsuOXpsa/55n23/sd7sbSd91Fm7z37o1WYV2V0GMyo1IguaXmdoVGIqAZFynaxNWS6Go9TKR+CrzYuQHIiE6/g==}
     peerDependencies:
-      react: ^15.0.0 || ^16.0.0-beta || ^16.0.0
-      react-dom: ^15.0.0 || ^16.0.0-beta || ^16.0.0
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

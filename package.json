@@ -18,7 +18,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "2.0.10",
-    "react-tilt": "0.1.4",
+    "react-parallax-tilt": "^1.7.137",
     "remark": "14.0.2",
     "remark-highlight.js": "7.0.1",
     "sharp": "0.32.0",
