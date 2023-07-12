@@ -41,7 +41,7 @@
     "eslint-config-upleveled": "5.0.0",
     "postcss": "8.4.23",
     "rss": "1.2.2",
-    "stylelint": "15.5.0",
+    "stylelint": "15.10.1",
     "stylelint-config-upleveled": "1.0.2",
     "ts-node": "10.9.1",
     "typescript": "5.0.4"
