@@ -10,6 +10,23 @@ type Props = {
   experiment: IExperiments;
 };
 
+const GithubIcon = styled(GitHub)`
+  height: 0.8em;
+  width: 0.8em;
+  color: #777;
+`;
+
+const CodepenIcon = styled(Codepen)`
+  height: 0.8em;
+  width: 0.8em;
+  color: #777;
+`;
+const ExternalLinkIcon = styled(ExternalLink)`
+  height: 0.8em;
+  width: 0.8em;
+  color: #777;
+`;
+
 const ExperimentItem = ({ experiment }: Props) => {
   let icon;
 
@@ -48,22 +65,5 @@ const ExperimentItem = ({ experiment }: Props) => {
     </Tilter>
   );
 };
-
-const GithubIcon = styled(GitHub)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
-
-const CodepenIcon = styled(Codepen)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
-const ExternalLinkIcon = styled(ExternalLink)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
 
 export default ExperimentItem;

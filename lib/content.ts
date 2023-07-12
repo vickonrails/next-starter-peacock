@@ -16,6 +16,17 @@ type IContentType = 'articles' | 'notes' | 'work';
  * @param {string} contentType Type of content to get ids
  */
 
+export const sortByDate = (a: { date?: Date }, b: { date?: Date }) => {
+  if (!a.date || !b.date) return 0;
+  if (a.date > b.date) {
+    return -1;
+  } else if (a.date < b.date) {
+    return 1;
+  } else {
+    return 0;
+  }
+};
+
 export const getAllContentIds = (contentType: IContentType) => {
   let filenames;
   let baseDir: string;
@@ -145,6 +156,9 @@ export const getContentList = (contentType: IContentType) => {
       contentFiles = fs.readdirSync(workDirectory);
       contentDir = workDirectory;
       break;
+
+    default:
+      throw new Error('You have to provide a content type');
   }
 
   const content: { date?: Date; previewImage: any; id: string }[] = contentFiles
@@ -186,6 +200,9 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
     case 'work':
       contentDir = workDirectory;
       break;
+
+    default:
+      throw new Error('You have to provide a content type');
   }
 
   const contentFiles = fs.readdirSync(contentDir);
@@ -239,6 +256,9 @@ export const getContentInCategory = (
     case 'work':
       contentDir = workDirectory;
       break;
+
+    default:
+      throw new Error('You have to provide a content type');
   }
 
   const contentFiles = fs.readdirSync(contentDir);
@@ -268,15 +288,4 @@ export const getContentInCategory = (
     );
 
   return filteredContent.sort(sortByDate);
-};
-
-export const sortByDate = (a: { date?: Date }, b: { date?: Date }) => {
-  if (!a.date || !b.date) return 0;
-  if (a.date > b.date) {
-    return -1;
-  } else if (a.date < b.date) {
-    return 1;
-  } else {
-    return 0;
-  }
 };
