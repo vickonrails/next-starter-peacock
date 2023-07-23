@@ -9,7 +9,7 @@ export const Chips = ({ items }) => {
         {items.map((tag: string[], index: number) => (
           <li key={index}>
             <Link href={`tags/${tag}`}>
-              <a>{tag}</a>
+              {tag}
             </Link>
           </li>
         ))}

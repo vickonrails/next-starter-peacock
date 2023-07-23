@@ -9,32 +9,32 @@ const MobileNav = () => {
       <div className="mobile-nav-container">
         <ul className="linkList">
           <li className="listItem">
-            <Link href="/">
-              <a className="link">Home</a>
+            <Link href="/" className="link">
+              Home
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/works">
-              <a className="link">Works</a>
+            <Link href="/works" className="link">
+              Works
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/articles">
-              <a className="link">Articles</a>
+            <Link href="/articles" className="link">
+              Articles
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/notes">
-              <a className="link">Notes</a>
+            <Link href="/notes" className="link">
+              Notes
             </Link>
           </li>
 
           <li className="listItem">
-            <Link href="/about">
-              <a className="link">About</a>
+            <Link href="/about" className="link">
+              About
             </Link>
           </li>
 

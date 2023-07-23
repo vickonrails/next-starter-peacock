@@ -17,11 +17,9 @@ const Nav = () => {
       <Container>
         <nav className="navWrapper">
           <div className="navLeft">
-            <Link href="/">
-              <a className="no-underline">
-                <Logo />
-                <span>{SiteConfig.author.name}</span>
-              </a>
+            <Link href="/" className="no-underline">
+              <Logo />
+              <span>{SiteConfig.author.name}</span>
             </Link>
           </div>
 
@@ -34,22 +32,22 @@ const Nav = () => {
             <ul className="navLinkList">
               <li className="navLinkItem">
                 <Link href="/works">
-                  <a>Work</a>
+                  Work
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/articles">
-                  <a>Articles</a>
+                  Articles
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/notes">
-                  <a>Notes</a>
+                  Notes
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/about">
-                  <a>About</a>
+                  About
                 </Link>
               </li>
 
