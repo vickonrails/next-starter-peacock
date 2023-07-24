@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import { StyledChip } from "../styles/chips.styles";
+import Link from 'next/link';
+import React from 'react';
+import { StyledChip } from '../styles/chips.styles';
 
 export const Chips = ({ items }) => {
   return (

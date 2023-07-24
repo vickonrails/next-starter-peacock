@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
-import { StyledMobileNav } from "../styles/nav.styles";
+import { StyledMobileNav } from '../styles/nav.styles';
 
 const MobileNav = () => {
   return (

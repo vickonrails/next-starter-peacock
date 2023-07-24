@@ -1,13 +1,13 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getContentWithTag } from "../../../lib/content";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { getContentWithTag } from '../../../lib/content';
 
-import tagsJSON from "../../../config/tags.json";
-import { Layout } from "../../../components/layout";
-import { Container } from "../../../components/container";
-import NotesComponent from "../../../components/notes/notes";
+import tagsJSON from '../../../config/tags.json';
+import { Layout } from '../../../components/layout';
+import { Container } from '../../../components/container';
+import NotesComponent from '../../../components/notes/notes';
 
-const category = ({ content, title, description }) => {
+const Category = ({ content, title, description }) => {
   const { pathname } = useRouter();
 
   return (
@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  let content = getContentWithTag(params.tag, "notes");
+  let content = getContentWithTag(params.tag, 'notes');
   const tagObject = tagsJSON.filter((json) => json.tag === params.tag)[0];
 
   return {
@@ -49,4 +49,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default category;
+export default Category;

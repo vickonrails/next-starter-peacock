@@ -1,6 +1,6 @@
-import { AppProps } from "next/app";
+import { AppProps } from 'next/app';
 
-import "../components/styles/layout.css";
+import '../components/styles/layout.css';
 
 /**
  * Root level component for all pages

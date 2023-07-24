@@ -1,23 +1,23 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { GitHub, Codepen, ExternalLink } from "react-feather";
+import React from 'react';
+import styled from '@emotion/styled';
+import { GitHub, Codepen, ExternalLink } from 'react-feather';
 
 import {
   StyledExperimentItemContainer,
   Tilter,
-} from "./styles/experiments.styles";
+} from './styles/experiments.styles';
 
 const ExperimentItem = ({ experiment }) => {
   let icon;
 
   switch (experiment.location) {
-    case "codepen":
+    case 'codepen':
       icon = <CodepenIcon role="img" />;
       break;
-    case "github":
+    case 'github':
       icon = <GithubIcon role="img" />;
       break;
-    case "medium":
+    case 'medium':
     default:
       icon = <ExternalLinkIcon role="img" />;
   }

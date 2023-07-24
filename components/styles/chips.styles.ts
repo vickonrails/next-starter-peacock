@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { IContainer } from "../container";
+import styled from '@emotion/styled';
+import { IContainer } from '../container';
 
 export const StyledChip = styled.div<IContainer>`
   //   display: flex;

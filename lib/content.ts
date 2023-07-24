@@ -1,17 +1,19 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { v4 as uuid } from "uuid";
-import { remark } from "remark";
-import html from "remark-html";
-import remarkPrism from "remark-prism";
-import { IContentData } from "../pages/articles/[id]";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { v4 as uuid } from 'uuid';
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import html from 'remark-html';
+import remarkPrism from 'remark-prism';
+import gfm from 'remark-gfm'
+import { IContentData } from '../pages/articles/[id]';
 
-const workDirectory = path.join(process.cwd(), "content", "work");
-const notesDirectory = path.join(process.cwd(), "content", "notes");
-const articlesDirectory = path.join(process.cwd(), "content", "articles");
+const workDirectory = path.join(process.cwd(), 'content', 'work');
+const notesDirectory = path.join(process.cwd(), 'content', 'notes');
+const articlesDirectory = path.join(process.cwd(), 'content', 'articles');
 
-type IContentType = "articles" | "notes" | "work";
+type IContentType = 'articles' | 'notes' | 'work';
 
 /**
  * Get IDs of all markdown post
@@ -24,29 +26,29 @@ export const getAllContentIds = (contentType: IContentType) => {
 
   // determine where to look for content types
   switch (contentType) {
-    case "articles":
+    case 'articles':
       baseDir = articlesDirectory;
       filenames = fs.readdirSync(articlesDirectory);
       break;
 
-    case "notes":
+    case 'notes':
       baseDir = notesDirectory;
       filenames = fs.readdirSync(notesDirectory);
       break;
 
-    case "work":
+    case 'work':
       baseDir = workDirectory;
       filenames = fs.readdirSync(workDirectory);
       break;
 
     default:
-      throw new Error("You have to provide a content type");
+      throw new Error('You have to provide a content type');
   }
 
   // return the slug of all the content IDs
   return filenames.map((filename) => {
     const filePath = path.join(baseDir, filename);
-    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
 
     const matterResult = matter(fileContent);
 
@@ -70,30 +72,30 @@ export const getContentData = async (id: string, contentType: IContentType) => {
   let contentTypeDirectory;
   let filenames;
   switch (contentType) {
-    case "articles":
+    case 'articles':
       filenames = fs.readdirSync(articlesDirectory);
       contentTypeDirectory = articlesDirectory;
       break;
 
-    case "notes":
+    case 'notes':
       filenames = fs.readdirSync(notesDirectory);
       contentTypeDirectory = notesDirectory;
       break;
 
-    case "work":
+    case 'work':
       filenames = fs.readdirSync(workDirectory);
       contentTypeDirectory = workDirectory;
       break;
 
     default:
-      throw new Error("You have to provide a content type");
+      throw new Error('You have to provide a content type');
   }
 
   // loop through all the content types and compare the slug to get the filename
   const match = filenames.filter((filename) => {
     const filePath = path.join(contentTypeDirectory, filename);
 
-    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
     const matterResult = matter(fileContent);
     const { slug } = matterResult.data;
 
@@ -103,11 +105,13 @@ export const getContentData = async (id: string, contentType: IContentType) => {
   // use the returned path to get the fullpath and read the file content
   const fullPath = path.join(contentTypeDirectory, match[0]);
   // const fullPath = path.join(contentTypeDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf-8");
+  const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
   const matterResult = matter(fileContents);
-  const processedContent = await remark()
-    .use(html)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(html, { sanitize: false })
+    .use(gfm)
     .use(remarkPrism)
     .process(matterResult.content);
 
@@ -118,10 +122,10 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     contentHtml,
     title: matterResult.data.title,
     date: matterResult.data.date,
-    previewImage: matterResult.data.previewImage || "",
-    description: matterResult.data.description || "",
+    previewImage: matterResult.data.previewImage || '',
+    description: matterResult.data.description || '',
     tags: matterResult.data.tags || [],
-    category: matterResult.data.category || "",
+    category: matterResult.data.category || '',
   };
 };
 
@@ -134,36 +138,36 @@ export const getContentList = (contentType: IContentType) => {
   let contentDir;
 
   switch (contentType) {
-    case "articles":
+    case 'articles':
       contentFiles = fs.readdirSync(articlesDirectory);
       contentDir = articlesDirectory;
 
       break;
 
-    case "notes":
+    case 'notes':
       contentFiles = fs.readdirSync(notesDirectory);
       contentDir = notesDirectory;
       break;
 
-    case "work":
+    case 'work':
       contentFiles = fs.readdirSync(workDirectory);
       contentDir = workDirectory;
       break;
   }
 
   const content = contentFiles
-    .filter((content) => content.endsWith(".md"))
+    .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
       const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
+        encoding: 'utf-8',
       });
 
       const { data } = matter(rawContent);
 
       return {
         ...data,
-        previewImage: data.previewImage || "/images/image-placeholder.png",
+        previewImage: data.previewImage || '/images/image-placeholder.png',
         id: uuid(),
       };
     });
@@ -180,15 +184,15 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
   let contentFiles;
 
   switch (contentType) {
-    case "articles":
+    case 'articles':
       contentDir = articlesDirectory;
       break;
 
-    case "notes":
+    case 'notes':
       contentDir = notesDirectory;
       break;
 
-    case "work":
+    case 'work':
       contentDir = workDirectory;
       break;
   }
@@ -196,18 +200,18 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
   contentFiles = fs.readdirSync(contentDir);
 
   let contentData = contentFiles
-    .filter((content) => content.endsWith(".md"))
+    .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
       const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
+        encoding: 'utf-8',
       });
 
       const { data } = matter(rawContent);
 
       return {
         ...data,
-        previewImage: data.previewImage || "/images/image-placeholder.png",
+        previewImage: data.previewImage || '/images/image-placeholder.png',
         id: uuid(),
       };
     });
@@ -231,15 +235,15 @@ export const getContentInCategory = (
   let contentFiles;
 
   switch (contentType) {
-    case "articles":
+    case 'articles':
       contentDir = articlesDirectory;
       break;
 
-    case "notes":
+    case 'notes':
       contentDir = notesDirectory;
       break;
 
-    case "work":
+    case 'work':
       contentDir = workDirectory;
       break;
   }
@@ -247,18 +251,18 @@ export const getContentInCategory = (
   contentFiles = fs.readdirSync(contentDir);
 
   let contentData = contentFiles
-    .filter((content) => content.endsWith(".md"))
+    .filter((content) => content.endsWith('.md'))
     .map((content) => {
       const path = `${contentDir}/${content}`;
       const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
+        encoding: 'utf-8',
       });
 
       const { data } = matter(rawContent);
 
       return {
         ...data,
-        previewImage: data.previewImage || "/images/image-placeholder.png",
+        previewImage: data.previewImage || '/images/image-placeholder.png',
         id: uuid(),
       };
     });

@@ -1,6 +1,6 @@
-import React from "react";
-import { Layout, Container, Cards } from "../components";
-import { getContentList } from "../lib/content";
+import React from 'react';
+import { Layout, Container, Cards } from '../components';
+import { getContentList } from '../lib/content';
 
 /**
  * Article page `/articles`
@@ -9,13 +9,13 @@ import { getContentList } from "../lib/content";
 const Articles = ({ articles }) => {
   return (
     <Layout
-      pathname={"/articles"}
+      pathname={'/articles'}
       pageTitle="Articles"
       pageDescription="Articles and Essays about Frontend Web Development and software engineering"
     >
       <Container>
         <p className="page-intro">
-          More long form articles and essays about new things I'm exploring and
+          More long form articles and essays about new things I&apos;m exploring and
           learning about...
         </p>
 
@@ -30,7 +30,7 @@ const Articles = ({ articles }) => {
 };
 
 export const getStaticProps = async () => {
-  const articles = getContentList("articles");
+  const articles = getContentList('articles');
   return {
     props: { articles },
   };

@@ -1,7 +1,7 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes } from 'react';
 
-import { Container } from "../container";
-import { StyledPageHeading } from "../styles/header.styles";
+import { Container } from '../container';
+import { StyledPageHeading } from '../styles/header.styles';
 
 interface IPageHeader extends HTMLAttributes<HTMLHeadingElement> {
   headingTitle: string;

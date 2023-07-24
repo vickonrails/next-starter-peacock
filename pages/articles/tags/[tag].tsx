@@ -1,11 +1,11 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getContentWithTag } from "../../../lib/content";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { getContentWithTag } from '../../../lib/content';
 
-import tagsJSON from "../../../config/tags.json";
-import { Cards, Container, Layout } from "../../../components";
+import tagsJSON from '../../../config/tags.json';
+import { Cards, Container, Layout } from '../../../components';
 
-const category = ({ content, title, description }) => {
+const Category = ({ content, title, description }) => {
   const { pathname } = useRouter();
   return (
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  let content = getContentWithTag(params.tag, "articles");
+  let content = getContentWithTag(params.tag, 'articles');
   const tagObject = tagsJSON.filter((json) => json.tag === params.tag)[0];
 
   return {
@@ -51,4 +51,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default category;
+export default Category;

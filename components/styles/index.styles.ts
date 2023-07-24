@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 // import BackgroundImage from "./images/background-pattern.jpg";
 
 export const StyledIndex = styled.div`
