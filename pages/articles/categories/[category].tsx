@@ -1,12 +1,12 @@
-import React from "react";
-import { useRouter } from "next/router";
-import { getContentInCategory } from "../../../lib/content";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { getContentInCategory } from '../../../lib/content';
 
-import categoryJSON from "../../../config/categories.json";
-import { Container, Layout } from "../../../components";
-import NotesComponent from "../../../components/notes/notes";
+import categoryJSON from '../../../config/categories.json';
+import { Container, Layout } from '../../../components';
+import NotesComponent from '../../../components/notes/notes';
 
-const category = ({ content, title, description }) => {
+const Category = ({ content, title, description }) => {
   const { pathname } = useRouter();
   return (
     <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
@@ -35,7 +35,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  let content = getContentInCategory(params.category, "articles");
+  let content = getContentInCategory(params.category, 'articles');
   const categoryObject = categoryJSON.filter(
     (category) => category.category === params.category
   )[0];
@@ -49,4 +49,4 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export default category;
+export default Category;

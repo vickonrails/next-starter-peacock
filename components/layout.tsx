@@ -1,12 +1,12 @@
-import React, { useState, createContext, ReactNode } from "react";
-import Head from "next/head";
-import SiteConfig from "../config/index.json";
+import React, { useState, createContext, ReactNode } from 'react';
+import Head from 'next/head';
+import SiteConfig from '../config/index.json';
 
-import { StyledMain } from "./styles/layout.styles";
-import Header from "./header/header";
-import Footer from "./footer";
-import Nav from "./nav";
-import MobileNav from "./nav/mobile-nav";
+import { StyledMain } from './styles/layout.styles';
+import Header from './header/header';
+import Footer from './footer';
+import Nav from './nav';
+import MobileNav from './nav/mobile-nav';
 
 interface ILayout {
   children: ReactNode;

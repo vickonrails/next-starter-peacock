@@ -1,11 +1,11 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image'
 
-import { Layout, Container } from "../../components";
-import { getAllContentIds, getContentData } from "../../lib/content";
-import { IContentData } from "../articles/[id]";
-import { StyledContent } from "../../components/styles/content.styles";
+import { Layout, Container } from '../../components';
+import { getAllContentIds, getContentData } from '../../lib/content';
+import { IContentData } from '../articles/[id]';
+import { StyledContent } from '../../components/styles/content.styles';
 
 /**
  *  Renders work markdown posts
@@ -20,7 +20,7 @@ const Article = ({ worksData }) => {
       <Container width="narrow">
         <StyledContent>
           <time>{worksData.date}</time>
-          {worksData.previewImage && <Image src={worksData.previewImage} height={550} width={1200} />}
+          {worksData.previewImage && <Image src={worksData.previewImage} height={550} width={1200} alt="" />}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>
@@ -29,7 +29,7 @@ const Article = ({ worksData }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllContentIds("work");
+  const paths = getAllContentIds('work');
   return {
     paths,
     fallback: false,
@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const worksData: IContentData = await getContentData(params.id, "work");
+  const worksData: IContentData = await getContentData(params.id, 'work');
   return {
     props: {
       worksData,

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Container } from "../container";
-import siteConfig from "../../config/index.json";
-import { StyledHomeHeading } from "../styles/header.styles";
+import { Container } from '../container';
+import siteConfig from '../../config/index.json';
+import { StyledHomeHeading } from '../styles/header.styles';
 
 const HomeHeader = () => (
   <StyledHomeHeading>

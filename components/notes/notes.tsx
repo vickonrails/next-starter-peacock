@@ -1,6 +1,6 @@
-import React from "react";
-import { StyledNotes } from "../styles/notes.styles";
-import Note, { INote } from "./note";
+import React from 'react';
+import { StyledNotes } from '../styles/notes.styles';
+import Note, { INote } from './note';
 
 interface INotes {
   notes: INote[];

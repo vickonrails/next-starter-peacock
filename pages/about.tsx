@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import Image from 'next/image'
 
-import { Layout, Container } from "../components";
-import { StyledAbout } from "../components/styles/about.styles";
+import { Layout, Container } from '../components';
+import { StyledAbout } from '../components/styles/about.styles';
 
 /**
  * About page `/about`
@@ -10,7 +10,7 @@ import { StyledAbout } from "../components/styles/about.styles";
 const About = () => {
   return (
     <Layout
-      pathname={"/about"}
+      pathname={'/about'}
       pageTitle="About"
       pageDescription="About page of Peacock starter by Victor Ofoegbu, Product Designer and Frontend Software Engineer in Nigeria"
     >
@@ -18,19 +18,19 @@ const About = () => {
         <Container width="narrow">
           <div className="postContent">
             <div className="avatarImage">
-              <Image src="/images/avatar.jpg" width={200} height={200} alt="Victor Ofoegbu" />
+              <Image src="/images/avatar.jpg" width={200} height={200} alt="" objectFit="cover" />
             </div>
             <p>
-              I'm{" "}
+              I&apos;m{' '}
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
-                rel="noopenner noreferrer"
+                rel="noopener noreferrer"
               >
                 @Victor
               </a>
               , a Designer and Frontend Engineer learning to build fast and
-              delightful experiences on the web. I'm also passionate about Web
+              delightful experiences on the web. I&apos;m also passionate about Web
               Standards, Design Systems and Learning in Public.
             </p>
             <p>
@@ -41,15 +41,15 @@ const About = () => {
             <p>
               I work heavily with ReactJs, Redux, Styled Components, Figma,
               Storybook & recently picked up C#/Dotnet Core for backend APIs. If
-              you're excited about any of the following, please shoot at me on{" "}
+              you&apos;re excited about any of the following, please shoot at me on{' '}
               <a
                 href="https://twitter.com/vick_OnRails"
                 target="_blank"
-                rel="noopenner noreferrer"
+                rel="noopener noreferrer"
               >
                 Twitter
-              </a>{" "}
-              and let's be friends 😊.
+              </a>{' '}
+              and let&apos;s be friends 😊.
             </p>
           </div>
         </Container>

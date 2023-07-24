@@ -1,8 +1,8 @@
-import React from "react";
-import { experiments } from "../content/experiments";
-import { Container } from "./container";
-import { StyledExperimentsSection } from "./styles/experiments.styles";
-import ExperimentItem from "./experiment";
+import React from 'react';
+import { experiments } from '../content/experiments';
+import { Container } from './container';
+import { StyledExperimentsSection } from './styles/experiments.styles';
+import ExperimentItem from './experiment';
 
 const ExperimentsSection = () => (
   <StyledExperimentsSection>
