@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Container } from "../container";
-import { StyledPageHeading } from "../styles/header.styles";
+import { Container } from '../container';
+import { StyledPageHeading } from '../styles/header.styles';
 
 const AboutHeader = () => (
   <StyledPageHeading>

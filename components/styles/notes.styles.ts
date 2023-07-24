@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledNoteLink = styled.a`
   text-decoration: none;

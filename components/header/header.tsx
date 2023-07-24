@@ -1,7 +1,7 @@
-import React from "react";
-import HomeHeader from "./home-header";
-import AboutHeader from "./about-header";
-import PageHeader from "./page-header";
+import React from 'react';
+import HomeHeader from './home-header';
+import AboutHeader from './about-header';
+import PageHeader from './page-header';
 
 interface IHeader {
   pathname: string;
@@ -12,10 +12,10 @@ interface IHeader {
 
 const header = ({ pathname, title }: IHeader) => {
   switch (pathname) {
-    case "/":
+    case '/':
       return <HomeHeader />;
 
-    case "/about":
+    case '/about':
       return <AboutHeader />;
 
     default:

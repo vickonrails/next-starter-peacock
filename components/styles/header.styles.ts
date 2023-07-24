@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledHomeHeading = styled.div`
   @media (min-width: 1024px) {

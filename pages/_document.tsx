@@ -1,7 +1,7 @@
-import Document, { Head, Main, NextScript, Html } from "next/document";
+import Document, { Head, Main, NextScript, Html } from 'next/document';
 
-import { site } from "../config/index.json";
-import ANALYTICS_ID from "../lib/gtag";
+import { site } from '../config/index.json';
+import ANALYTICS_ID from '../lib/gtag';
 
 export default class MyDocument extends Document {
   render() {
@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
             src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}
           />
           <link
-            href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
+            href={'https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css'}
             rel="stylesheet"
           />
 

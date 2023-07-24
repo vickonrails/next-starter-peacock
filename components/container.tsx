@@ -1,6 +1,6 @@
-import React, { FC, HTMLAttributes } from "react";
-import { StyledContainer } from "./styles/container.styles";
-import { IWidth } from "../util/getWidth";
+import React, { FC, HTMLAttributes } from 'react';
+import { StyledContainer } from './styles/container.styles';
+import { IWidth } from '../util/getWidth';
 
 export interface IContainer extends HTMLAttributes<HTMLElement> {
   width?: IWidth;
@@ -8,7 +8,7 @@ export interface IContainer extends HTMLAttributes<HTMLElement> {
 
 const Container: FC<IContainer> = ({
   children,
-  width = "default",
+  width = 'default',
   ...props
 }) => {
   return (

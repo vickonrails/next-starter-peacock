@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import Link from "next/link";
+import React, { useContext } from 'react';
+import Link from 'next/link';
 
-import { NavSection, StyledHamburger } from "./styles/nav.styles";
-import Logo from "./logo";
-import { Container } from "./container";
-import SiteConfig from "../config/index.json";
-import { MenuContext } from ".";
+import { NavSection, StyledHamburger } from './styles/nav.styles';
+import Logo from './logo';
+import { Container } from './container';
+import SiteConfig from '../config/index.json';
+import { MenuContext } from '.';
 
 const Nav = () => {
   const menuContext = useContext(MenuContext);
@@ -17,11 +17,9 @@ const Nav = () => {
       <Container>
         <nav className="navWrapper">
           <div className="navLeft">
-            <Link href="/">
-              <a className="no-underline">
-                <Logo />
-                <span>{SiteConfig.author.name}</span>
-              </a>
+            <Link href="/" className="no-underline">
+              <Logo />
+              <span>{SiteConfig.author.name}</span>
             </Link>
           </div>
 
@@ -34,22 +32,22 @@ const Nav = () => {
             <ul className="navLinkList">
               <li className="navLinkItem">
                 <Link href="/works">
-                  <a>Work</a>
+                  Work
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/articles">
-                  <a>Articles</a>
+                  Articles
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/notes">
-                  <a>Notes</a>
+                  Notes
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/about">
-                  <a>About</a>
+                  About
                 </Link>
               </li>
 
