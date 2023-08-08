@@ -1,7 +1,5 @@
 import { AppProps } from 'next/app';
 
-// TODO: move these global styles into tailwind config
-import '../components/styles/layout.css';
 import '../components/styles/globals.css';
 
 /**

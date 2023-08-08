@@ -13,7 +13,7 @@ const Nav = () => {
       <Container>
         <nav className="navWrapper flex justify-between items-center">
           <div className="navLeft">
-            <Link href="/" className="flex items-center text-neutral-400 hover:text-white">
+            <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
               <Logo />
               <span>{SiteConfig.author.name}</span>
             </Link>

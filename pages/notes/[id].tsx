@@ -24,8 +24,8 @@ const Note = ({ notesData }) => {
             <Image src={notesData.previewImage} height={550} width={1200} alt="" />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          {notesData.tags && <Chips items={notesData.tags} />}
         </section>
+        {notesData.tags && <Chips items={notesData.tags} />}
       </Container>
     </Layout>
   );

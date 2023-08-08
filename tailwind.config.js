@@ -10,11 +10,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['Manrope', 'system-ui', '-apple-system', 'BlinkMacSystemFont']
+      },
       backgroundImage: {
-        'home-page-pattern': "url('/images/background-pattern.jpg')"
+        'home-page-pattern': "url('/images/background-pattern.jpg')",
+      },
+      backgroundColor: {
+        light: 'var(--background-light)',
+        body: 'var(--background)'
       },
       colors: {
-        primary: '#b94c50'
+        primary: 'var(--prim-color)',
+        bright: 'var(--text-color-bright)',
+        'body-text': 'var(--text-color)'
       },
       boxShadow: {
         glow: '0 0 3px 2px #3c1516'

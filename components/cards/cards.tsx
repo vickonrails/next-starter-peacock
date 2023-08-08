@@ -22,7 +22,7 @@ interface ICard {
 
 const Cards = ({ data, basePath }: ICard) => {
   return (
-    <section className="flex sm:flex-row flex-col flex-wrap md:justify-between text-neutral-500 ">
+    <section className="flex sm:flex-row flex-col flex-wrap md:justify-between text-bright ">
       {data.map((singleCard, idx) => (
         <article
           className={
@@ -36,6 +36,7 @@ const Cards = ({ data, basePath }: ICard) => {
           <Link
             href={`/${basePath}/[id]`}
             as={`/${basePath}/${singleCard.slug}`}
+            className="no-underline"
           >
             <Image
               src={singleCard.previewImage}
@@ -45,17 +46,17 @@ const Cards = ({ data, basePath }: ICard) => {
               sizes="(min-width: 640px) 700px, 400px"
               className="w-full object-cover mb-[0.4rem] transition-transform duration-200 group-hover:scale-110"
             />
-            <time className="text-sm text-neutral-500">
+            <time className="text-sm text-bright">
               {singleCard.date.toString()}
             </time>
             <h2
-              className="font-bold text-lg mb-1 text-neutral-400 group-hover:underline group-hover:text-white"
+              className="font-bold text-lg mb-1 text-body-text group-hover:underline group-hover:text-white"
             >
               {singleCard.title}
             </h2>
 
             {singleCard.description && (
-              <p className="text-neutral-500 group-hover:text-neutral-400">
+              <p className="text-bright group-hover:text-body-text">
                 {singleCard.description}
               </p>
             )}

@@ -82,7 +82,7 @@ const Layout = ({
       ) : (
         <>
           <Header pathname={pathname} title={pageTitle} />
-          <main className="mb-8">{children}</main>
+          <main>{children}</main>
           <Footer />
         </>
       )}

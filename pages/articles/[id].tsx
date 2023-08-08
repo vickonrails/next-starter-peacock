@@ -23,8 +23,8 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
             <Image className="mb-4 block object-cover" src={articlesData.previewImage} height={550} width={1200} alt="" />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          {articlesData.tags && <Chips items={articlesData.tags} />}
         </section>
+        {articlesData.tags && <Chips items={articlesData.tags} />}
       </Container>
     </Layout>
   );

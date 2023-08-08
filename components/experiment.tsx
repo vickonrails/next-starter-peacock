@@ -4,7 +4,7 @@ import Tilt from 'react-parallax-tilt';
 
 const ExperimentItem = ({ experiment }) => {
   let icon;
-  const classes = 'text-neutral-500'
+  const classes = 'text-bright'
 
   switch (experiment.location) {
     case 'codepen':
@@ -22,23 +22,23 @@ const ExperimentItem = ({ experiment }) => {
     <Tilt
       scale={1}
       transitionSpeed={200}
-      className="rounded bg-[#202020] mb-3 p-3 cursor-pointer sm:mx-2 sm:mb-4 sm:basis-[40%] sm:flex-grow sm:flex-shrink lg:basis-[30%]"
+      className="rounded bg-light mb-3 p-3 cursor-pointer sm:mx-2 sm:mb-4 sm:basis-[40%] sm:flex-grow sm:flex-shrink lg:basis-[30%]"
     >
       <a
-        className=""
+        className="no-underline"
         href={experiment.link}
         rel="noopener noreferrer"
         target="_blank"
       >
         <div className="flex items-center justify-between">
-          <time className="text-xs text-neutral-500">{experiment.date}</time>
+          <time className="text-xs text-bright">{experiment.date}</time>
           <span>{icon}</span>
         </div>
         <h3 className="mb-2 text-base">{experiment.title}</h3>
         <p className="mb-2">{experiment.description}</p>
         <ul className="list-none">
           {experiment.tags.map((tag, index) => (
-            <li key={index} className="inline-block text-xs mr-2 border border-primary text-primary py-1 px-3 mb-1">{tag}</li>
+            <li key={index} className="inline-block text-xs mr-2 border-2 border-primary text-primary py-1 px-3 mb-1">{tag}</li>
           ))}
         </ul>
       </a>

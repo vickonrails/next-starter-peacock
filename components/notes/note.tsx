@@ -15,7 +15,7 @@ export interface INote {
 
 const Note = ({ date, title, slug, basePath }: INote) => {
   return (
-    <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} className="cursor-pointer no-underline">
+    <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} className="cursor-pointer no-underline hover:underline">
       <article className="flex flex-col mb-4 sm:mb-0 sm:flex-row sm:items-center">
         <time className="flex w-52 text-sm items-center">
           <span className="date-icon">
