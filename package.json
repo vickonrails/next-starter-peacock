@@ -10,8 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
     "@types/uuid": "^9.0.2",
     "gray-matter": "^4.0.3",
     "next": "^13.4.12",
