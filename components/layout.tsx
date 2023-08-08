@@ -2,7 +2,6 @@ import React, { useState, createContext, ReactNode } from 'react';
 import Head from 'next/head';
 import SiteConfig from '../config/index.json';
 
-import { StyledMain } from './styles/layout.styles';
 import Header from './header/header';
 import Footer from './footer';
 import Nav from './nav';
@@ -83,7 +82,7 @@ const Layout = ({
       ) : (
         <>
           <Header pathname={pathname} title={pageTitle} />
-          <StyledMain>{children}</StyledMain>
+          <main className="mb-8">{children}</main>
           <Footer />
         </>
       )}

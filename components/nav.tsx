@@ -1,57 +1,50 @@
-import React, { useContext } from 'react';
+import React, { HTMLAttributes, useContext } from 'react';
 import Link from 'next/link';
 
-import { NavSection, StyledHamburger } from './styles/nav.styles';
 import Logo from './logo';
 import { Container } from './container';
 import SiteConfig from '../config/index.json';
 import { MenuContext } from '.';
+import clsx from 'clsx';
 
 const Nav = () => {
-  const menuContext = useContext(MenuContext);
-
-  const { toggleMenuOpen, menuOpen } = menuContext;
-
   return (
-    <NavSection>
+    <header className="py-4 mb-20 relative z-10">
       <Container>
-        <nav className="navWrapper">
+        <nav className="navWrapper flex justify-between items-center">
           <div className="navLeft">
-            <Link href="/" className="no-underline">
+            <Link href="/" className="flex items-center text-neutral-400 hover:text-white">
               <Logo />
               <span>{SiteConfig.author.name}</span>
             </Link>
           </div>
 
-          <div className="navRight">
-            <StyledHamburger
-              menuOpen={menuOpen}
-              onClick={toggleMenuOpen}
-            ></StyledHamburger>
+          <div className="relative">
+            <Hamburger />
 
-            <ul className="navLinkList">
-              <li className="navLinkItem">
+            <ul className="hidden list-none md:flex">
+              <li className="mr-2">
                 <Link href="/works">
                   Work
                 </Link>
               </li>
-              <li className="navLinkItem">
+              <li className="mr-2">
                 <Link href="/articles">
                   Articles
                 </Link>
               </li>
-              <li className="navLinkItem">
+              <li className="mr-2">
                 <Link href="/notes">
                   Notes
                 </Link>
               </li>
-              <li className="navLinkItem">
+              <li className="mr-2">
                 <Link href="/about">
                   About
                 </Link>
               </li>
 
-              <li className="navLinkItem">
+              <li>
                 <a
                   href={`${SiteConfig.site.siteUrl}/rss.xml`}
                   target="_blank"
@@ -64,8 +57,28 @@ const Nav = () => {
           </div>
         </nav>
       </Container>
-    </NavSection>
+    </header>
   );
 };
 
 export default Nav;
+
+
+const Hamburger = (props: HTMLAttributes<HTMLElement>) => {
+  const menuContext = useContext(MenuContext);
+  const { toggleMenuOpen, menuOpen } = menuContext;
+
+  return (
+    <button
+      className={
+        clsx(`
+          h-4 w-8 bg-inherit block p-3 border-white border relative border-none rounded-[50%] transition-all
+          cursor-pointer focus:outline-white active:outline-white before:content-[""] before:bg-white
+          before:h-[2px] before:w-full before:absolute before:block before:right-0 after:content-[""] after:bg-white
+          after:h-[2px] after:w-full after:absolute after:block after:right-0 md:hidden`,
+          menuOpen ? 'before:top-[12px] before:rotate-45 after:w-full after:bottom-[11px] after:-rotate-45' : 'before:top-[8px] after:w-[80%] after:bottom-[8px]'
+        )}
+      onClick={toggleMenuOpen}
+    />
+  )
+}

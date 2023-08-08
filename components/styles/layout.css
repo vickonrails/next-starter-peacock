@@ -30,11 +30,11 @@
 
 a {
   color: var(--prim-color);
-  text-decoration: underline var(--prim-color);
+  /* text-decoration: underline var(--prim-color); */
 }
 a:hover,
 a:visited:hover {
-  text-decoration: underline var(--prim-color);
+  /* text-decoration: underline var(--prim-color); */
   color: #fff;
 }
 a:focus {
@@ -65,7 +65,6 @@ ol {
 body {
   background: #121212;
   color: #999;
-  transition: all var(--transition-duration) var(--transition-timing-function);
 }
 .page-intro {
   text-align: center;
@@ -157,16 +156,19 @@ figcaption {
   }
 }
 
+/* md */
 @media (min-width: 759px) {
   h1 {
     font-size: 3em;
   }
 }
+/* lg */
 @media (min-width: 1024px) {
   h1 {
     font-size: 4em;
   }
 }
+/* xl */
 @media (min-width: 1336px) {
   h1 {
     font-size: 4.37em;

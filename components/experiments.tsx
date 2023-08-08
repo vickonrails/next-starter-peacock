@@ -1,25 +1,24 @@
 import React from 'react';
 import { experiments } from '../content/experiments';
 import { Container } from './container';
-import { StyledExperimentsSection } from './styles/experiments.styles';
 import ExperimentItem from './experiment';
 
 const ExperimentsSection = () => (
-  <StyledExperimentsSection>
+  <section className="my-10">
     <Container>
-      <h2>Experiments</h2>
-      <p className="section-intro max-width">
+      <h2 className="text-3xl mb-4">Experiments</h2>
+      <p className="section-intro max-width mb-6">
         I try to stage little experiments to help me learn things I find
         interesting. I almost never finish them 🙈. But I learn a lot anyways
       </p>
 
-      <section className="experiments">
+      <section className="flex flex-wrap">
         {experiments.map((experiment, index) => (
           <ExperimentItem key={index} experiment={experiment} />
         ))}
       </section>
     </Container>
-  </StyledExperimentsSection>
+  </section>
 );
 
 export default ExperimentsSection;

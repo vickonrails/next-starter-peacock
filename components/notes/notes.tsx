@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyledNotes } from '../styles/notes.styles';
 import Note, { INote } from './note';
 
 interface INotes {
@@ -9,7 +8,7 @@ interface INotes {
 
 const Notes = ({ notes, basePath }: INotes) => {
   return (
-    <StyledNotes>
+    <section>
       {notes.map((note) => (
         <Note
           key={note.id}
@@ -20,7 +19,7 @@ const Notes = ({ notes, basePath }: INotes) => {
           date={note.date}
         />
       ))}
-    </StyledNotes>
+    </section>
   );
 };
 

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Layout, Container } from '../../components';
 import { getAllContentIds, getContentData } from '../../lib/content';
 import { IContentData } from '../articles/[id]';
-import { StyledContent } from '../../components/styles/content.styles';
 import { Chips } from '../../components/chips/chips';
 
 /**
@@ -19,14 +18,14 @@ const Note = ({ notesData }) => {
   return (
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
-        <StyledContent>
+        <section className="content">
           <time>{notesData.date}</time>
           {notesData.previewImage && (
             <Image src={notesData.previewImage} height={550} width={1200} alt="" />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
           {notesData.tags && <Chips items={notesData.tags} />}
-        </StyledContent>
+        </section>
       </Container>
     </Layout>
   );

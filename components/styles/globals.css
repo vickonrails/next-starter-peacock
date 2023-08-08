@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    h1 {
+        @apply text-5xl leading-[1.25] font-extrabold mb-4;
+        color: var(--text-color-white);
+      }
+
+    a {
+        color: var(--prim-color);
+        /* text-decoration: underline var(--prim-color); */
+    }
+    a:hover,
+    a:visited:hover {
+        /* text-decoration: underline var(--prim-color); */
+        color: #fff;
+    }
+    a:focus {
+        outline-color: var(--prim-color);
+        text-decoration: none;
+      }
+    a.no-underline {
+        text-decoration: none;
+    }
+    p,
+    table {
+        margin-bottom: 1.5em;
+        color: var(--text-color);
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 1em;
+        font-family: "Manrope";
+        color: var(--text-color-white);
+    }
+}
+
+@layer components {
+        .content {
+            @apply block;
+        }
+        .content pre code {
+            @apply overflow-hidden;
+        }
+        .content li {
+            @apply mb-2;
+        }
+        .content ul ul,
+        .content ol ol {
+            @apply mb-0;
+        }
+        .content img {
+            @apply mb-4 block object-cover;
+        }
+        .content ul,
+        .content ol {
+            @apply px-4;
+        }
+        .content time {
+            @apply text-center block mb-8;
+        }
+}

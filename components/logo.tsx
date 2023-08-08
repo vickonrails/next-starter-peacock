@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyledLogo } from './styles/logo.styles';
 
 const Logo = () => {
-  return <StyledLogo src="/images/logo.svg" alt="logo" />;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src="/images/logo.svg" alt="logo" className="h-4 w-4 mr-1" />;
 };
 
 export default Logo;

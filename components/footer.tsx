@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  StyledFooterSection,
-  GitHubIcon,
-  CodepenIcon,
-  TwitterIcon,
-} from './styles/footer.styles';
 import { Container } from './container';
+import { Codepen, GitHub, Twitter } from 'react-feather';
 
 const Footer = () => (
-  <StyledFooterSection>
-    <Container className="footer-container">
-      <ul className="footerSocialLinks">
-        <li className="footerSocialLink">
+  <footer>
+    <Container className="flex justify-center items-center">
+      <ul className="flex m-auto mb-4">
+        <li className="block mr-2">
           <a
             className="footerLink"
             href="https://github.com/vickOnRails"
@@ -19,38 +14,38 @@ const Footer = () => (
             rel="noreferrer noopener"
             aria-label="github"
           >
-            <GitHubIcon />
+            <GitHub />
           </a>
         </li>
 
-        <li className="footerSocialLink">
+        <li>
           <a
-            className="footerLink"
+            className="block mr-2"
             href="https://codepen.io/Vick_onrails"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="codepen"
           >
-            <CodepenIcon />
+            <Codepen />
           </a>
         </li>
 
-        <li className="footerSocialLink">
+        <li>
           <a
-            className="footerLink"
+            className="block mr-2"
             href="https://twitter.com/vick_onrails"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="twitter"
           >
-            <TwitterIcon />
+            <Twitter />
           </a>
         </li>
       </ul>
     </Container>
 
     <Container>
-      <p className="about-site">
+      <p className="text-center max-w-xs mx-auto text-sm">
         Built by{' '}
         <a
           href="https://twitter.com/vick_OnRails"
@@ -59,7 +54,7 @@ const Footer = () => (
         >
           @vick_onrails
         </a>
-        . With NextJS, TypeScript Emotion and Vercel.{' '}
+        . With NextJS, TypeScript, TailwindCSS and Vercel.{' '}
         <a
           href="https://github.com/vickOnRails/next-starter-peacock"
           target="_blank"
@@ -69,7 +64,7 @@ const Footer = () => (
         </a>
       </p>
     </Container>
-  </StyledFooterSection>
+  </footer>
 );
 
 export default Footer;
