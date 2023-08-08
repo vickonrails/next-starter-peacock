@@ -1,66 +1,49 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { GitHub, Codepen, ExternalLink } from 'react-feather';
-
-import {
-  StyledExperimentItemContainer,
-  Tilter,
-} from './styles/experiments.styles';
+import Tilt from 'react-parallax-tilt';
 
 const ExperimentItem = ({ experiment }) => {
   let icon;
+  const classes = 'text-bright'
 
   switch (experiment.location) {
     case 'codepen':
-      icon = <CodepenIcon role="img" />;
+      icon = <Codepen role="img" className={classes} size={18} />;
       break;
     case 'github':
-      icon = <GithubIcon role="img" />;
+      icon = <GitHub role="img" className={classes} size={18} />;
       break;
     case 'medium':
     default:
-      icon = <ExternalLinkIcon role="img" />;
+      icon = <ExternalLink className={classes} role="img" size={18} />;
   }
 
   return (
-    <Tilter scale={1} transitionSpeed={200}>
-      <StyledExperimentItemContainer
-        className="experiments-container"
+    <Tilt
+      scale={1}
+      transitionSpeed={200}
+      className="rounded bg-light mb-3 p-3 cursor-pointer sm:mx-2 sm:mb-4 sm:basis-[40%] sm:flex-grow sm:flex-shrink lg:basis-[30%]"
+    >
+      <a
+        className="no-underline"
         href={experiment.link}
         rel="noopener noreferrer"
         target="_blank"
       >
-        <div className="experiment-meta">
-          <time className="experiment-date">{experiment.date}</time>
+        <div className="flex items-center justify-between">
+          <time className="text-xs text-bright">{experiment.date}</time>
           <span>{icon}</span>
         </div>
-        <h3 className="experiment-item-heading">{experiment.title}</h3>
-        <p>{experiment.description}</p>
-        <ul>
+        <h3 className="mb-2 text-base">{experiment.title}</h3>
+        <p className="mb-2">{experiment.description}</p>
+        <ul className="list-none">
           {experiment.tags.map((tag, index) => (
-            <li key={index}>{tag}</li>
+            <li key={index} className="inline-block text-xs mr-2 border-2 border-primary text-primary py-1 px-3 mb-1">{tag}</li>
           ))}
         </ul>
-      </StyledExperimentItemContainer>
-    </Tilter>
+      </a>
+    </Tilt>
   );
 };
-
-const GithubIcon = styled(GitHub)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
-
-const CodepenIcon = styled(Codepen)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
-const ExternalLinkIcon = styled(ExternalLink)`
-  height: 0.8em;
-  width: 0.8em;
-  color: #777;
-`;
 
 export default ExperimentItem;

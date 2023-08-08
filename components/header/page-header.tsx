@@ -1,20 +1,15 @@
 import React, { HTMLAttributes } from 'react';
 
 import { Container } from '../container';
-import { StyledPageHeading } from '../styles/header.styles';
 
 interface IPageHeader extends HTMLAttributes<HTMLHeadingElement> {
   headingTitle: string;
 }
 
 const PageHeader = ({ headingTitle }: IPageHeader) => (
-  <StyledPageHeading className="page">
-    <Container>
-      <div className="header-container">
-        <h1>{headingTitle}</h1>
-      </div>
-    </Container>
-  </StyledPageHeading>
+  <Container>
+    <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4">{headingTitle}</h1>
+  </Container>
 );
 
 export default PageHeader;

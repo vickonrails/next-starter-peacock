@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 import { Layout, Container } from '../../components';
 import { getAllContentIds, getContentData } from '../../lib/content';
-import { StyledContent } from '../../components/styles/content.styles';
 import { Chips } from '../../components/chips/chips';
 
 /**
@@ -18,14 +17,14 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
   return (
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
-        <StyledContent>
-          <time>{articlesData.date.toString()}</time>
+        <section className="content">
+          <time className="text-center block mb-8">{articlesData.date.toString()}</time>
           {articlesData.previewImage && (
-            <Image src={articlesData.previewImage} height={550} width={1200} alt="" />
+            <Image className="mb-4 block object-cover" src={articlesData.previewImage} height={550} width={1200} alt="" />
           )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-          {articlesData.tags && <Chips items={articlesData.tags} />}
-        </StyledContent>
+        </section>
+        {articlesData.tags && <Chips items={articlesData.tags} />}
       </Container>
     </Layout>
   );

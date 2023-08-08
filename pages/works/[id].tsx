@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Layout, Container } from '../../components';
 import { getAllContentIds, getContentData } from '../../lib/content';
 import { IContentData } from '../articles/[id]';
-import { StyledContent } from '../../components/styles/content.styles';
 
 /**
  *  Renders work markdown posts
@@ -18,11 +17,11 @@ const Article = ({ worksData }) => {
   return (
     <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
       <Container width="narrow">
-        <StyledContent>
+        <section className="content">
           <time>{worksData.date}</time>
           {worksData.previewImage && <Image src={worksData.previewImage} height={550} width={1200} alt="" />}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        </StyledContent>
+        </section>
       </Container>
     </Layout>
   );
