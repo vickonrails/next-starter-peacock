@@ -6,8 +6,8 @@ import ExperimentItem from './experiment';
 const ExperimentsSection = () => (
   <section className="my-10">
     <Container>
-      <h2 className="text-3xl mb-4">Experiments</h2>
-      <p className="section-intro max-width mb-6">
+      <h2 className="mb-4">Experiments</h2>
+      <p className="section-intro max-w-4xl mb-6 text-md">
         I try to stage little experiments to help me learn things I find
         interesting. I almost never finish them 🙈. But I learn a lot anyways
       </p>

@@ -33,12 +33,10 @@ export default function ContentListPage({ params }) {
 
     return (
         <>
-            <Container>
+            <Container width={isNotes ? 'narrow' : 'default'}>
                 <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4">
                     {title}
                 </h1>
-            </Container>
-            <Container>
                 <p className="page-intro">
                     {description}
                 </p>

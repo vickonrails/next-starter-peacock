@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import fs from 'fs';
 
-import { getContentList, sortByDate } from './content';
+import { IContent, getContentList, sortByDate } from './content';
 import { site, author } from '../config/index.json';
-import { INote } from '../components/notes/note';
 
 const RSS = require('rss');
 
@@ -30,7 +29,7 @@ try {
   });
 
   // Add Notes content to feed
-  notesContent.sort(sortByDate).map((contentItem: INote) => {
+  notesContent.sort(sortByDate).map((contentItem: IContent) => {
     const { title, date, id, slug, description } = contentItem;
     const url = `${siteUrl}notes/${slug}`;
 
@@ -45,7 +44,7 @@ try {
   });
 
   // Add Articles content to feed
-  articlesContent.sort(sortByDate).map((contentItem: INote) => {
+  articlesContent.sort(sortByDate).map((contentItem: IContent) => {
     const { title, date, id, slug, description } = contentItem;
     const url = `${siteUrl}/articles/${slug}`;
     feed.item({

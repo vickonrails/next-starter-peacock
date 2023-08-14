@@ -16,7 +16,7 @@
         --background: #121212;
         --background-light: #202020;
 
-        @apply text-xl;
+        @apply text-lg leading-normal;
     }
     *,
     *:after,
@@ -24,7 +24,10 @@
         @apply m-0 p-0 box-border;
     }
     h1 {
-        @apply text-5xl leading-[1.25] font-extrabold mb-4 text-white sm:text-5xl lg:text-6xl 2xl:text-7xl;
+        @apply text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 text-white;
+    }
+    h2 {
+        @apply text-2xl;
     }
     a {
         @apply text-primary
@@ -78,7 +81,7 @@
         @apply outline-primary no-underline decoration-primary;
     }
     html {
-        @apply text-[16px] leading-[1.5] text-body-text font-body;
+        @apply text-[16px] text-body-text font-body;
     }
     ul,
     ol {

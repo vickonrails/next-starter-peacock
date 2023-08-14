@@ -12,6 +12,7 @@ export function Notes({ notes, basePath }: INotes) {
     <section>
       {notes.map((note) => (
         <Note
+          id={note.id}
           key={note.slug}
           basePath={basePath}
           title={note.title}

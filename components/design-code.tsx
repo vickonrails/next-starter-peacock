@@ -5,7 +5,7 @@ import { Container } from './container';
 
 const DesignCode = () => {
   return (
-    <section className="py-10 text-body-text bg-home-page-pattern bg-white">
+    <section className="py-14 text-body-text bg-home-page-pattern bg-white">
       <Container className="md:flex items-center flex-wrap">
         <div className="md:flex-1 sm:mb-4 md:mr-[5%]">
           <h2 className="text-3xl text-neutral-800 mb-4 font-bold lg:text-5xl">Design+Code</h2>

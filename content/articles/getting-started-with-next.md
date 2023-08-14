@@ -6,6 +6,7 @@ description: "NextJS is a framework for building server-side and static sites in
 category: weekly-notes
 tags:
   - javascript
+  - css
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.

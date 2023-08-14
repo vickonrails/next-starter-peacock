@@ -31,6 +31,7 @@ export default async function ContentPage({ params }) {
 
     return (
         <Container width="narrow">
+            <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4 text-2xl md:text-4xl">{content.title}</h1>
             <section className="content">
                 <time className="time mb-8">{content.date.toString()}</time>
                 {content.previewImage && (

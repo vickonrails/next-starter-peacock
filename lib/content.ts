@@ -7,7 +7,7 @@ import remarkParse from 'remark-parse'
 import html from 'remark-html';
 import rehypeHighlight from 'rehype-highlight';
 import gfm from 'remark-gfm'
-import { IContentData } from '../pages-archive/articles-archive/[id]-archive';
+import { IContentData } from '../app/[contentType]/[slug]/page';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');
@@ -18,6 +18,7 @@ export type IContent = {
   slug: string;
   basePath: string
   date: Date;
+  id: string;
 
   description?: string;
   previewImage?: string
