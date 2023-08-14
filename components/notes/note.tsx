@@ -1,19 +1,9 @@
 import React from 'react';
 import { Calendar } from 'react-feather';
 import Link from 'next/link';
+import { IContent } from '../../lib/content';
 
-export interface INote {
-  title: string;
-  id: string;
-  slug: string;
-  date: Date;
-  basePath: string;
-  description?: string;
-}
-
-// TODO: make a time component
-
-const Note = ({ date, title, slug, basePath }: INote) => {
+export function Note({ date, title, slug, basePath }: IContent) {
   return (
     <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} className="cursor-pointer no-underline hover:underline">
       <article className="flex flex-col mb-4 sm:mb-0 sm:flex-row sm:items-center">
@@ -28,5 +18,3 @@ const Note = ({ date, title, slug, basePath }: INote) => {
     </Link>
   );
 };
-
-export default Note;

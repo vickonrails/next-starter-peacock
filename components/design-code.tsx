@@ -3,8 +3,6 @@ import Image from 'next/image'
 
 import { Container } from './container';
 
-// TODO: make the text library a bit more formal 
-// maybe have a typography component
 const DesignCode = () => {
   return (
     <section className="py-10 text-body-text bg-home-page-pattern bg-white">

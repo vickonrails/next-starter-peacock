@@ -10,8 +10,8 @@ import HomeHeader from '../components/header/home-header';
  * Index page `/index`
  */
 
-const Index: FC = async () => {
-    const works = await getContentList('work')
+const Index = async () => {
+    const works = await getContentList('works')
         .filter((work) => work.selectedWork);
 
     return (

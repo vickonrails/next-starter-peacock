@@ -5,15 +5,25 @@ import { v4 as uuid } from 'uuid';
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import html from 'remark-html';
-import remarkPrism from 'remark-prism';
+import rehypeHighlight from 'rehype-highlight';
 import gfm from 'remark-gfm'
-import { IContentData } from '../pages/articles-archive/[id]-archive';
+import { IContentData } from '../pages-archive/articles-archive/[id]-archive';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles');
 
-export type IContentType = 'articles' | 'notes' | 'work';
+export type IContent = {
+  title: string;
+  slug: string;
+  basePath: string
+  date: Date;
+
+  description?: string;
+  previewImage?: string
+}
+
+export type IContentType = 'articles' | 'notes' | 'works';
 
 /**
  * Get IDs of all markdown post
@@ -36,7 +46,7 @@ export const getAllContentIds = (contentType: IContentType) => {
       filenames = fs.readdirSync(notesDirectory);
       break;
 
-    case 'work':
+    case 'works':
       baseDir = workDirectory;
       filenames = fs.readdirSync(workDirectory);
       break;
@@ -71,7 +81,7 @@ export const getAllContentIds = (contentType: IContentType) => {
 export const getContentData = async (id: string, contentType: IContentType) => {
   let contentTypeDirectory;
   let filenames;
-  switch (contentType) {
+  switch (contentType.toLowerCase()) {
     case 'articles':
       filenames = fs.readdirSync(articlesDirectory);
       contentTypeDirectory = articlesDirectory;
@@ -82,7 +92,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
       contentTypeDirectory = notesDirectory;
       break;
 
-    case 'work':
+    case 'works':
       filenames = fs.readdirSync(workDirectory);
       contentTypeDirectory = workDirectory;
       break;
@@ -112,7 +122,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     .use(remarkParse)
     .use(html, { sanitize: false })
     .use(gfm)
-    // .use(remarkPrism)
+    .use(rehypeHighlight)
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
@@ -149,7 +159,7 @@ export const getContentList = (contentType: IContentType) => {
       contentDir = notesDirectory;
       break;
 
-    case 'work':
+    case 'works':
       contentFiles = fs.readdirSync(workDirectory);
       contentDir = workDirectory;
       break;
@@ -192,7 +202,7 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
       contentDir = notesDirectory;
       break;
 
-    case 'work':
+    case 'works':
       contentDir = workDirectory;
       break;
   }
@@ -243,7 +253,7 @@ export const getContentInCategory = (
       contentDir = notesDirectory;
       break;
 
-    case 'work':
+    case 'works':
       contentDir = workDirectory;
       break;
   }

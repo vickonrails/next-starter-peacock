@@ -32,7 +32,7 @@ const ExperimentItem = ({ experiment }) => {
         target="_blank"
       >
         <div className="flex items-center justify-between">
-          <time className="text-xs text-bright">{experiment.date}</time>
+          <time className="time">{experiment.date}</time>
           <span>{icon}</span>
         </div>
         <h3 className="mb-2 text-base">{experiment.title}</h3>

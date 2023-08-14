@@ -5,7 +5,7 @@ import { getContentList } from '../lib/content';
 /**
  * Work page `/work`
  */
-const Work = ({ works }) => {
+export default function Work({ works }) {
   return (
     <Layout
       pathname={'/works'}
@@ -24,10 +24,8 @@ const Work = ({ works }) => {
 };
 
 export const getStaticProps = async () => {
-  const works = getContentList('work');
+  const works = getContentList('works');
   return {
     props: { works },
   };
 };
-
-export default Work;

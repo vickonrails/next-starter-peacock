@@ -78,7 +78,7 @@
         @apply outline-primary no-underline decoration-primary;
     }
     html {
-        @apply text-[17px] leading-[1.5] text-body-text font-body;
+        @apply text-[16px] leading-[1.5] text-body-text font-body;
     }
     ul,
     ol {
@@ -109,6 +109,9 @@
 }
 
 @layer components {
+        .time {
+            @apply text-xs text-bright text-center block;
+        }
         .content {
             @apply block;
         }
