@@ -15,6 +15,7 @@ export const metadata = {
 export default function About() {
   return (
     <Container width="narrow">
+      <h1 className="text-3xl text-center mb-6 md:text-4xl">About Me 🧘🏾‍♂️</h1>
       <div className="postContent">
         <div className="mb-3 float-left mr-2 md:mr-4" style={{ shapeOutside: 'circle()' }}>
           <Image src="/images/avatar.jpg" width={150} height={150} alt="" objectFit="cover" className="rounded-full" />

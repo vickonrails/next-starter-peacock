@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 const MobileNav = () => {
   return (
-    // section
     <section className="absolute inset-0 animate-slide-in">
       <div className="flex items-center justify-center min-h-full">
         <ul className="list-none">

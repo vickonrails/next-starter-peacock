@@ -4,8 +4,7 @@ import 'highlight.js/styles/tokyo-night-dark.css';
 import '../components/styles/globals.css';
 
 import { site, author } from '../config/index.json';
-import Footer from '../components/footer';
-import Nav from '../components/nav';
+import { Layout } from '../components';
 
 export const metadata: Metadata = {
     title: `${site.siteTitle} | ${site.siteDescription}`,
@@ -42,11 +41,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <Nav />
-                <main className="min-h-[400px]">
-                    {children}
-                </main>
-                <Footer />
+                <Layout>
+                    <main className="min-h-[400px]">
+                        {children}
+                    </main>
+                </Layout>
             </body>
         </html >
     )

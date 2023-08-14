@@ -32,14 +32,16 @@ const Cards = ({ items, basePath }: ICard) => {
             as={`/${basePath}/${singleCard.slug}`}
             className="no-underline"
           >
-            <Image
-              src={singleCard.previewImage!}
-              alt=""
-              width={450}
-              height={220}
-              sizes="(min-width: 640px) 700px, 400px"
-              className="w-full object-cover mb-[0.4rem] transition-transform duration-200 group-hover:scale-110"
-            />
+            <div className="overflow-hidden max-h-40 mb-2">
+              <Image
+                src={singleCard.previewImage!}
+                alt=""
+                width={450}
+                height={220}
+                sizes="(min-width: 640px) 700px, 400px"
+                className="w-full object-cover mb-[0.4rem] transition-transform duration-200 group-hover:scale-110"
+              />
+            </div>
             <time className="time text-left">
               {singleCard.date.toString()}
             </time>

@@ -11,14 +11,14 @@ import HomeHeader from '../components/header/home-header';
  */
 
 const Index = async () => {
-    const works = await getContentList('works')
+    const content = await getContentList('works')
         .filter((work) => work.selectedWork);
 
     return (
         <>
             <HomeHeader />
             <Container>
-                <Cards data={works} basePath="works" />
+                <Cards items={content} basePath="works" />
             </Container>
             <DesignCode />
             <ExperimentsSection />
