@@ -7,13 +7,13 @@ import remarkParse from 'remark-parse'
 import html from 'remark-html';
 import remarkPrism from 'remark-prism';
 import gfm from 'remark-gfm'
-import { IContentData } from '../pages/articles/[id]';
+import { IContentData } from '../pages/articles-archive/[id]-archive';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');
 const articlesDirectory = path.join(process.cwd(), 'content', 'articles');
 
-type IContentType = 'articles' | 'notes' | 'work';
+export type IContentType = 'articles' | 'notes' | 'work';
 
 /**
  * Get IDs of all markdown post
@@ -112,7 +112,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     .use(remarkParse)
     .use(html, { sanitize: false })
     .use(gfm)
-    .use(remarkPrism)
+    // .use(remarkPrism)
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();

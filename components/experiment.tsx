@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { GitHub, Codepen, ExternalLink } from 'react-feather';
 import Tilt from 'react-parallax-tilt';

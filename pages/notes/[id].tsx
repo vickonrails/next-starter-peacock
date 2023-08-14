@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { Layout, Container } from '../../components';
 import { getAllContentIds, getContentData } from '../../lib/content';
-import { IContentData } from '../articles/[id]';
+import { IContentData } from '../articles-archive/[id]-archive';
 import { Chips } from '../../components/chips/chips';
 
 /**

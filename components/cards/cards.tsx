@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image'
 import clsx from 'clsx';
 
-interface ICard {
+export interface ICard {
   basePath: string;
   data: {
     title: string;
