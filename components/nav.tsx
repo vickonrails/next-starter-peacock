@@ -28,20 +28,20 @@ const Nav = () => {
             )}
 
             <ul className="navLinkList">
-              <li data-cy="workPageLink" className="navLinkItem">
+              <li data-test-id="workPageLink" className="navLinkItem">
                 <Link href="/works">Work</Link>
               </li>
-              <li data-cy="articlesPageLink" className="navLinkItem">
+              <li data-test-id="articlesPageLink" className="navLinkItem">
                 <Link href="/articles">Articles</Link>
               </li>
-              <li data-cy="notesPageLink" className="navLinkItem">
+              <li data-test-id="notesPageLink" className="navLinkItem">
                 <Link href="/notes">Notes</Link>
               </li>
-              <li data-cy="aboutPageLink" className="navLinkItem">
+              <li data-test-id="aboutPageLink" className="navLinkItem">
                 <Link href="/about">About</Link>
               </li>
 
-              <li data-cy="rssPageLink" className="navLinkItem">
+              <li data-test-id="rssPageLink" className="navLinkItem">
                 <a
                   href={`${SiteConfig.site.siteUrl}/rss.xml`}
                   target="_blank"

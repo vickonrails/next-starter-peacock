@@ -6,7 +6,7 @@ const AboutHeader = () => (
   <StyledPageHeading>
     <Container>
       <div className="header-container">
-        <h1 className="about-header">
+        <h1 data-test-id="pageTitle" className="about-header">
           About Me
           <span aria-label="person-doing-meditation" role="img">
             🧘🏾‍♂️

@@ -10,7 +10,7 @@ const PageHeader = ({ headingTitle }: IPageHeader) => (
   <StyledPageHeading className="page">
     <Container>
       <div className="header-container">
-        <h1 data-cy="pageTitle">{headingTitle}</h1>
+        <h1 data-test-id="pageTitle">{headingTitle}</h1>
       </div>
     </Container>
   </StyledPageHeading>

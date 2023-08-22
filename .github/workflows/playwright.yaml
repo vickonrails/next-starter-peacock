@@ -1,0 +1,50 @@
+name: Playwright Tests
+on: push
+
+jobs:
+  playwright-tests:
+    name: Playwright Tests
+    runs-on: ubuntu-latest # or macos-latest, windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 'latest'
+
+      # Use the official setup-node action (sets up Node.js):
+      # https://github.com/actions/setup-node
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build Next.js app
+        run: pnpm build
+
+      # Cache and install Playwright browser binaries, modified version of:
+      # https://github.com/microsoft/playwright/issues/7249#issuecomment-1154603556
+      # https://github.com/microsoft/playwright/issues/7249#issuecomment-1385567519
+      # https://playwrightsolutions.com/playwright-github-action-to-cache-the-browser-binaries/
+      - name: Get installed Playwright version for cache key
+        run: echo "PLAYWRIGHT_VERSION=$(yq eval '.version' --output-format=yaml ./node_modules/@playwright/test/package.json)" >> $GITHUB_ENV
+      - name: Cache Playwright browser binaries
+        uses: actions/cache@v3
+        id: playwright-browser-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+      - name: Install Playwright browsers only on cache miss
+        run: pnpm playwright install --with-deps chromium
+        if: steps.playwright-browser-cache.outputs.cache-hit != 'true'
+
+      - name: Run tests
+        run: pnpm playwright test
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: playwright-screenshots-videos
+          path: playwright/test-results/

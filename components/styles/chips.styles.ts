@@ -14,7 +14,9 @@ export const StyledChip = styled.div<IContainer>`
     font-size: 0.8em;
     background: #202020;
     margin-bottom: 0.5em;
-    transition: transform 0.15s, color 0.15s;
+    transition:
+      transform 0.15s,
+      color 0.15s;
 
     a {
       padding: 0.35em 0.5em;
