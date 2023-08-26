@@ -5,6 +5,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: './node_modules/.bin/next start',
     port: 3000,
+    stdout: 'pipe',
   },
   testMatch: '**/playwright/**',
   reporter: process.env.CI
