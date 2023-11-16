@@ -3,4 +3,4 @@ const config = {
   extends: ['stylelint-config-upleveled'],
 };
 
-module.exports = config;
+export default config;

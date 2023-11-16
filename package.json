@@ -2,12 +2,12 @@
   "name": "next-starter-peacock",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@8.9.2",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "build:rss": "ts-node ./lib/rss.ts"
+    "build:rss": "ts-node ./lib/rss.ts",
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/react": "11.11.1",
@@ -24,8 +24,6 @@
     "uuid": "9.0.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
-    "@next/eslint-plugin-next": "13.5.6",
     "@playwright/test": "^1.36.2",
     "@types/eslint": "8.44.6",
     "@types/node": "20.8.7",
@@ -34,15 +32,14 @@
     "@types/sharp": "0.31.1",
     "@types/styled-components": "5.1.29",
     "@types/uuid": "9.0.6",
-    "@typescript-eslint/eslint-plugin": "6.8.0",
-    "@typescript-eslint/parser": "6.8.0",
     "eslint": "8.51.0",
-    "eslint-config-upleveled": "5.1.0",
+    "eslint-config-upleveled": "7.0.1",
     "postcss": "8.4.31",
     "rss": "1.2.2",
     "stylelint": "15.11.0",
     "stylelint-config-upleveled": "1.0.2",
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
-  }
+  },
+  "packageManager": "pnpm@8.9.2"
 }
