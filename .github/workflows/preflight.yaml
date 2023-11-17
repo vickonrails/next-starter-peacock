@@ -1,21 +1,13 @@
-name: UpLeveled Preflight check
+name: Preflight
 on: [push]
 
 jobs:
-  Preflight-check:
-    name: UpLeveled Preflight check
+  preflight:
+    name: Preflight
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get UpLeveled check image
+      - name: Pull latest Preflight image
         run: docker pull ghcr.io/upleveled/preflight
-      - name: Run Get UpLeveled check image
-        run: |
-          MY_STRING=$(docker run ghcr.io/upleveled/preflight https://github.com/${{ github.repository}} ${{ github.ref_name }})
-          echo $MY_STRING
-          MY_STRING="${MY_STRING//'%'/'%25'}"
-          MY_STRING="${MY_STRING//$'\n'/'%0A'}"
-          MY_STRING="${MY_STRING//$'\r'/'%0D'}"
-          if [[ $MY_STRING == *"FAILED"* ]]; then
-          exit 1
-          fi
+      - name: Run Preflight
+        run: docker run ghcr.io/upleveled/preflight https://github.com/${{ github.repository}} ${{ github.ref_name }}
