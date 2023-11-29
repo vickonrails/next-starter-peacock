@@ -1,13 +1,14 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
-import { v4 as uuid } from 'uuid';
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import html from 'remark-html';
+import path from 'path';
 import rehypeHighlight from 'rehype-highlight';
-import gfm from 'remark-gfm'
+import gfm from 'remark-gfm';
+import html from 'remark-html';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import { v4 as uuid } from 'uuid';
 import { IContentData } from '../app/[contentType]/[slug]/page';
+import { CONTENT_TYPES_MAP } from './content-types';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');
@@ -20,6 +21,7 @@ export type IContent = {
   date: Date;
   id: string;
 
+  selectedWork?: boolean
   description?: string;
   previewImage?: string
 }
@@ -144,7 +146,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
  * Get content list for a particular content type
  * @param {string} contentType Type of content
  */
-export const getContentList = (contentType: IContentType) => {
+export const getContentList = (contentType: IContentType): IContent[] => {
   let contentFiles;
   let contentDir;
 
@@ -299,3 +301,7 @@ export const sortByDate = (a, b) => {
     return 0;
   }
 };
+
+export const getContentTypes = () => {
+  return Array.from(CONTENT_TYPES_MAP.keys());
+}

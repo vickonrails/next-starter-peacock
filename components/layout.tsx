@@ -1,18 +1,7 @@
 'use client'
-import React, { createContext, useState } from 'react'
-import Nav from './nav/nav'
-import Footer from './footer'
-import MobileNav from './nav/mobile-nav'
-
-interface MenuContextProps {
-    menuOpen: boolean,
-    toggleMenuOpen: () => void
-}
-
-export const MenuContext = createContext<MenuContextProps>({
-    menuOpen: false,
-    toggleMenuOpen: () => {/** */ },
-});
+import React, { useState } from 'react'
+import { Footer, MobileNav, Nav } from '@components'
+import { MenuProvider } from './MenuContext';
 
 export function Layout({ children }: { children: React.ReactNode }) {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <MenuContext.Provider value={{ toggleMenuOpen, menuOpen }}>
+        <MenuProvider value={{ toggleMenuOpen, menuOpen }}>
             <Nav />
             {menuOpen ? <MobileNav /> : (
                 <>
@@ -30,6 +19,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <Footer />
                 </>
             )}
-        </MenuContext.Provider>
+        </MenuProvider>
     )
 }

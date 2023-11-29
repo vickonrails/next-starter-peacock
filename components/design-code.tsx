@@ -1,9 +1,8 @@
-import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 
 import { Container } from './container';
 
-const DesignCode = () => {
+export function DesignCode() {
   return (
     <section className="py-14 text-body-text bg-home-page-pattern bg-white">
       <Container className="md:flex items-center flex-wrap">
@@ -34,4 +33,3 @@ const DesignCode = () => {
   );
 };
 
-export default DesignCode;

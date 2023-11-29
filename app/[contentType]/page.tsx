@@ -1,11 +1,9 @@
-import React from 'react';
-import { Cards, Container, ContentList } from '../../components';
-import { IContentType, getContentList } from '../../lib/content';
-import NotesComponent from '../../components/notes/notes';
-import { notFound } from 'next/navigation';
-import { CONTENT_TYPES_MAP } from './utils';
-import { site } from '../../config/index.json'
+import { Container, ContentList } from '@components';
+import { IContentType, getContentList, getContentTypes } from '@utils/content';
+import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { site } from '../../config/index.json';
 
 /** generate list page metadata */
 export function generateMetadata({ params }): Metadata {
@@ -14,6 +12,13 @@ export function generateMetadata({ params }): Metadata {
         title: `${contentType.title} | ${site.siteTitle}`,
         description: contentType.description
     }
+}
+
+export async function generateStaticParams() {
+    const contentTypes = getContentTypes();
+    return Array.from(contentTypes).map(contentType => ({
+        contentType
+    }))
 }
 
 /**

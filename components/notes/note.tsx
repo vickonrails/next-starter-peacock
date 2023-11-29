@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar } from 'react-feather';
 import Link from 'next/link';
-import { IContent } from '../../lib/content';
+import { IContent } from '@utils/content';
 
 export function Note({ date, title, slug, basePath }: IContent) {
   return (

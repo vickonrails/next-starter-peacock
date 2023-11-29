@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes } from 'react';
-import clsx from 'clsx'
+import clsx from 'clsx';
+import { FC, HTMLAttributes } from 'react';
 
 export type IWidth = 'default' | 'bleed' | 'narrow';
 export interface IContainer extends HTMLAttributes<HTMLElement> {

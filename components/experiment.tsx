@@ -1,9 +1,8 @@
 'use client'
-import React from 'react';
-import { GitHub, Codepen, ExternalLink } from 'react-feather';
+import { Codepen, ExternalLink, GitHub } from 'react-feather';
 import Tilt from 'react-parallax-tilt';
 
-const ExperimentItem = ({ experiment }) => {
+export function ExperimentItem({ experiment }) {
   let icon;
   const classes = 'text-bright'
 
@@ -46,5 +45,3 @@ const ExperimentItem = ({ experiment }) => {
     </Tilt>
   );
 };
-
-export default ExperimentItem;

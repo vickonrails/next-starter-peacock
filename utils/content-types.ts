@@ -1,4 +1,4 @@
-import { IContentType } from '../../lib/content';
+import { IContentType } from './content';
 
 export const CONTENT_TYPES_MAP: Map<IContentType, any> = new Map([
     ['articles', { title: 'Articles', description: "More long form articles and essays about new things I'm exploring and learning about...", path: 'articles' }],
