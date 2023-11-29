@@ -1,7 +1,6 @@
-import React from 'react';
+import { ExperimentItem } from '@components';
 import { experiments } from '../content/experiments';
 import { Container } from './container';
-import { ExperimentItem } from '@components'
 
 export function ExperimentsSection() {
   return (
@@ -14,8 +13,8 @@ export function ExperimentsSection() {
         </p>
 
         <section className="flex flex-wrap">
-          {experiments.map((experiment, index) => (
-            <ExperimentItem key={index} experiment={experiment} />
+          {experiments.map((experiment) => (
+            <ExperimentItem key={experiment.link} experiment={experiment} />
           ))}
         </section>
       </Container>

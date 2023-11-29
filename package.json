@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:rss": "ts-node ./lib/rss.ts",
+    "build:rss": "ts-node ./utils/rss.ts",
     "lint": "next lint"
   },
   "dependencies": {

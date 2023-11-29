@@ -1,7 +1,6 @@
-import React from 'react';
 
-import { Container } from './container';
 import siteConfig from '../config/index.json';
+import { Container } from '@components';
 
 export function Header() {
   return (

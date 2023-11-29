@@ -1,9 +1,9 @@
+import { Container, ContentList } from '@components';
+import { IContentType, getContentList, getContentTypes } from '@utils/content';
+import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { site } from '../../config/index.json';
-import { IContentType, getContentList, getContentTypes } from '../../lib/content';
-import { CONTENT_TYPES_MAP } from './utils';
-import { ContentList, Container } from '@components'
 
 /** generate list page metadata */
 export function generateMetadata({ params }): Metadata {

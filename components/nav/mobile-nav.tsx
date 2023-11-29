@@ -1,7 +1,6 @@
-import React from 'react';
 import Link from 'next/link';
 
-const MobileNav = () => {
+export function MobileNav() {
   return (
     <section className="absolute inset-0 animate-slide-in">
       <div className="flex items-center justify-center min-h-full">
@@ -50,5 +49,3 @@ const MobileNav = () => {
     </section>
   );
 };
-
-export default MobileNav;

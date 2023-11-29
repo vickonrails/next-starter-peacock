@@ -1,5 +1,5 @@
 import { Cards, Container, DesignCode, ExperimentsSection, Header } from '@components';
-import { getContentList } from '../lib/content';
+import { getContentList } from '@utils/content';
 
 /**
  * Index page `/index`

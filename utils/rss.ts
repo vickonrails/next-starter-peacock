@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 import fs from 'fs';
+import RSS from 'rss';
 
+import { author, site } from '../config/index.json';
 import { IContent, getContentList, sortByDate } from './content';
-import { site, author } from '../config/index.json';
-
-const RSS = require('rss');
 
 const { siteName, siteTitle, siteUrl } = site;
 

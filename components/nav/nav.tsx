@@ -1,13 +1,13 @@
-import React, { HTMLAttributes, createContext, useContext, useState } from 'react';
 import Link from 'next/link';
+import { HTMLAttributes, useContext } from 'react';
 
-import Logo from '../logo';
-import { Container } from '../container';
-import SiteConfig from '../../config/index.json';
+import { Logo } from '@components';
 import clsx from 'clsx';
-import { MenuContext } from '../layout';
+import SiteConfig from '../../config/index.json';
+import { Container } from '../container';
+import { MenuContext } from '../MenuContext';
 
-const Nav = () => {
+export function Nav() {
   return (
     <header className="py-4 mb-20 relative z-10">
       <Container>
@@ -60,9 +60,6 @@ const Nav = () => {
     </header>
   );
 };
-
-export default Nav;
-
 
 const Hamburger = (props: HTMLAttributes<HTMLElement>) => {
   const menuContext = useContext(MenuContext);

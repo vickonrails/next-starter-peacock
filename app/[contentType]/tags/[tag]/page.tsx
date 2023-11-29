@@ -1,7 +1,7 @@
 
 import { Container, ContentList } from '@components';
-import { IContentType, getContentWithTag } from '../../../../lib/content';
-import { CONTENT_TYPES_MAP } from '../../utils';
+import { IContentType, getContentWithTag } from '@utils/content';
+import { CONTENT_TYPES_MAP } from '@utils/content-types';
 
 // TODO: I need to rethink the tags page. I don't think I want to have a page for each tag.
 // /notes/tags/programming & /articles/tags/programming. Instead I want to have a single page for all tags

@@ -1,8 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image'
+import { IContent } from '@utils/content';
 import clsx from 'clsx';
-import { IContent } from '../lib/content';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export interface ICard {
   basePath: string;

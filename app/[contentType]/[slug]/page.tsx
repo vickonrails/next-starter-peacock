@@ -1,8 +1,8 @@
+import { Chips, Container } from '@components';
+import { IContentType, getContentData, getContentList, getContentTypes } from '@utils/content';
+import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Chips, Container } from '@components';
-import { IContentType, getContentData, getContentList, getContentTypes } from '../../../lib/content';
-import { CONTENT_TYPES_MAP } from '../utils';
 import Content from './content';
 
 /**

@@ -8,7 +8,7 @@ import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { v4 as uuid } from 'uuid';
 import { IContentData } from '../app/[contentType]/[slug]/page';
-import { CONTENT_TYPES_MAP } from '../app/[contentType]/utils';
+import { CONTENT_TYPES_MAP } from './content-types';
 
 const workDirectory = path.join(process.cwd(), 'content', 'work');
 const notesDirectory = path.join(process.cwd(), 'content', 'notes');

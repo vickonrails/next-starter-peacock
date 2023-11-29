@@ -1,6 +1,5 @@
 'use client'
-import React from 'react';
-import { GitHub, Codepen, ExternalLink } from 'react-feather';
+import { Codepen, ExternalLink, GitHub } from 'react-feather';
 import Tilt from 'react-parallax-tilt';
 
 export function ExperimentItem({ experiment }) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Note } from './note';
-import { IContent } from '../../lib/content';
+import { IContent } from '@utils/content';
 
 interface INotes {
   notes: IContent[];
