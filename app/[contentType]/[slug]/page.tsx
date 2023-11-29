@@ -1,11 +1,27 @@
-import React from 'react';
-import { notFound, useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { Container } from '../../../components';
 import { Chips } from '../../../components/chips/chips';
-import { IContentType, getContentData } from '../../../lib/content';
+import { IContentType, getContentData, getContentList, getContentTypes } from '../../../lib/content';
 import { CONTENT_TYPES_MAP } from '../utils';
 import Content from './content';
+
+/**
+ * statically generate all content pages
+ */
+export async function generateStaticParams() {
+    const contentTypes = getContentTypes();
+
+    return contentTypes.map(contentType => {
+        const contentList = getContentList(contentType);
+        return contentList.map(({ slug }) => {
+            return {
+                contentType,
+                slug
+            }
+        })
+    }).flat()
+}
 
 /**
  *  Renders articles markdown posts

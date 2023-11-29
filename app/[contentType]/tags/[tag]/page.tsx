@@ -1,10 +1,11 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
 
-import { Metadata } from 'next';
+import { Container, ContentList } from '../../../../components';
 import { IContentType, getContentWithTag } from '../../../../lib/content';
 import { CONTENT_TYPES_MAP } from '../../utils';
-import { Container, ContentList } from '../../../../components';
+
+// TODO: I need to rethink the tags page. I don't think I want to have a page for each tag.
+// /notes/tags/programming & /articles/tags/programming. Instead I want to have a single page for all tags
+// /tags/programming. I think this will be easier to manage and will be more intuitive for readers.
 
 /**
  * Index page `/index`

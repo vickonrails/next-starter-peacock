@@ -1,17 +1,16 @@
-import React, { FC } from 'react';
 
-import { Container, Cards } from '../components';
+import { Cards, Container } from '../components';
 import DesignCode from '../components/design-code';
 import ExperimentsSection from '../components/experiments';
-import { getContentList } from '../lib/content';
 import HomeHeader from '../components/header/home-header';
+import { getContentList } from '../lib/content';
 
 /**
  * Index page `/index`
  */
 
-const Index = async () => {
-    const content = await getContentList('works')
+const Index = () => {
+    const content = getContentList('works')
         .filter((work) => work.selectedWork);
 
     return (
