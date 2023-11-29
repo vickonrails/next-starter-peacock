@@ -6,9 +6,9 @@ Peacock is a NextJS portfolio Starter for software engineers and designers. Show
 
 ## Features
 
-- Styled with Tailwind CSS
-- Written in TypeScript & Next 14 (RSC)
-- Blog, Notes and Work content types 
+- Styled with Tailwind CSS 
+- Written in TypeScript ⚛
+- Blog, Notes and Work content types 🖊
 
 ## Getting Started
 
