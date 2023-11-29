@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
-import { IContent } from '../../lib/content';
-import { Notes } from '../notes';
-import { Cards } from '../cards';
+import { IContent } from '../lib/content';
+import { Notes } from './notes';
+import { Cards } from './cards';
 
 interface ContentListProps extends HTMLAttributes<HTMLElement> {
     items: IContent[]

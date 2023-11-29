@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import 'highlight.js/styles/tokyo-night-dark.css';
 
-import '../components/styles/globals.css';
+import '../components/globals.css';
 
 import { site, author } from '../config/index.json';
-import { Layout } from '../components';
+import { Layout } from '@components';
 
 export const metadata: Metadata = {
     title: `${site.siteTitle} | ${site.siteDescription}`,

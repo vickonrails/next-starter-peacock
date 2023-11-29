@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Container } from '../../../components';
-import { Chips } from '../../../components/chips/chips';
+import { Chips, Container } from '@components';
 import { IContentType, getContentData, getContentList, getContentTypes } from '../../../lib/content';
 import { CONTENT_TYPES_MAP } from '../utils';
 import Content from './content';

@@ -23,7 +23,12 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "@components": [
+        "./components"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",

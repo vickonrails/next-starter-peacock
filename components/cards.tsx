@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
 import clsx from 'clsx';
-import { IContent } from '../../lib/content';
+import { IContent } from '../lib/content';
 
 export interface ICard {
   basePath: string;

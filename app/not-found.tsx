@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '../components'
+import { Container } from '@components'
 
 export default function NotFound() {
     return (

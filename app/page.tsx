@@ -1,8 +1,4 @@
-
-import { Cards, Container } from '../components';
-import DesignCode from '../components/design-code';
-import ExperimentsSection from '../components/experiments';
-import HomeHeader from '../components/header/home-header';
+import { Cards, Container, DesignCode, ExperimentsSection, Header } from '@components';
 import { getContentList } from '../lib/content';
 
 /**
@@ -15,7 +11,7 @@ const Index = () => {
 
     return (
         <>
-            <HomeHeader />
+            <Header />
             <Container>
                 <Cards items={content} basePath="works" />
             </Container>

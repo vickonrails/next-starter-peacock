@@ -1,5 +1,5 @@
 
-import { Container, ContentList } from '../../../../components';
+import { Container, ContentList } from '@components';
 import { IContentType, getContentWithTag } from '../../../../lib/content';
 import { CONTENT_TYPES_MAP } from '../../utils';
 

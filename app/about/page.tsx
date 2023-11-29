@@ -1,8 +1,7 @@
-import React from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 
+import { Container } from '@components';
 import SiteConfig from '../../config/index.json';
-import { Container } from '../../components';
 
 export const metadata = {
   title: SiteConfig.site.siteName,
