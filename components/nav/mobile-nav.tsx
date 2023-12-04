@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { Moon, Sun } from 'react-feather';
+import { useTheme } from '../ThemeContext';
 
 export function MobileNav() {
+  const { theme, toggleTheme } = useTheme()
   return (
     <section className="absolute inset-0 animate-slide-in">
       <div className="flex items-center justify-center min-h-full">
@@ -43,6 +46,12 @@ export function MobileNav() {
             >
               Source
             </a>
+          </li>
+
+          <li>
+            <button className="p-4 border-l border-outline" onClick={toggleTheme}>
+              {theme === 'dark' ? <Moon className="text-foreground" /> : <Sun className="text-foreground" />}
+            </button>
           </li>
         </ul>
       </div>

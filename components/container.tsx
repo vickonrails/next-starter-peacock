@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from '@utils/cn';
 import { FC, HTMLAttributes } from 'react';
 
 export type IWidth = 'default' | 'bleed' | 'narrow';
@@ -9,7 +9,7 @@ export interface IContainer extends HTMLAttributes<HTMLElement> {
 const getMaxWidth = (width: IWidth) => {
   switch (width) {
     case 'bleed':
-      return 'max-w-[90%]'
+      return 'max-w-[95%]'
 
     case 'default':
     default:
@@ -31,8 +31,8 @@ const Container: FC<IContainer> = ({
   return (
     <section
       className={
-        clsx(
-          'my-0 mx-auto py-0 px-[4%]',
+        cn(
+          'my-0 mx-auto py-0 px-[4%] xl:px-0' /**px-[4%]*/,
           className,
           maxWidth
         )}

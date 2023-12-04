@@ -3,63 +3,64 @@ import { HTMLAttributes, useContext } from 'react';
 
 import { Logo } from '@components';
 import clsx from 'clsx';
+import { Moon, Sun } from 'react-feather';
 import SiteConfig from '../../config/index.json';
-import { Container } from '../container';
 import { MenuContext } from '../MenuContext';
+import { useTheme } from '../ThemeContext';
+import { Container } from '../container';
 
 export function Nav() {
+  const rssLink = `${SiteConfig.site.siteUrl}/rss.xml`;
+  const { toggleTheme, theme } = useTheme()
   return (
-    <header className="py-4 mb-20 relative z-10">
-      <Container>
-        <nav className="navWrapper flex justify-between items-center">
+    <header className="relative z-10 border-b border-accent-8">
+      <Container width="bleed">
+        <nav className="navWrapper flex justify-between items-center py-2 xl:p-0">
           <div className="navLeft">
             <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
               <Logo />
-              <span>{SiteConfig.author.name}</span>
+              <span className="text-xl text-foreground">{SiteConfig.author.name}</span>
             </Link>
           </div>
 
+          {/* TODO: make the links configurable */}
           <div className="relative">
             <Hamburger />
 
-            <ul className="hidden list-none md:flex">
-              <li className="mr-2">
-                <Link href="/works">
-                  Work
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/articles">
-                  Articles
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/notes">
-                  Notes
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/about">
-                  About
-                </Link>
-              </li>
-
-              <li>
-                <a
-                  href={`${SiteConfig.site.siteUrl}/rss.xml`}
-                  target="_blank"
-                  rel="noopener norefferer"
-                >
-                  RSS Feed
-                </a>
-              </li>
-            </ul>
+            <nav className="hidden list-none md:flex md:items-center">
+              <NavItem title="Works" href="/works" />
+              <NavItem title="Articles" href="/articles" />
+              <NavItem title="About" href="/about" />
+              <NavItem title="RSS Feed" href={rssLink} external />
+              <button className="p-4 border-l border-accent-8" onClick={toggleTheme}>
+                {theme === 'dark' ? <Moon className="text-foreground" /> : <Sun className="text-foreground" />}
+              </button>
+            </nav>
           </div>
         </nav>
       </Container>
     </header>
   );
 };
+
+function NavItem({ title, href, external = false }: { title: string, href: string, external?: boolean }) {
+  const classes = 'border-l border-accent-8 p-4 uppercase'
+
+  if (external) {
+    return (
+      <a href={href} className={classes} target="_blank" rel="noreferrer noopener">
+        {title}
+      </a>
+    )
+  }
+
+  return (
+    <Link href={href} className={classes}>
+      {title}
+    </Link>
+  );
+
+}
 
 const Hamburger = (props: HTMLAttributes<HTMLElement>) => {
   const menuContext = useContext(MenuContext);

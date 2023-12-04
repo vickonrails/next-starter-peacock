@@ -1,9 +1,9 @@
 ---
-title: Building Lensees
+title: Bob - Resume Builder
 date: "2019-06"
-slug: "lensees"
+slug: "bob"
 selectedWork: true
-description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
+description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
 previewImage: "/images/work/lensees/lensees_desktop.png"
 ---
 

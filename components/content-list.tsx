@@ -1,17 +1,31 @@
-import { Cards, Notes } from '@components';
-import { IContent } from '@utils/content';
+import { Cards, Notes, WorkItem } from '@components';
+import { IContent, IContentType } from '@utils/content';
 import { HTMLAttributes } from 'react';
 
 interface ContentListProps extends HTMLAttributes<HTMLElement> {
     items: IContent[]
-    mode?: 'list' | 'grid',
+    contentType: IContentType
     basePath: string
 }
 
-export function ContentList<T>({ items, mode = 'grid', basePath }: ContentListProps) {
-    if (mode === 'list') {
+export function ContentList<T>({ items, contentType, basePath }: ContentListProps) {
+    if (contentType === 'works') {
         return (
-            <Notes notes={items} basePath={basePath} />
+            <section>
+                <section className="flex flex-col gap-8">
+                    {items.filter(x => x.selectedWork).map(item => (
+                        <WorkItem key={item.slug} work={item} />
+                    ))}
+                </section>
+
+                <h3>Other Experiments</h3>
+
+                <section className="flex gap-8">
+                    {items.filter(x => !x.selectedWork).map(item => (
+                        <WorkItem key={item.slug} work={item} />
+                    ))}
+                </section>
+            </section>
         )
     }
 
@@ -19,4 +33,3 @@ export function ContentList<T>({ items, mode = 'grid', basePath }: ContentListPr
         <Cards items={items} basePath={basePath} />
     )
 }
-

@@ -1,9 +1,9 @@
 ---
-title: Designing & Building Prudent
+title: Delight - Backend Framework
 date: "2020-04"
-slug: "prudent"
+slug: "delight"
 selectedWork: true
-description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
+description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
 previewImage: "/images/work/prudent/prudent.png"
 ---
 

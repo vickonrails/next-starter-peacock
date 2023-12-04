@@ -1,9 +1,9 @@
 ---
-title: Redesigning Smile
+title: JobQuest - Job Tracker
 date: "2019-01"
-slug: "redesigning-smile"
+slug: "job-quest"
 selectedWork: true
-description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
+description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
 previewImage: "/images/work/smile/smile_desktop.png"
 ---
 
