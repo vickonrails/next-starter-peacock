@@ -18,8 +18,11 @@
         --accent-9: theme('colors.neutral.100');
         --foreground: ;
 
+        /* TODO: rename to more interesting ones */
         --accent-delight: 248 73% 18%;
         --accent-bob: 338 73% 18%;
+
+        --primary: 358 44% 51%;
 
     }
     
@@ -36,7 +39,21 @@
         --accent-9: theme('colors.neutral.900');
         --foreground: ;
 
+        --primary: 358 44% 51%;
+
         --accent-delight: 248 73% 18%;
         --accent-bob: 338 73% 18%;
+    }
+}
+
+/* Try to import this from another file because it makes this part clunky */
+@layer base {
+    a {
+        text-decoration: underline;
+        color: hsl(var(--accent-2));
+        transition: color 0.15s ease;
+    }
+    b {
+        color: var(--accent-2);
     }
 }

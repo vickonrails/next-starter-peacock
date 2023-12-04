@@ -25,7 +25,8 @@ module.exports = {
         'accent-7': 'var(--accent-7)',
         'accent-8': 'var(--accent-8)',
         'accent-delight': 'hsl(var(--accent-delight))',
-        'accent-bob': 'hsl(var(--accent-bob))'
+        'accent-bob': 'hsl(var(--accent-bob))',
+        'primary': 'hsl(var(--primary))',
       }
     }
   },

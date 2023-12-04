@@ -4,7 +4,7 @@ date: "2020-04"
 slug: "delight"
 selectedWork: true
 description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
-previewImage: "/images/work/prudent/prudent.png"
+previewImage: "/images/work/delight/delight-preview.png"
 ---
 
 > **Role**: UX Strategy, User Research, Interaction design, Engineering.

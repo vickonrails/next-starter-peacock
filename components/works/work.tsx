@@ -12,30 +12,24 @@ const COLORS_LOOKUP = {
 }
 
 export function WorkItem({ work }: { work: IContent }) {
-    const { title, slug, description, previewImage } = work
+    const { title, slug, description } = work
     return (
-        <section className={cn('rounded-xl select-none no-underline flex flex-col lg:flex-row transition-transform hover:cursor-pointer hover:scale-[102%]', COLORS_LOOKUP[slug])}>
+        <Link href={`/works/${slug}`} className={cn('group rounded-xl select-none no-underline flex flex-col py-10 w-full lg:flex-row transition-transform hover:cursor-pointer hover:scale-[102%]', COLORS_LOOKUP[slug])}>
             <section className="flex flex-col flex-1 xl:order-2">
-                <Image className="w-full" src={placeholderImg} alt="" width={100} height={100} />
+                <Image className="w-full" src={work.previewImage ?? ''} alt="" width={400} height={400} />
             </section>
 
-            <section className="p-5 xl:px-11 xl:py-16 flex flex-1 xl:order-1">
+            <section className="flex flex-1 px-12"/**className="p-5 xl:px-11 xl:py-16 flex flex-1 xl:order-1"**/>
                 <div className="max-w-md flex flex-col gap-4 justify-center">
-                    <h2 className="font-bold text-xl">{title}</h2>
-                    <p>{description}</p>
+                    <h2 className="font-bold text-2xl">{title}</h2>
+                    <p className="description opacity-75">{description}</p>
 
-                    <div className="flex gap-6">
-                        <Link href={`/works/${slug}`} className="flex gap-1 items-center">
-                            <ArrowRight size={18} />
-                            <span className="text-sm">See More</span>
-                        </Link>
-                        <a href="" className="flex gap-1 items-center">
-                            <GitHub size={18} />
-                            <span className="text-sm">See Repository</span>
-                        </a>
+                    <div className="flex gap-1 items-center">
+                        <ArrowRight size={18} />
+                        <span>More Info</span>
                     </div>
                 </div>
             </section>
-        </section>
+        </Link>
     )
 }

@@ -45,7 +45,7 @@ const Index = () => {
         <div>
             <Header />
             {/* TODO: I can hash the selected index based on the colors */}
-            <Container width="default" className="flex flex-col gap-8 mb-20">
+            <Container className="flex flex-col gap-8 mb-20">
                 {content.map((work) => (
                     <WorkItem key={work.slug} work={work} />
                 ))}

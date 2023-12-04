@@ -4,7 +4,7 @@ date: "2019-01"
 slug: "job-quest"
 selectedWork: true
 description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
-previewImage: "/images/work/smile/smile_desktop.png"
+previewImage: "/images/work/job-quest/job-quest-preview.png"
 ---
 
 [Smile Communications](https://smile.com.ng/) is one of Africa’s largest 4G LTE provider. Launched in 2007, Smile currently provides fast and reliable Internet and Voice Services for 4 countries in Africa; Tanzania, Nigeria, The Republic of Congo and Uganda.

@@ -4,7 +4,7 @@ date: "2019-06"
 slug: "bob"
 selectedWork: true
 description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
-previewImage: "/images/work/lensees/lensees_desktop.png"
+previewImage: "/images/work/bob/bob-preview.png"
 ---
 
 > **Role**: UX Strategy, User Research, Interaction design, Engineering.

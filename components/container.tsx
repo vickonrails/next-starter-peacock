@@ -9,11 +9,11 @@ export interface IContainer extends HTMLAttributes<HTMLElement> {
 const getMaxWidth = (width: IWidth) => {
   switch (width) {
     case 'bleed':
-      return 'max-w-[95%]'
+      return 'max-w-[90%]'
 
     case 'default':
     default:
-      return 'max-w-7xl'
+      return 'max-w-6xl'
 
     case 'narrow':
       return 'max-w-4xl'

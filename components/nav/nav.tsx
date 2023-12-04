@@ -3,7 +3,7 @@ import { HTMLAttributes, useContext } from 'react';
 
 import { Logo } from '@components';
 import clsx from 'clsx';
-import { Moon, Sun } from 'react-feather';
+import { Moon, Rss, Sun } from 'react-feather';
 import SiteConfig from '../../config/index.json';
 import { MenuContext } from '../MenuContext';
 import { useTheme } from '../ThemeContext';
@@ -19,7 +19,7 @@ export function Nav() {
           <div className="navLeft">
             <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
               <Logo />
-              <span className="text-xl text-foreground">{SiteConfig.author.name}</span>
+              <span className="text-base text-foreground">{SiteConfig.author.name}</span>
             </Link>
           </div>
 
@@ -31,7 +31,10 @@ export function Nav() {
               <NavItem title="Works" href="/works" />
               <NavItem title="Articles" href="/articles" />
               <NavItem title="About" href="/about" />
-              <NavItem title="RSS Feed" href={rssLink} external />
+              <button className="p-4 border-l border-accent-8">
+                <Rss className="text-foreground" />
+              </button>
+              {/* <NavItem title="RSS Feed" href={rssLink} external /> */}
               <button className="p-4 border-l border-accent-8" onClick={toggleTheme}>
                 {theme === 'dark' ? <Moon className="text-foreground" /> : <Sun className="text-foreground" />}
               </button>
