@@ -68,8 +68,8 @@ export default async function ContentPage({ params }) {
 
 function WorkPage({ work }: { work: IContentData }) {
     return (
-        <Container className="flex gap-4 pt-12">
-            <section className="w-1/3 border-r border-accent-8 p-2 pr-8">
+        <Container className="flex flex-col lg:flex-row gap-4 pt-12">
+            <section className="w-full lg:w-1/3 border-r border-accent-8 p-2 pr-8">
                 <div className="mb-8 flex flex-col items-start gap-5">
                     <button className="flex items-center">
                         <ChevronLeft />
@@ -81,14 +81,14 @@ function WorkPage({ work }: { work: IContentData }) {
                 </div>
 
                 <ul>
-                    {work.techStack && <MetadataListItem item="Tech Stack" value={work.techStack.join(',')} />}
+                    {Boolean(work.techStack?.length) && <MetadataListItem item="Tech Stack" value={work.techStack?.join(',') ?? ''} />}
                     <MetadataListItem item="Date" value={work.date.toString()} />
                     {work.problem && <MetadataListItem item="Problem" value={work.problem ?? ''} />}
                 </ul>
 
             </section>
 
-            <section className="w-2/3 p-2">
+            <section className="w-full lg:w-2/3 p-2">
                 <Image src={work.previewImage ?? ''} height={1000} width={1000} alt="" className="mb-4" />
                 <Content html={work.contentHtml} />
             </section>

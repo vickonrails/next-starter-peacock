@@ -34,7 +34,7 @@ export function ContentList<T>({ items, contentType, basePath }: ContentListProp
 
 function WorkListGrid({ works }: { works: IContent[] }) {
     return (
-        <section className="flex flex-wrap gap-8 pb-10 mb-10">
+        <section className="flex flex-col lg:flex-row flex-wrap gap-8 pb-10 mb-10">
             {works.map(item => (
                 <WorkItem key={item.slug} work={item} grid />
             ))}

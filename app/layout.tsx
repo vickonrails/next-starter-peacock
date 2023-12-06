@@ -4,9 +4,12 @@ import 'highlight.js/styles/tokyo-night-dark.css';
 
 import '../components/globals.css';
 
-import { Layout } from '@components';
-import { ThemeProvider } from 'next-themes'
-import { Manrope, Young_Serif } from 'next/font/google'
+import { Footer, MobileNav, Nav } from '@components';
+import { ThemeProvider } from 'next-themes';
+import { Manrope, Young_Serif } from 'next/font/google';
+import { useState } from 'react';
+import { MenuProvider } from '../components/MenuContext';
+import { cn } from '@utils/cn';
 
 const manrope = Manrope({
     display: 'swap',
@@ -20,9 +23,6 @@ const youngSerif = Young_Serif({
     subsets: ['latin'],
     variable: '--font-young-serif'
 })
-
-// import { ThemeProvider } from '../components/ThemeContext';
-
 
 // export const metadata: Metadata = {
 //     title: `${site.siteTitle} | ${site.siteDescription}`,
@@ -56,17 +56,26 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenuOpen = () => {
+        menuOpen ? setMenuOpen(false) : setMenuOpen(true);
+    };
+
     return (
         <html lang="en" className={`${manrope.variable} ${youngSerif.variable}`}>
-            <body className="bg-background text-accent-1 font-body">
+            <body className={cn('bg-background text-accent-1 font-body', menuOpen && 'h-full w-full overflow-hidden')}>
                 <ThemeProvider>
-                    <Layout>
+                    <MenuProvider value={{ toggleMenuOpen, menuOpen }}>
+                        <Nav />
+                        <MobileNav />
                         <main className="main bg-background">
                             {children}
                         </main>
-                    </Layout>
+                        <Footer />
+                    </MenuProvider>
                 </ThemeProvider>
             </body>
-        </html >
+        </html>
     )
 }
