@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=DM+Sans:wght@400;700;900");
+@import url("./content.css");
 
 @tailwind base;
 @tailwind components;
@@ -55,5 +55,11 @@
     }
     b {
         color: var(--accent-2);
+    }
+}
+
+@layer components {
+    .main {
+        min-height: calc(100vh - 150px);
     }
 }

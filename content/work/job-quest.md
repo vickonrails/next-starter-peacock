@@ -5,6 +5,11 @@ slug: "job-quest"
 selectedWork: true
 description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
 previewImage: "/images/work/job-quest/job-quest-preview.png"
+problem: A newly wedded friend of mine told me a story of how a photographer messed up her wedding memories. In her words…
+techStack: 
+    - Next.js
+    - Typescript 
+    - Tailwindcss
 ---
 
 [Smile Communications](https://smile.com.ng/) is one of Africa’s largest 4G LTE provider. Launched in 2007, Smile currently provides fast and reliable Internet and Voice Services for 4 countries in Africa; Tanzania, Nigeria, The Republic of Congo and Uganda.

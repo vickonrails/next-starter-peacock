@@ -1,14 +1,8 @@
-import { Container, Header, WorkItem, Works } from '@components';
+import { Container, Header, Testimonials, WorkItem } from '@components';
 import { getContentList } from '@utils/content';
 /**
  * Index page `/index`
  */
-
-interface Testimonial {
-    name: string;
-    title: string;
-    text: string;
-}
 
 const testimonials = [
     {
@@ -45,7 +39,7 @@ const Index = () => {
         <div>
             <Header />
             {/* TODO: I can hash the selected index based on the colors */}
-            <Container className="flex flex-col gap-8 mb-20">
+            <Container className="flex flex-col gap-8 mb-20 border-b border-accent-8 pb-9">
                 {content.map((work) => (
                     <WorkItem key={work.slug} work={work} />
                 ))}
@@ -54,27 +48,5 @@ const Index = () => {
         </div>
     );
 };
-
-function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
-    return (
-        <div className="py-12">
-            <Container>
-                <h2 className="font-bold text-2xl mb-10 xl:mb-20 max-w-xs xl:max-w-md 2xl:text-4xl">What People Have To Say About Me...</h2>
-            </Container>
-            <section className="flex gap-4 overflow-x-auto w-auto">
-                {testimonials.map((testimonial, idx) => (
-                    <div key={idx} className="bg-accent-8 min-w-[400px] py-4 px-5 rounded-md select-none">
-                        <header className="mb-6">
-                            <h2 className="font-bold">{testimonial.name}</h2>
-                            <p className="text-sm">{testimonial.title}</p>
-                        </header>
-
-                        <p>{testimonial.text}</p>
-                    </div>
-                ))}
-            </section>
-        </div>
-    );
-}
 
 export default Index;

@@ -6,7 +6,7 @@ export function Socials() {
         <ul className="flex gap-3 mb-4">
             <li className="block">
                 <a
-                    className="footerLink"
+                    className="text-accent-4 hover:text-accent-2"
                     href="https://github.com/vickOnRails"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -18,7 +18,7 @@ export function Socials() {
 
             <li>
                 <a
-                    className="block"
+                    className="text-accent-4 hover:text-accent-2"
                     href="https://linkedin.com/in/victor-ofoegbu"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -30,7 +30,7 @@ export function Socials() {
 
             <li>
                 <a
-                    className="block"
+                    className="text-accent-4 hover:text-accent-2"
                     href="https://twitter.com/vick_onrails"
                     target="_blank"
                     rel="noreferrer noopener"

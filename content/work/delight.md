@@ -5,6 +5,11 @@ slug: "delight"
 selectedWork: true
 description: "I have 5 years experience as a software engineer, building tools in government, online publishing and content management."
 previewImage: "/images/work/delight/delight-preview.png"
+problem: A newly wedded friend of mine told me a story of how a photographer messed up her wedding memories. In her words…
+techStack: 
+    - Next.js
+    - Typescript 
+    - Tailwindcss
 ---
 
 > **Role**: UX Strategy, User Research, Interaction design, Engineering.

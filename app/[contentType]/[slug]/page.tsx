@@ -4,6 +4,7 @@ import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Content from './content';
+import { ChevronLeft } from 'react-feather';
 
 /**
  * statically generate all content pages
@@ -44,21 +45,67 @@ export default async function ContentPage({ params }) {
 
     const content = await fetchContentData(slug, contentType);
 
+    if (contentType === 'works') return <WorkPage work={content} />
+
     return (
         <Container width="narrow">
-            <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4 text-2xl md:text-4xl">{content.title}</h1>
-            <section className="content">
-                <time className="time mb-8">{content.date.toString()}</time>
-                {content.previewImage && (
-                    <Image className="mb-4 block object-cover" src={content.previewImage} height={550} width={1200} alt="" />
-                )}
-                <Content html={content.contentHtml} />
-            </section>
+            <header>
+                <section className="pt-16">
+                    <h1 className="my-0 font-bold font-display mb-2 text-2xl/normal md:text-4xl max-w-xl">{content.title}</h1>
+                    <time className="block text-accent-4 mb-8">{content.date.toString()}</time>
+                    {content.previewImage && (
+                        <Image className="pb-8 block object-cover" src={content.previewImage} height={550} width={1200} alt="" />
+                    )}
+                </section>
+            </header>
+
+            <Content html={content.contentHtml} />
             {content.tags && <Chips items={content.tags} />}
         </Container>
 
     );
 };
+
+function WorkPage({ work }: { work: IContentData }) {
+    return (
+        <Container className="flex gap-4 pt-12">
+            <section className="w-1/3 border-r border-accent-8 p-2 pr-8">
+                <div className="mb-8 flex flex-col items-start gap-5">
+                    <button className="flex items-center">
+                        <ChevronLeft />
+                        <span>back</span>
+                    </button>
+                    <h1 className="text-4xl font-bold font-display text-accent-3">{work.title}</h1>
+                    <p className="text-accent-4">{work.description}</p>
+                    <button>Se Demo</button>
+                </div>
+
+                <ul>
+                    {work.techStack && <MetadataListItem item="Tech Stack" value={work.techStack.join(',')} />}
+                    <MetadataListItem item="Date" value={work.date.toString()} />
+                    {work.problem && <MetadataListItem item="Problem" value={work.problem ?? ''} />}
+                </ul>
+
+            </section>
+
+            <section className="w-2/3 p-2">
+                <Image src={work.previewImage ?? ''} height={1000} width={1000} alt="" className="mb-4" />
+                <Content html={work.contentHtml} />
+            </section>
+
+        </Container>
+    )
+}
+
+function MetadataListItem({ item, value }: { item: string, value: string }) {
+    return (
+        <li className="list-none flex gap-4 border-b border-accent-8 py-3">
+            <span className="text-accent-4 w-1/3">{item}</span>
+            <span className="w-2/3 text-accent-2">{value}</span>
+        </li>
+
+    )
+}
 
 export interface IContentData {
     id: string;
@@ -69,4 +116,6 @@ export interface IContentData {
     description?: string;
     tags?: string[];
     category?: string;
+    problem?: string;
+    techStack?: string[];
 }

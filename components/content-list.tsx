@@ -12,18 +12,16 @@ export function ContentList<T>({ items, contentType, basePath }: ContentListProp
     if (contentType === 'works') {
         return (
             <section>
-                <section className="flex flex-col gap-8">
+                <section className="flex flex-col gap-8 pb-10 mb-10 border-b border-accent-8">
                     {items.filter(x => x.selectedWork).map(item => (
                         <WorkItem key={item.slug} work={item} />
                     ))}
                 </section>
 
-                <h3>Other Experiments</h3>
+                <h3 className="text-3xl font-bold text-accent-3 mb-16 font-display">Other Experiments</h3>
 
                 <section className="flex gap-8">
-                    {items.filter(x => !x.selectedWork).map(item => (
-                        <WorkItem key={item.slug} work={item} />
-                    ))}
+                    <WorkListGrid works={items.filter(x => !x.selectedWork)} />
                 </section>
             </section>
         )
@@ -31,5 +29,18 @@ export function ContentList<T>({ items, contentType, basePath }: ContentListProp
 
     return (
         <Cards items={items} basePath={basePath} />
+    )
+}
+
+function WorkListGrid({ works }: { works: IContent[] }) {
+    return (
+        <section className="flex flex-wrap gap-8 pb-10 mb-10">
+            {works.map(item => (
+                <WorkItem key={item.slug} work={item} grid />
+            ))}
+            {works.map(item => (
+                <WorkItem key={item.slug} work={item} grid />
+            ))}
+        </section>
     )
 }

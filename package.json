@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@types/uuid": "^9.0.2",
+    "framer-motion": "^10.16.14",
     "gray-matter": "^4.0.3",
     "next": "^13.4.12",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
@@ -22,6 +24,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-parse": "^10.0.2",
+    "swiper": "^11.0.5",
     "unified": "^10.1.2",
     "uuid": "^9.0.0"
   },

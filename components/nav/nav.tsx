@@ -1,23 +1,27 @@
+'use client'
+
 import Link from 'next/link';
-import { HTMLAttributes, useContext } from 'react';
+import { HTMLAttributes, ReactNode, useContext } from 'react';
 
 import { Logo } from '@components';
 import clsx from 'clsx';
 import { Moon, Rss, Sun } from 'react-feather';
 import SiteConfig from '../../config/index.json';
 import { MenuContext } from '../MenuContext';
-import { useTheme } from '../ThemeContext';
+// import { useTheme } from '../ThemeContext';
 import { Container } from '../container';
+import { useTheme } from 'next-themes';
 
 export function Nav() {
   const rssLink = `${SiteConfig.site.siteUrl}/rss.xml`;
-  const { toggleTheme, theme } = useTheme()
+  // const { toggleTheme, theme } = useTheme()
+  const { theme, setTheme } = useTheme()
   return (
     <header className="relative z-10 border-b border-accent-8">
       <Container width="bleed">
         <nav className="navWrapper flex justify-between items-center py-2 xl:p-0">
           <div className="navLeft">
-            <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
+            <Link href="/" className="flex items-center no-underline">
               <Logo />
               <span className="text-base text-foreground">{SiteConfig.author.name}</span>
             </Link>
@@ -31,11 +35,10 @@ export function Nav() {
               <NavItem title="Works" href="/works" />
               <NavItem title="Articles" href="/articles" />
               <NavItem title="About" href="/about" />
-              <button className="p-4 border-l border-accent-8">
-                <Rss className="text-foreground" />
-              </button>
+
+              <NavItem title={<Rss className="text-foreground" />} href={rssLink} external />
               {/* <NavItem title="RSS Feed" href={rssLink} external /> */}
-              <button className="p-4 border-l border-accent-8" onClick={toggleTheme}>
+              <button className="p-4 border-l border-accent-8" onClick={() => setTheme('light')}>
                 {theme === 'dark' ? <Moon className="text-foreground" /> : <Sun className="text-foreground" />}
               </button>
             </nav>
@@ -46,8 +49,8 @@ export function Nav() {
   );
 };
 
-function NavItem({ title, href, external = false }: { title: string, href: string, external?: boolean }) {
-  const classes = 'border-l border-accent-8 p-4 uppercase'
+function NavItem({ title, href, external = false }: { title: string | ReactNode, href: string, external?: boolean }) {
+  const classes = 'border-l border-accent-8 text-accent-4 hover:text-accent-1 p-4 uppercase'
 
   if (external) {
     return (

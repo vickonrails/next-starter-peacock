@@ -11,6 +11,6 @@ export default function Content({ html }) {
     }, []);
 
     return (
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="content-body mb-8" dangerouslySetInnerHTML={{ __html: html }} />
     )
 }

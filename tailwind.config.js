@@ -12,7 +12,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['DM Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont']
+        body: 'var(--font-manrope)',
+        display: 'var(--font-young-serif)'
       },
       colors: {
         background: 'var(--background)',

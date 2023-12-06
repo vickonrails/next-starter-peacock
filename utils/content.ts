@@ -139,6 +139,8 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     description: matterResult.data.description || '',
     tags: matterResult.data.tags || [],
     category: matterResult.data.category || '',
+    problem: matterResult.data.problem || '',
+    techStack: matterResult.data.techStack || [],
   };
 };
 

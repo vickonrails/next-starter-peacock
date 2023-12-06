@@ -30,7 +30,7 @@ export default function ContentListPage({ params }) {
                 <ContentList
                     basePath={path}
                     items={content}
-                    mode={isNotes ? 'list' : 'grid'}
+                    contentType={contentType}
                 />
             </Container>
         </>
