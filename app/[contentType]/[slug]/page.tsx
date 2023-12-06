@@ -1,10 +1,31 @@
 import { Chips, Container } from '@components';
 import { IContentType, getContentData, getContentList, getContentTypes } from '@utils/content';
 import { CONTENT_TYPES_MAP } from '@utils/content-types';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import BackButton from '../../../components/back-button';
+import { author, site } from '../../../config/index.json';
 import Content from './content';
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+    const { title, previewImage, description } = await getContentData(params.slug, params.contentType)
+    return {
+        title: `${title} | ${site.siteTitle}`,
+        description: description ?? site.siteDescription,
+        openGraph: {
+            title: `${title} | ${site.siteName}`,
+            description: description ?? site.siteDescription,
+            url: site.siteUrl,
+            images: previewImage ?? site.siteImage,
+            siteName: site.siteName,
+        },
+        twitter: {
+            card: 'summary',
+            creator: author.twitterHandle
+        }
+    }
+}
 
 /**
  * statically generate all content pages

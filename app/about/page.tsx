@@ -1,11 +1,9 @@
-import Image from 'next/image';
 
 import { Container } from '@components';
 import SiteConfig from '../../config/index.json';
-import Avatar from '../../public/images/me-orig.jpg';
 
 export const metadata = {
-  title: SiteConfig.site.siteName,
+  title: `About Me | ${SiteConfig.site.siteName}`,
   description: SiteConfig.site.siteDescription
 }
 
