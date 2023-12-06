@@ -9,7 +9,7 @@ export function Header() {
     <Container className="flex py-16 gap-5">
       <div className="flex-1 mt-20">
         <div className="mb-5">
-          <h1 className="text-foreground text-4xl font-bold mb-4 max-w-[80%] font-display">
+          <h1 className="text-foreground text-4xl font-bold mb-4 md:max-w-[80%] font-display">
             Senior Software & Product Engineer...
           </h1>
           <p className="mb-4 text-lg text-accent-4">

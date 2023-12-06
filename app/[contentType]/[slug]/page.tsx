@@ -3,8 +3,8 @@ import { IContentType, getContentData, getContentList, getContentTypes } from '@
 import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import BackButton from '../../../components/back-button';
 import Content from './content';
-import { ChevronLeft } from 'react-feather';
 
 /**
  * statically generate all content pages
@@ -67,14 +67,12 @@ export default async function ContentPage({ params }) {
 };
 
 function WorkPage({ work }: { work: IContentData }) {
+
     return (
         <Container className="flex flex-col lg:flex-row gap-4 pt-12">
             <section className="w-full lg:w-1/3 border-r border-accent-8 p-2 pr-8">
                 <div className="mb-8 flex flex-col items-start gap-5">
-                    <button className="flex items-center">
-                        <ChevronLeft />
-                        <span>back</span>
-                    </button>
+                    <BackButton />
                     <h1 className="text-4xl font-bold font-display text-accent-3">{work.title}</h1>
                     <p className="text-accent-4">{work.description}</p>
                     <button>Se Demo</button>

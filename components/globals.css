@@ -26,7 +26,7 @@
 
     }
     
-    .dark {
+    [data-theme='dark'] {
         --background:theme('colors.neutral.950');
         --accent-1: theme('colors.neutral.100');
         --accent-2: theme('colors.neutral.200');

@@ -64,7 +64,7 @@ export default function RootLayout({
 
     return (
         <html lang="en" className={`${manrope.variable} ${youngSerif.variable}`}>
-            <body className={cn('bg-background text-accent-1 font-body', menuOpen && 'h-full w-full overflow-hidden')}>
+            <body className={cn('bg-background text-accent-1 font-body transition-colors', menuOpen && 'h-full w-full overflow-hidden')}>
                 <ThemeProvider>
                     <MenuProvider value={{ toggleMenuOpen, menuOpen }}>
                         <Nav />
