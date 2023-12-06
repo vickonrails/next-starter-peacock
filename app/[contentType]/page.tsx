@@ -4,6 +4,7 @@ import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { site } from '../../config/index.json';
+import { generateRSS } from '@utils/rss';
 
 /** generate list page metadata */
 export function generateMetadata({ params }): Metadata {
@@ -15,6 +16,8 @@ export function generateMetadata({ params }): Metadata {
 }
 
 export async function generateStaticParams() {
+    generateRSS();
+
     const contentTypes = getContentTypes();
     return Array.from(contentTypes).map(contentType => ({
         contentType
