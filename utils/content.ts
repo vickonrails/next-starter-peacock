@@ -182,7 +182,7 @@ export const getContentList = (contentType: IContentType): IContent[] => {
 
       return {
         ...data,
-        previewImage: data.previewImage || '/images/image-placeholder.png',
+        previewImage: data.previewImage ?? '/images/article-placeholder.png',
         id: uuid(),
       };
     });

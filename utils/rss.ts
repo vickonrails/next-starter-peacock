@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
+import { Feed } from 'feed';
 import fs from 'fs';
-import RSS from 'rss';
+import path from 'path';
 
 import { author, site } from '../config/index.json';
 import { IContent, getContentList, sortByDate } from './content';
@@ -14,55 +15,48 @@ const year = new Date().getFullYear();
 
 try {
   console.log('🔃 - Generating RSS feed at rss.xml');
-  // Instantiate RSS feed
-  const feed = new RSS({
+  const feed = new Feed({
     title: siteName,
     description: siteTitle,
-    feed_url: `${siteUrl}/rss.xml`,
-    site_url: siteUrl,
-    image_url: `${siteUrl}/Logo.png`,
-    managingEditor: author.name,
-    webMaster: author.name,
+    id: siteUrl,
+    link: siteUrl,
+    favicon: `${siteUrl}/favicon.ico`,
+    feedLinks: {
+      rss: `${siteUrl}/rss.xml`
+    },
+    image: `${siteUrl}/Logo.png`,
     copyright: `${year} ${author.name}`,
     language: 'en',
+    author: {
+      name: author.name,
+      link: author.twitterHandle
+    }
   });
 
-  // Add Notes content to feed
-  notesContent.sort(sortByDate).map((contentItem: IContent) => {
-    const { title, date, id, slug, description } = contentItem;
-    const url = `${siteUrl}notes/${slug}`;
+  articlesContent.sort(sortByDate).forEach((contentItem: IContent) => {
+    const { title, previewImage, date, id, slug, description } = contentItem;
 
-    feed.item({
-      title,
-      description: description,
-      author: author.name,
-      date,
-      guid: url,
-      url,
-    });
-  });
-
-  // Add Articles content to feed
-  articlesContent.sort(sortByDate).map((contentItem: IContent) => {
-    const { title, date, id, slug, description } = contentItem;
     const url = `${siteUrl}/articles/${slug}`;
-    feed.item({
+    feed.addItem({
       title,
-      description: description,
-      author: author.name,
-      date,
-      guid: url,
-      url,
+      id: slug,
+      description,
+      image: path.join(siteUrl, previewImage!),
+      author: [{
+        name: author.name,
+        link: author.twitterHandle
+      }],
+      date: new Date(date),
+      link: url,
     });
   });
 
-  // convert to xml format
-  const xml = feed.xml();
-  // write to rss.xml
+  const xml = feed.rss2();
   fs.writeFileSync('./public/rss.xml', xml);
   console.log('🎉 - RSS feed generated at rss.xml');
 } catch (ex) {
   console.error(
-    `😢 An error occurred while generating XML scripts: ${ex.message}`
+    ex
+    // `😢 An error occurred while generating XML scripts: ${ex.message}`
   );
 }
