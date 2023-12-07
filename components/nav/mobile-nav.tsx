@@ -46,19 +46,19 @@ export function MobileNav() {
               </li>
 
               <li className="text-center mb-4">
-                <Link href="/articles" className="text-lg">
+                <Link href="/articles" className="text-lg" onClick={() => toggleMenuOpen()}>
                   Articles
                 </Link>
               </li>
 
               <li className="text-center mb-4">
-                <Link href="/notes" className="text-lg">
+                <Link href="/notes" className="text-lg" onClick={() => toggleMenuOpen()}>
                   Notes
                 </Link>
               </li>
 
               <li className="text-center mb-4">
-                <Link href="/about" className="text-lg">
+                <Link href="/about" className="text-lg" onClick={() => toggleMenuOpen()}>
                   About
                 </Link>
               </li>

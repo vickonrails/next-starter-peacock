@@ -21,12 +21,14 @@ export default function ContentListPage({ params }) {
     return (
         <>
             <Container width={isNotes ? 'narrow' : 'default'}>
-                <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4 text-4xl">
-                    {title} Tags
-                </h1>
-                <p className="page-intro leading-normal">
-                    {description}
-                </p>
+                <section className="flex flex-col py-20 gap-2 max-w-2xl">
+                    <h1 className="text-4xl font-bold font-display">
+                        {title} Tags
+                    </h1>
+                    <p className="text-accent-4 text-lg">
+                        {description}
+                    </p>
+                </section>
                 <ContentList
                     basePath={path}
                     items={content}

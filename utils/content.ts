@@ -20,6 +20,7 @@ export type IContent = {
   basePath: string
   date: Date;
   id: string;
+  draft?: boolean
 
   selectedWork?: boolean
   description?: string;
@@ -134,6 +135,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     id,
     contentHtml,
     title: matterResult.data.title,
+    draft: matterResult.data.draft || false,
     date: matterResult.data.date,
     previewImage: matterResult.data.previewImage || '',
     description: matterResult.data.description || '',
@@ -187,7 +189,7 @@ export const getContentList = (contentType: IContentType): IContent[] => {
       };
     });
 
-  return content.sort(sortByDate);
+  return content.filter(x => !x.draft).sort(sortByDate);
 };
 
 /**

@@ -15,7 +15,7 @@ export interface ICard {
 
 const Cards = ({ items, basePath }: ICard) => {
   return (
-    <section className="flex sm:flex-row flex-col flex-wrap justify-between">
+    <section className="flex sm:flex-row flex-col flex-wrap justify-start">
       {items.map((singleCard, idx) => (
         <article
           className={

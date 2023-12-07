@@ -2,13 +2,14 @@ import { cn } from '@utils/cn';
 import { IContent } from '@utils/content';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, GitHub } from 'react-feather'
-import placeholderImg from '/public/images/placeholder.jpg'
+import { ArrowRight } from 'react-feather';
+import placeholderImg from '/public/images/placeholder.jpg';
 
+// TODO: use some type of hash function to generate the colors
 const COLORS_LOOKUP = {
-    'job-quest': 'bg-accent-delight text-white',
-    'delight': 'bg-accent-8',
-    'bob': 'bg-accent-bob text-white',
+    'code-collab': 'bg-accent-delight text-white',
+    'health-track': 'bg-accent-8',
+    'task-buddy': 'bg-accent-bob text-white',
 }
 
 export function WorkItem({ work, grid }: { work: IContent, grid?: boolean }) {
@@ -18,7 +19,7 @@ export function WorkItem({ work, grid }: { work: IContent, grid?: boolean }) {
     return (
         <Link href={`/works/${slug}`} className={cn('group rounded-xl select-none no-underline flex flex-col lg:py-10 w-full md:flex-row transition-transform hover:cursor-pointer hover:scale-[102%] active:scale-95', COLORS_LOOKUP[slug])}>
             <section className="flex flex-col flex-1 lg:order-2">
-                <Image className="w-full rounded-t-md lg:rounded-none" src={work.previewImage ?? ''} alt="" width={500} height={300} />
+                <Image className="w-full rounded-t-md lg:rounded-none" src={work.previewImage ?? placeholderImg} alt="" width={500} height={300} />
             </section>
 
             <section className="flex flex-1 p-4 lg:px-12">
@@ -40,9 +41,9 @@ function WorkGridItem({ work }: { work: IContent }) {
     const { title, slug, description } = work
 
     return (
-        <Link href={`/works/${slug}`} className={cn('group rounded-md no-underline select-none transition-transform hover:cursor-pointer hover:scale-[102%] bg-accent-8 w-full lg:w-[30%] active:scale-95', COLORS_LOOKUP[slug])}>
-            <section className="">
-                <Image className="w-full rounded-t-md" src={work.previewImage ?? ''} alt="" width={300} height={150} />
+        <Link href={`/works/${slug}`} className="group rounded-md no-underline select-none transition-transform hover:cursor-pointer hover:scale-[102%] bg-accent-8 w-full lg:w-[30%] active:scale-95">
+            <section>
+                <Image className="w-full rounded-t-md" src={work.previewImage ?? placeholderImg} alt="" width={300} height={150} />
             </section>
 
             <section className="flex flex-1 p-4">

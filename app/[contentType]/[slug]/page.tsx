@@ -66,6 +66,7 @@ export default async function ContentPage({ params }) {
     }
 
     const content = await fetchContentData(slug, contentType);
+    if (content.draft) return notFound();
 
     if (contentType === 'works') return <WorkPage work={content} />
 
@@ -101,7 +102,7 @@ function WorkPage({ work }: { work: IContentData }) {
                 </div>
 
                 <ul>
-                    {Boolean(work.techStack?.length) && <MetadataListItem item="Tech Stack" value={work.techStack?.join(',') ?? ''} />}
+                    <TechStack techStack={work.techStack ?? []} />
                     <MetadataListItem item="Date" value={work.date.toString()} />
                     {work.problem && <MetadataListItem item="Problem" value={work.problem ?? ''} />}
                 </ul>
@@ -119,11 +120,26 @@ function WorkPage({ work }: { work: IContentData }) {
 
 function MetadataListItem({ item, value }: { item: string, value: string }) {
     return (
-        <li className="list-none flex gap-4 border-b border-accent-8 py-3">
+        <li className="list-none flex gap-4 border-b border-accent-8 py-3 text-sm">
             <span className="text-accent-4 w-1/3">{item}</span>
             <span className="w-2/3 text-accent-2">{value}</span>
         </li>
 
+    )
+}
+
+function TechStack({ techStack }: { techStack: string[] }) {
+    if (!techStack.length) return null
+    return (
+        <li className="list-none flex gap-4 border-b border-accent-8 py-3 text-sm">
+            <span className="text-accent-4 w-1/3 flex-shrink-0">Tech Stack</span>
+
+            <ul className="flex flex-wrap gap-2 flex-grow-0">
+                {techStack.map(tech =>
+                    <li key={tech} className="select-none bg-accent-8 text-accent-2 px-2 py-1 rounded-md">{tech}</li>
+                )}
+            </ul>
+        </li>
     )
 }
 

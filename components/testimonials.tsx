@@ -25,13 +25,13 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
                 slidesPerView={3}
                 navigation
                 grabCursor
-                loop
+                // loop
                 className="flex gap-4 overflow-x-auto w-auto">
                 {testimonials.map((testimonial, idx) => (
                     <SwiperSlide key={idx} className="bg-accent-8 min-w-[400px] py-4 px-5 rounded-md select-none">
                         <header className="mb-6">
                             <h2 className="font-bold text-accent-2">{testimonial.name}</h2>
-                            <p className="text-sm text-accent-4">{testimonial.title}</p>
+                            <p className="text-sm text-accent-4">{testimonial.title.substring(0, 50)}</p>
                         </header>
 
                         <p className="text-accent-4">{testimonial.text}</p>
