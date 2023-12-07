@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=DM+Sans:wght@400;700");
+@import url("./content.css");
 
 @tailwind base;
 @tailwind components;
@@ -6,148 +6,60 @@
 
 @layer base {
     :root {
-        --text-color: #bbb;
-        --text-color: theme('colors.neutral.400');
-    
-        --text-color-white: #fff;
-        --text-color-bright: theme('colors.neutral.500');
-        --prim-color: #b94c50;
-    
-        --background: #121212;
-        --background-light: #202020;
+        --background: theme('colors.neutral.50');
+        --accent-1: theme('colors.neutral.900');
+        --accent-2: theme('colors.neutral.800');
+        --accent-3: theme('colors.neutral.700');
+        --accent-4: theme('colors.neutral.600');
+        --accent-5: theme('colors.neutral.500');
+        --accent-6: theme('colors.neutral.400');
+        --accent-7: theme('colors.neutral.300');
+        --accent-8: theme('colors.neutral.200');
+        --accent-9: theme('colors.neutral.100');
+        --foreground: ;
 
-        @apply text-lg leading-normal;
+        /* TODO: rename to more interesting ones */
+        --accent-delight: 248 73% 18%;
+        --accent-bob: 338 73% 18%;
+
+        --primary: 358 44% 51%;
+
     }
-    *,
-    *:after,
-    *:before {
-        @apply m-0 p-0 box-border;
+    
+    [data-theme='dark'] {
+        --background:theme('colors.neutral.950');
+        --accent-1: theme('colors.neutral.100');
+        --accent-2: theme('colors.neutral.200');
+        --accent-3: theme('colors.neutral.300');
+        --accent-4: theme('colors.neutral.400');
+        --accent-5: theme('colors.neutral.500');
+        --accent-6: theme('colors.neutral.600');
+        --accent-7: theme('colors.neutral.700');
+        --accent-8: theme('colors.zinc.800');
+        --accent-9: theme('colors.neutral.900');
+        --foreground: ;
+
+        --primary: 358 44% 51%;
+
+        --accent-delight: 248 73% 18%;
+        --accent-bob: 338 73% 18%;
     }
-    h1 {
-        @apply text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 text-white;
-    }
-    h2 {
-        @apply text-2xl;
-    }
+}
+
+/* Try to import this from another file because it makes this part clunky */
+@layer base {
     a {
-        @apply text-primary
+        text-decoration: underline;
+        color: hsl(var(--accent-2));
+        transition: color 0.15s ease;
     }
-    a:hover,
-    a:visited:hover {
-        @apply text-white;
-    }
-    a:focus {
-        @apply no-underline outline-primary;
-    }
-    p,
-    table {
-        @apply mb-6 text-body-text;
-    }
-    main {
-        @apply mb-8;
-    }
-    b, strong {
-        @apply font-bold text-neutral-300;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply mb-4 font-extrabold text-white font-body;
-    }
-    figcaption {
-        @apply mt-2 text-center text-sm italic block;
-    }
-    hr {
-        @apply mb-4 border-x-0 border-t-0 border border-b border-[#505050];
-    }
-    img {
-        @apply w-full max-w-full;
-    }
-    a > img,
-    a:hover > img {
-        @apply no-underline;
-    }
-    a {
-        @apply text-primary underline;
-    }
-    a:hover,
-    a:visited:hover {
-        @apply text-white;
-    }
-    a:focus {
-        @apply outline-primary no-underline decoration-primary;
-    }
-    html {
-        @apply text-[16px] text-body-text font-body;
-    }
-    ul,
-    ol {
-        @apply text-body-text;
-    }
-    body {
-        @apply bg-body text-bright;
-    }
-    td,
-    th {
-        @apply p-2 border-white border;
-    }
-    blockquote {
-        @apply relative italic bg-light p-4 mb-6 before:content-[""] before:h-full before:w-1 before:inline-block before:absolute before:top-0 before:left-0 before:right-0 before:bg-primary; 
-    }
-    blockquote p {
-        @apply mb-0;
-    }
-    table {
-        @apply border-collapse w-full overflow-x-scroll block border border-body-text;
-    }
-    th {
-        @apply text-white;
-    }
-    .page-intro {
-        @apply text-center w-full mx-auto mb-8 mt-0 max-w-lg;
+    b {
+        color: var(--accent-2);
     }
 }
 
 @layer components {
-        .time {
-            @apply text-xs text-bright text-center block;
-        }
-        .content {
-            @apply block;
-        }
-        .content ul {
-            @apply list-disc;
-        }
-        .content ol {
-            @apply list-decimal;
-        }
-        .content pre code {
-            @apply overflow-hidden;
-        }
-        .content li {
-            @apply mb-2;
-        }
-        .content ul ul,
-        .content ol ol,
-        .content ol ul,
-        .content ul ol {
-            @apply mb-0 list-inside;
-            list-style-type: square;
-        }
-        .content img {
-            @apply mb-4 block object-cover;
-        }
-        .content ul,
-        .content ol {
-            @apply px-4;
-        }
-        .content li p {
-            @apply mb-0;
-        }
-        .content time {
-            @apply text-center block mb-8;
-        }
+    .main {
+        min-height: calc(100vh - 150px);
+    }
 }

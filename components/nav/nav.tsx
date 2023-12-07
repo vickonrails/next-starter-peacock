@@ -1,59 +1,61 @@
+'use client'
+
 import Link from 'next/link';
-import { HTMLAttributes, useContext } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { Logo } from '@components';
-import clsx from 'clsx';
+import { useTheme } from 'next-themes';
+import { Loader, Moon, Rss, Sun } from 'react-feather';
 import SiteConfig from '../../config/index.json';
 import { Container } from '../container';
-import { MenuContext } from '../MenuContext';
+import { Hamburger } from '../hamburger';
 
 export function Nav() {
+  const rssLink = `${SiteConfig.site.siteUrl}/rss.xml`;
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
   return (
-    <header className="py-4 mb-20 relative z-10">
-      <Container>
-        <nav className="navWrapper flex justify-between items-center">
-          <div className="navLeft">
-            <Link href="/" className="flex items-center text-body-text hover:text-white no-underline">
-              <Logo />
-              <span>{SiteConfig.author.name}</span>
-            </Link>
-          </div>
+    <header className="relative z-10 border-b border-accent-8">
+      <Container width="bleed">
+        <nav className="navWrapper flex justify-between items-center py-3 xl:p-0">
+          <Link href="/" className="flex items-center no-underline">
+            <Logo />
+            <span className="text-base text-foreground">{SiteConfig.author.name}</span>
+          </Link>
 
+          {/* TODO: make the links configurable */}
           <div className="relative">
-            <Hamburger />
+            {mounted && (
+              <div className="flex gap-4 lg:hidden">
+                <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="transition-colors text-accent-4 hover:text-accent-1">
+                  {theme === 'dark' ? <Moon /> : <Sun />}
+                </button>
+                <Hamburger />
+              </div>
+            )}
 
-            <ul className="hidden list-none md:flex">
-              <li className="mr-2">
-                <Link href="/works">
-                  Work
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/articles">
-                  Articles
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/notes">
-                  Notes
-                </Link>
-              </li>
-              <li className="mr-2">
-                <Link href="/about">
-                  About
-                </Link>
-              </li>
+            <nav className="hidden list-none md:flex md:items-center">
+              <NavItem title="Works" href="/works" />
+              <NavItem title="Articles" href="/articles" />
+              <NavItem title="Notes" href="/notes" />
+              <NavItem title="About" href="/about" />
 
-              <li>
-                <a
-                  href={`${SiteConfig.site.siteUrl}/rss.xml`}
-                  target="_blank"
-                  rel="noopener norefferer"
-                >
-                  RSS Feed
-                </a>
-              </li>
-            </ul>
+              <NavItem title={<Rss className="text-foreground" />} href={rssLink} external />
+              <div>
+                {mounted ? (
+                  <button className="p-4 border-l border-accent-8 text-accent-4 hover:text-accent-1" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+                    {theme === 'dark' ? <Moon /> : <Sun />}
+                  </button>
+                ) : (
+                  <div className="p-4 border-l border-accent-8 text-accent-6">
+                    <Loader className="animate-spin" />
+                  </div>
+                )}
+              </div>
+            </nav>
           </div>
         </nav>
       </Container>
@@ -61,22 +63,22 @@ export function Nav() {
   );
 };
 
-const Hamburger = (props: HTMLAttributes<HTMLElement>) => {
-  const menuContext = useContext(MenuContext);
-  const { toggleMenuOpen, menuOpen } = menuContext;
+function NavItem({ title, href, external = false }: { title: string | ReactNode, href: string, external?: boolean }) {
+  const classes = 'border-l border-accent-8 text-accent-4 hover:text-accent-1 p-4 uppercase'
+
+  if (external) {
+    return (
+      <a href={href} className={classes} target="_blank" rel="noreferrer noopener">
+        {title}
+      </a>
+    )
+  }
 
   return (
-    <button
-      className={
-        clsx(`
-          h-4 w-8 bg-inherit block p-3 border-white border relative border-none rounded-[50%] transition-all
-          cursor-pointer focus:outline-white active:outline-white before:content-[""] before:bg-white
-          before:h-[2px] before:w-full before:absolute before:block before:right-0 after:content-[""] after:bg-white
-          after:h-[2px] after:w-full after:absolute after:block after:right-0 md:hidden z-20`,
-          menuOpen ? 'before:top-[14px] before:rotate-45 after:w-full after:bottom-[11px] after:-rotate-45' : 'before:top-[8px] after:w-[80%] after:bottom-[8px]'
-        )}
-      onClick={toggleMenuOpen}
-      {...props}
-    />
-  )
+    <Link href={href} className={classes}>
+      {title}
+    </Link>
+  );
+
 }
+

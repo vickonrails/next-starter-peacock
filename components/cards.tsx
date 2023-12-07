@@ -15,12 +15,12 @@ export interface ICard {
 
 const Cards = ({ items, basePath }: ICard) => {
   return (
-    <section className="flex sm:flex-row flex-col flex-wrap md:justify-start text-bright ">
+    <section className="flex sm:flex-row flex-col flex-wrap justify-start">
       {items.map((singleCard, idx) => (
         <article
           className={
             clsx(
-              'article mb-[2%] overflow-hidden hover:text-white group sm:basis-[47%] lg:basis-[32%]',
+              'article mb-[2%] overflow-hidden group sm:basis-[47%] lg:basis-[32%]',
               (idx === items.length - 1) ? 'sm:mr-0' : 'sm:mr-2'
             )
           }
@@ -41,17 +41,17 @@ const Cards = ({ items, basePath }: ICard) => {
                 className="w-full object-cover mb-[0.4rem] transition-transform duration-200 group-hover:scale-110"
               />
             </div>
-            <time className="time text-left">
+            <time className="text-sm text-accent-4 mb-2 block">
               {singleCard.date.toString()}
             </time>
             <h2
-              className="font-bold text-lg mb-1 text-body-text group-hover:underline group-hover:text-white"
+              className="font-bold text-lg mb-1 group-hover:underline max-w-[80%] font-display"
             >
               {singleCard.title}
             </h2>
 
             {singleCard.description && (
-              <p className="text-bright group-hover:text-body-text">
+              <p className="transition-transform text-accent-4 group-hover:text-accent-3">
                 {singleCard.description}
               </p>
             )}

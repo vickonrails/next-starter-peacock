@@ -4,6 +4,7 @@ import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { site } from '../../config/index.json';
+import { generateRSS } from '@utils/rss';
 
 /** generate list page metadata */
 export function generateMetadata({ params }): Metadata {
@@ -15,6 +16,8 @@ export function generateMetadata({ params }): Metadata {
 }
 
 export async function generateStaticParams() {
+    generateRSS();
+
     const contentTypes = getContentTypes();
     return Array.from(contentTypes).map(contentType => ({
         contentType
@@ -39,16 +42,19 @@ export default function ContentListPage({ params }) {
     return (
         <>
             <Container width={isNotes ? 'narrow' : 'default'}>
-                <h1 className="max-w-[80%] text-center my-0 mx-auto mb-4">
-                    {title}
-                </h1>
-                <p className="page-intro">
-                    {description}
-                </p>
+                <section className="flex flex-col py-20 gap-2 max-w-2xl">
+                    <h1 className="text-4xl font-bold font-display">
+                        {title}
+                    </h1>
+                    <p className="text-accent-4 text-lg">
+                        {description}
+                    </p>
+                </section>
+
                 <ContentList
                     basePath={path}
                     items={content}
-                    mode={isNotes ? 'list' : 'grid'}
+                    contentType={contentType}
                 />
             </Container>
         </>

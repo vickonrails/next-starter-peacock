@@ -1,0 +1,112 @@
+@tailwind components;
+
+@layer components {
+    .content-body {
+        @apply text-accent-2;
+    }
+    .content-body p {
+        @apply mb-3;
+    }
+    .content-body ul {
+        @apply list-disc;
+    }
+    .content-body ol {
+        @apply list-decimal;
+    }
+    .content-body pre code {
+        @apply overflow-hidden;
+    }
+    .content-body li {
+        @apply mb-2;
+    }
+    .content-body ul ul,
+    .content-body ol ol,
+    .content-body ol ul,
+    .content-body ul ol {
+        @apply mb-0 list-inside;
+        list-style-type: square;
+    }    
+    .content-body img {
+        @apply mb-4 block object-cover w-full max-w-full;
+    }
+    .content-body ul,
+    .content-body ol {
+        @apply px-4;
+    }
+    .content-body li p {
+        @apply mb-0;
+    }
+    .content-body time {
+        @apply text-center block mb-8;
+    } 
+    .content-body blockquote p {
+        @apply mb-0;
+    }
+    .content-body table {
+        @apply border-collapse w-full overflow-x-scroll block border;
+    }
+    .content-body th {
+        @apply text-white;
+    }
+    .content-body a > img,
+    .content-body a:hover > img {
+        @apply no-underline;
+    }
+    .content-body a {
+        @apply text-primary underline;
+    }
+    .content-body a:hover,
+    .content-body a:visited:hover {
+        @apply text-accent-3;
+    }
+    .content-body a:focus {
+        @apply outline-primary no-underline decoration-primary;
+    }
+    .content-body td,
+    .content-body th {
+        @apply p-2 border-accent-3 border;
+    }
+    .content-body blockquote {
+        @apply relative italic p-4 mb-6 before:content-[""] before:h-full before:w-1 before:inline-block before:absolute before:top-0 before:left-0 before:right-0 before:bg-primary; 
+    }
+    .content-body h1,
+    .content-body h2,
+    .content-body h3,
+    .content-body h4,
+    .content-body h5,
+    .content-body h6 {
+        @apply mb-4 font-extrabold text-accent-2 font-display;
+    }
+    .content-body figcaption {
+        @apply mt-2 text-center text-sm italic block;
+    }
+    .content-body hr {
+        @apply mb-4 border-x-0 border-t-0 border border-b;
+    }
+    .content-body a {
+        @apply text-primary
+    }
+    .content-body a:hover,
+    .content-body a:visited:hover {
+        @apply text-accent-3;
+    }
+    .content-body a:focus {
+        @apply no-underline outline-primary;
+    }
+    .content-body main {
+        @apply mb-8;
+    }
+    .content-body b,
+    .content-body strong {
+        @apply font-bold text-accent-2;
+    }
+    .content-body h1 {
+        @apply text-3xl md:text-4xl xl:text-5xl font-extrabold mb-4 font-display;
+    }
+    .content-body h2 {
+        @apply text-2xl font-display;
+    }
+    .content-body .contains-task-list {
+        @apply list-none px-0;
+     }
+}

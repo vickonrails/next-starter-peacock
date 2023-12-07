@@ -1,4 +1,3 @@
-export * from './layout'
 export * from './container';
 export * from './cards';
 export * from './content-list'
@@ -11,3 +10,7 @@ export * from './logo'
 export * from './notes'
 export * from './nav'
 export * from './footer'
+export * from './works'
+export * from './socials'
+export * from './link'
+export * from './testimonials'

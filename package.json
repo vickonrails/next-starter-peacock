@@ -6,22 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:rss": "ts-node ./utils/rss.ts",
+    "build:rss": "tsx ./utils/rss.ts",
     "lint": "next lint"
   },
   "dependencies": {
     "@types/uuid": "^9.0.2",
+    "feed": "^4.2.2",
+    "framer-motion": "^10.16.14",
     "gray-matter": "^4.0.3",
-    "next": "^13.4.12",
+    "next": "^14.0.3",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.10",
     "react-parallax-tilt": "^1.7.137",
     "rehype-highlight": "^6.0.0",
     "remark": "^12.0.1",
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-parse": "^10.0.2",
+    "swiper": "^11.0.5",
     "unified": "^10.1.2",
     "uuid": "^9.0.0"
   },
@@ -31,11 +35,10 @@
     "autoprefixer": "^10.4.14",
     "clsx": "^2.0.0",
     "eslint": "^8.45.0",
-    "eslint-config-next": "^13.4.12",
+    "eslint-config-next": "^14.0.3",
     "postcss": "^8.4.27",
-    "rss": "^1.2.2",
+    "tailwind-merge": "^2.0.0",
     "tailwindcss": "^3.3.3",
-    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
 }

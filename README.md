@@ -1,4 +1,4 @@
-![Next Starter Peacock](./screenshot.png)
+![Next Starter Peacock](./.github/screenshot.png)
 
 # 🦚 Next Starter Peacock
 
@@ -6,9 +6,9 @@ Peacock is a NextJS portfolio Starter for software engineers and designers. Show
 
 ## Features
 
-- Styled with Tailwind CSS 💅🏾
-- Written in TypeScript ⚛
-- Blog, Notes and Work content types 🖊
+- Styled with Tailwind CSS
+- Written in TypeScript & Next 14 (RSC)
+- Blog, Notes and Work content types 
 
 ## Getting Started
 
@@ -79,6 +79,7 @@ The fastest way to get an answer to your question is to reach out via [Twitter](
 - [x] Image optimization (Fixed image heights to avoid layout janks)
 - [x] RSS Feed
 - [ ] Release V1
-- [ ] Add page transitions with `react-spring`
+- [x] Add page transitions with `framer-motion`
 - [ ] Add mdx support
 - [x] Code syntax highlighting
+- [ ] og image generation with vercel/og

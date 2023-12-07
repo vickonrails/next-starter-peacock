@@ -20,6 +20,7 @@ export type IContent = {
   basePath: string
   date: Date;
   id: string;
+  draft?: boolean
 
   selectedWork?: boolean
   description?: string;
@@ -134,11 +135,14 @@ export const getContentData = async (id: string, contentType: IContentType) => {
     id,
     contentHtml,
     title: matterResult.data.title,
+    draft: matterResult.data.draft || false,
     date: matterResult.data.date,
     previewImage: matterResult.data.previewImage || '',
     description: matterResult.data.description || '',
     tags: matterResult.data.tags || [],
     category: matterResult.data.category || '',
+    problem: matterResult.data.problem || '',
+    techStack: matterResult.data.techStack || [],
   };
 };
 
@@ -180,12 +184,12 @@ export const getContentList = (contentType: IContentType): IContent[] => {
 
       return {
         ...data,
-        previewImage: data.previewImage || '/images/image-placeholder.png',
+        previewImage: data.previewImage ?? '/images/article-preview.png',
         id: uuid(),
       };
     });
 
-  return content.sort(sortByDate);
+  return content.filter(x => !x.draft).sort(sortByDate);
 };
 
 /**
