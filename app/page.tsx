@@ -7,7 +7,7 @@ import { Metadata } from 'next';
  */
 
 export const metadata: Metadata = {
-    title: `${site.siteTitle} | ${site.siteDescription}`,
+    title: site.siteTitle,
     keywords: site.keywords.split(','),
     description: site.siteDescription,
     alternates: {
@@ -21,8 +21,9 @@ export const metadata: Metadata = {
         }
     },
     twitter: {
-        card: 'summary',
-        creator: author.twitterHandle
+        card: 'summary_large_image',
+        creator: author.twitterHandle,
+        images: site.siteImage,
     },
     openGraph: {
         title: `${site.siteTitle} | ${site.siteDescription}`,
