@@ -1,0 +1,65 @@
+@import url("./content.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: theme('colors.neutral.50');
+        --accent-1: theme('colors.neutral.900');
+        --accent-2: theme('colors.neutral.800');
+        --accent-3: theme('colors.neutral.700');
+        --accent-4: theme('colors.neutral.600');
+        --accent-5: theme('colors.neutral.500');
+        --accent-6: theme('colors.neutral.400');
+        --accent-7: theme('colors.neutral.300');
+        --accent-8: theme('colors.neutral.200');
+        --accent-9: theme('colors.neutral.100');
+        --foreground: ;
+
+        /* TODO: rename to more interesting ones */
+        --accent-delight: 248 73% 18%;
+        --accent-bob: 338 73% 18%;
+
+        --primary: 358 44% 51%;
+
+    }
+    
+    [data-theme='dark'] {
+        --background:theme('colors.neutral.950');
+        --accent-1: theme('colors.neutral.100');
+        --accent-2: theme('colors.neutral.200');
+        --accent-3: theme('colors.neutral.300');
+        --accent-4: theme('colors.neutral.400');
+        --accent-5: theme('colors.neutral.500');
+        --accent-6: theme('colors.neutral.600');
+        --accent-7: theme('colors.neutral.700');
+        --accent-8: theme('colors.zinc.800');
+        --accent-9: theme('colors.neutral.900');
+        --foreground: ;
+
+        --primary: 358 44% 51%;
+
+        --accent-delight: 248 73% 18%;
+        --accent-bob: 338 73% 18%;
+    }
+}
+
+/* Try to import this from another file because it makes this part clunky */
+@layer base {
+    a {
+        text-decoration: underline;
+        color: hsl(var(--accent-2));
+        transition: color 0.15s ease;
+    }
+    b {
+        color: var(--accent-2);
+    }
+}
+
+@layer components {
+    .main {
+        min-height: calc(100vh - 150px);
+    }
+}

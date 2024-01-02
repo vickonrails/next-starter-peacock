@@ -1,75 +1,16 @@
-import React from 'react';
-import { Container } from './container';
-import {
-  CodepenIcon,
-  GitHubIcon,
-  StyledFooterSection,
-  TwitterIcon,
-} from './styles/footer.styles';
+import { Container, Socials } from '@components';
+import { Codepen, GitHub, Linkedin, Twitter } from 'react-feather';
 
-const Footer = () => (
-  <StyledFooterSection>
-    <Container className="footer-container">
-      <ul className="footerSocialLinks">
-        <li className="footerSocialLink">
-          <a
-            className="footerLink"
-            href="https://github.com/vickOnRails"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="github"
-          >
-            <GitHubIcon />
-          </a>
-        </li>
+export function Footer() {
+  return (
+    <footer className="py-10">
+      <Container className="flex justify-between">
+        <p>&copy; Victor Ofoegbu</p>
 
-        <li className="footerSocialLink">
-          <a
-            className="footerLink"
-            href="https://codepen.io/Vick_onrails"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="codepen"
-          >
-            <CodepenIcon />
-          </a>
-        </li>
-
-        <li className="footerSocialLink">
-          <a
-            className="footerLink"
-            href="https://twitter.com/vick_onrails"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="twitter"
-          >
-            <TwitterIcon />
-          </a>
-        </li>
-      </ul>
-    </Container>
-
-    <Container>
-      <p className="about-site">
-        Built by{' '}
-        <a
-          href="https://twitter.com/vick_OnRails"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          @vick_onrails
-        </a>
-        . With NextJS, TypeScript Emotion and Vercel.{' '}
-        <a
-          href="https://github.com/vickOnRails/next-starter-peacock"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Source
-        </a>
-      </p>
-    </Container>
-  </StyledFooterSection>
-);
+        <Socials />
+      </Container>
+    </footer>
+  );
+}
 
 export default Footer;

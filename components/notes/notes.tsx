@@ -1,26 +1,26 @@
+import { IContent } from '@utils/content';
 import React from 'react';
-import { StyledNotes } from '../styles/notes.styles';
-import Note, { INote } from './note';
+import { Note } from './note';
 
 interface INotes {
-  notes: INote[];
+  notes: IContent[];
   basePath: string;
 }
 
-const Notes = ({ notes, basePath }: INotes) => {
+export function Notes({ notes, basePath }: INotes) {
   return (
-    <StyledNotes>
+    <section>
       {notes.map((note) => (
         <Note
-          key={`note-${note.id}`}
+          id={note.id}
+          key={note.slug}
           basePath={basePath}
           title={note.title}
           slug={note.slug}
-          id={note.id}
           date={note.date}
         />
       ))}
-    </StyledNotes>
+    </section>
   );
 };
 

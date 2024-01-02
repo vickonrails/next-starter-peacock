@@ -34,9 +34,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-.eslintcache
-*.tsbuildinfo
-
-/playwright/test-results/
-/playwright/report/
-/playwright/.cache/
+public/rss.xml
