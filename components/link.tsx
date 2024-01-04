@@ -1,5 +1,5 @@
 import { cn } from '@utils/cn'
-import { AllHTMLAttributes, HTMLAttributes } from 'react'
+import { AllHTMLAttributes } from 'react'
 
 export function NativeLink({ className, ...rest }: AllHTMLAttributes<HTMLAnchorElement>) {
     return (
