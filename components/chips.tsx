@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const Chips = ({ items }) => {
+export const Chips = ({ items }: { items: string[] }) => {
   return (
     <ul className="list-none flex flex-wrap pl-0">
       {items.map((tag: string[], index: number) => (

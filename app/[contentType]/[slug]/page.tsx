@@ -8,7 +8,7 @@ import BackButton from '../../../components/back-button';
 import { author, site } from '../../../config/index.json';
 import Content from './content';
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
     const { title, previewImage, description } = await getContentData(params.slug, params.contentType)
     return {
         title: `${title} | ${site.siteTitle}`,
@@ -58,8 +58,8 @@ type Params = {
     contentType: IContentType
 }
 
-export default async function ContentPage({ params }) {
-    const { slug, contentType } = params as Params
+export default async function ContentPage({ params }: { params: Params }) {
+    const { slug, contentType } = params;
 
     if (!CONTENT_TYPES_MAP.has(contentType)) {
         return notFound();
