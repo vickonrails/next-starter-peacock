@@ -67,7 +67,7 @@ export function MobileNav() {
                 <a
                   href="https://github.com/vickOnRails/next-starter-peacock"
                   target="_blank"
-                  rel="noopener norefferer"
+                  rel="noopener noreferrer"
                 >
                   Source
                 </a>
