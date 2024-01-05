@@ -34,7 +34,7 @@ export function generateRSS() {
     });
 
     articlesContent.sort(sortByDate).forEach((contentItem: IContent) => {
-      const { title, previewImage, date, id, slug, description } = contentItem;
+      const { title, previewImage, date, slug, description } = contentItem;
 
       const url = `${siteUrl}/articles/${slug}`;
       feed.addItem({
