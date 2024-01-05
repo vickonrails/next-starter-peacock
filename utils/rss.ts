@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
+import fs from 'node:fs';
+import path from 'node:path';
 import { Feed } from 'feed';
-import fs from 'fs';
-import path from 'path';
 
 import { author, site } from '../config/index.json';
 import { IContent, getContentList, sortByDate } from './content';
