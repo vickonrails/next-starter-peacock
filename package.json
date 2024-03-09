@@ -20,13 +20,12 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-parallax-tilt": "^1.7.137",
-    "rehype-highlight": "^6.0.0",
-    "remark": "^12.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-html": "^15.0.2",
-    "remark-parse": "^10.0.2",
+    "rehype-highlight": "^7.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
     "swiper": "^11.0.5",
-    "unified": "^10.1.2",
+    "unified": "^11.0.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
