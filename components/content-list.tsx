@@ -8,7 +8,7 @@ interface ContentListProps extends HTMLAttributes<HTMLElement> {
     basePath: string
 }
 
-export function ContentList<T>({ items, contentType, basePath }: ContentListProps) {
+export function ContentList({ items, contentType, basePath }: ContentListProps) {
     if (contentType === 'works') {
         const otherWorks = items.filter(x => !x.selectedWork);
         return (

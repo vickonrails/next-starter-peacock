@@ -17,14 +17,16 @@ const articlesDirectory = path.join(process.cwd(), 'content', 'articles');
 export type IContent = {
   title: string;
   slug: string;
-  basePath: string
+  basePath: string;
   date: Date;
   id: string;
-  draft?: boolean
+  draft?: boolean;
 
-  selectedWork?: boolean
+  selectedWork?: boolean;
   description?: string;
-  previewImage?: string
+  previewImage?: string;
+  tags?: string[];
+  category?: string;
 }
 
 export type IContentType = 'articles' | 'notes' | 'works';

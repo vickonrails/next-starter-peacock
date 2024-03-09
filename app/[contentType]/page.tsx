@@ -6,8 +6,12 @@ import { notFound } from 'next/navigation';
 import { site } from '../../config/index.json';
 import { generateRSS } from '@utils/rss';
 
+type Params = {
+    contentType: IContentType;
+  };
+
 /** generate list page metadata */
-export function generateMetadata({ params }): Metadata {
+export function generateMetadata({ params }: { params: Params }): Metadata {
     const contentType = CONTENT_TYPES_MAP.get(params.contentType)
     return {
         title: `${contentType.title} | ${site.siteTitle}`,
@@ -27,8 +31,8 @@ export async function generateStaticParams() {
 /**
  * Index page `/index`
  */
-export default function ContentListPage({ params }) {
-    const contentType = params.contentType as IContentType
+export default function ContentListPage({ params }: { params: Params }) {
+    const contentType = params.contentType;
 
     // redirect to 404 with wrong contentType
     if (!CONTENT_TYPES_MAP.has(contentType)) {
